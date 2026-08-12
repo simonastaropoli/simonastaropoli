@@ -3,11 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rituali di Benessere - Simona Staropoli</title>
-  <style>
-    /* Font ad alta leggibilità e definizione */
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+  
+  <!-- SEO & Localizzazione -->
+  <title>Rituali di Benessere | Simona Staropoli - Naturopata</title>
+  <meta name="description" content="Massaggi, riequilibrio energetico dei Chakra e cristalloterapia a Brescia. Scopri i trattamenti e i Rituali Andini per ritrovare armonia e rigenerazione.">
 
+  <!-- Dati Strutturati SEO (E-E-A-T) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemPage",
+    "name": "Rituali di Benessere - Simona Staropoli",
+    "description": "Pratiche e trattamenti olistici personalizzati: massaggi di presenza, allineamento energetico dei chakra, cristalloterapia e rituali della tradizione andina.",
+    "provider": {
+      "@type": "Person",
+      "name": "Simona Staropoli",
+      "jobTitle": "Naturopata e Operatrice Olistica"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts Uniformati -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+
+  <style>
     * {
       box-sizing: border-box;
       margin: 0;
@@ -15,8 +36,8 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+      font-family: 'Montserrat', sans-serif;
+      background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
@@ -38,60 +59,75 @@
       position: relative;
     }
 
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* Struttura Header e Menu di Navigazione Orizzontale */
+    header {
+      text-align: center;
       margin-bottom: 30px;
     }
 
-    .btn-back, .btn-back-bottom {
-      display: inline-block;
-      font-family: 'Inter', sans-serif;
-      border: 1px solid #736758;
-      border-radius: 30px;
-      padding: 9px 20px;
-      color: #423a30;
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      font-weight: 500;
-      transition: all 0.3s ease;
-    }
-
-    .btn-back:hover, .btn-back-bottom:hover {
-      background: #736758;
-      color: #fff;
-    }
-
-    /* Cerchio con Stella Fluttuante (Sfondo Trasparente) */
     .symbol-circle {
-      width: 56px;
-      height: 56px;
+      width: 44px;
+      height: 44px;
       border-radius: 50%;
-      background: transparent;
       border: 1.5px solid #c29b38;
       color: #c29b38;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0 auto 20px auto;
       box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
       animation: float4Directions 5s ease-in-out infinite;
     }
 
     .symbol-circle svg {
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       fill: #c29b38;
+    }
+
+    nav {
+      margin-bottom: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #423a30;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(115, 103, 88, 0.2);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background: rgba(194, 155, 56, 0.15);
+      border-color: #c29b38;
+      color: #141210;
+    }
+
+    .nav-active {
+      background: rgba(194, 155, 56, 0.25) !important;
+      border-color: #c29b38 !important;
+      font-weight: 600;
     }
 
     @keyframes float4Directions {
       0% { transform: translate(0, 0); }
-      25% { transform: translate(0, -7px); }
-      50% { transform: translate(7px, 0); }
-      75% { transform: translate(0, 7px); }
-      87.5% { transform: translate(-7px, 0); }
+      25% { transform: translate(0, -5px); }
+      50% { transform: translate(5px, 0); }
+      75% { transform: translate(0, 5px); }
       100% { transform: translate(0, 0); }
     }
 
@@ -126,15 +162,14 @@
       border: 1px solid #c29b38;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
       line-height: 1.75;
-      text-wrap: balance;
     }
 
     .card-body p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       line-height: 1.8;
       color: #2c2723;
       margin-bottom: 24px;
-      text-align: left; /* Modificato da justify a left per evitare disallineamenti su mobile */
+      text-align: left;
     }
 
     .card-body ul {
@@ -146,11 +181,11 @@
     .card-body ul li {
       position: relative;
       padding-left: 32px;
-      margin-bottom: 24px;
-      font-size: 1rem;
+      margin-bottom: 26px;
+      font-size: 0.95rem;
       line-height: 1.75;
       color: #2c2723;
-      text-align: left; /* Allineamento a sinistra sicuro anche per gli elementi della lista */
+      text-align: left;
     }
 
     .card-body ul li::before {
@@ -164,15 +199,15 @@
 
     .ritual-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: #1b281a;
       font-weight: 600;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
 
     .info-note {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       color: #2c2723;
       background: rgba(194, 155, 56, 0.1);
       padding: 22px;
@@ -194,7 +229,7 @@
       background: rgba(255, 255, 255, 0.65);
       border-left: 4px solid #8c4327;
       border-radius: 0 12px 12px 0;
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       line-height: 1.7;
     }
 
@@ -207,7 +242,8 @@
     .card-footer {
       text-align: center;
       margin-top: 45px;
-      padding-top: 20px;
+      padding-top: 25px;
+      border-top: 1px solid rgba(115, 103, 88, 0.15);
     }
 
     .signature-gold {
@@ -223,13 +259,31 @@
       font-size: 2.5rem;
       color: #1a1512;
       font-weight: 500;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
     }
 
-    /* Stile per il link delle note legali nel footer */
+    .btn-back-bottom {
+      display: inline-block;
+      border: 1px solid #736758;
+      border-radius: 30px;
+      padding: 9px 24px;
+      color: #423a30;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back-bottom:hover {
+      background: #736758;
+      color: #fff;
+    }
+
     .legal-footer-link {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 25px;
       font-size: 0.85rem;
       color: #736758;
       text-decoration: none;
@@ -252,14 +306,14 @@
     }
 
     .floating-btn {
-      width: 50px;
-      height: 50px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.3s ease;
     }
 
     .floating-btn:hover {
@@ -267,32 +321,22 @@
     }
 
     .floating-btn svg {
-      width: 26px;
-      height: 26px;
+      width: 22px;
+      height: 22px;
       fill: #ffffff;
     }
 
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
 
-    /* MEDIA QUERIES PER SMARTPHONE */
     @media (max-width: 650px) {
-      body {
-        padding: 15px 10px;
-      }
-      .card-container {
-        padding: 30px 20px;
-      }
-      .page-title {
-        font-size: 2.2rem;
-      }
-      .quote-box {
-        padding: 18px 20px;
-        font-size: 1.05rem;
-      }
-      .ritual-title {
-        font-size: 1.35rem;
-      }
+      body { padding: 15px 10px; }
+      .card-container { padding: 35px 20px; }
+      .page-title { font-size: 2.2rem; }
+      .quote-box { padding: 18px 20px; font-size: 1.05rem; }
+      .ritual-title { font-size: 1.4rem; }
+      nav ul { gap: 8px; }
+      nav a { padding: 5px 10px; font-size: 0.7rem; }
     }
   </style>
 </head>
@@ -300,71 +344,81 @@
 
   <div class="card-container">
     
-    <div class="card-header">
-      <a href="index.html#comincia" class="btn-back">← Torna alla Home</a>
+    <header>
       <div class="symbol-circle">
         <svg viewBox="0 0 24 24">
           <path d="M12,2 14.8,9.2 22,12 14.8,14.8 12,22 9.2,14.8 2,12 9.2,9.2 Z" />
         </svg>
       </div>
-    </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" class="nav-active">Rituali di Benessere</a></li>
+          <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
+          <li><a href="calendario.html">📅 Calendario</a></li>
+          <li><a href="chi-sono.html">Chi Sono</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <h1 class="page-title">Rituali di Benessere</h1>
-    <p class="subtitle-gold">Presenza, Armonia e Rigenerazione Interiore</p>
+    <main>
+      <h1 class="page-title">Rituali di Benessere</h1>
+      <p class="subtitle-gold">Presenza, Armonia e Rigenerazione Interiore</p>
 
-    <div class="quote-box">
-      In questo spazio non troverai semplici interventi isolati, ma vere e proprie Pratiche di Benessere. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande. Il vero equilibrio non si raggiunge in un giorno: si coltiva con&nbsp;costanza.
-    </div>
-
-    <div class="card-body">
-      <p>
-        Ogni corpo e ogni anima hanno un proprio ritmo. I Rituali di Benessere che trovi qui sotto non sono interventi isolati, ma strumenti complementari pensati per accompagnarti passo dopo passo verso la tua armonia. Puoi iniziare da ciò che risuona di più con te oggi, sapendo che la vera trasformazione nasce dalla continuità e dall’ascolto nel tempo.
-      </p>
-
-      <ul>
-        <li>
-          <strong class="ritual-title">Rituali di Tocco e Presenza (Massaggi)</strong>
-          Un tempo sacro per rilasciare le tensioni fisiche e mentali. Attraverso il tocco consapevole, questo rituale ti aiuta a riabitare il corpo, sciogliere i blocchi quotidiani e ritrovare un profondo senso di radicamento. Ideale come appuntamento regolare per mantenere il corpo fluido e leggero.
-        </li>
-
-        <li>
-          <strong class="ritual-title">Allineamento Sottile (Riequilibrio Energetico)</strong>
-          Una sessione profonda e unica, dedicata a ripulire e armonizzare i tuoi centri energetici (Chakra). La particolarità di questo rituale risiede nella mia connessione con le Guide dei mondi spirituali: muovendomi sotto la loro guida e protezione, andiamo a lavorare sui tuoi flussi invisibili per sciogliere i nodi emotivi più radicati e ricaricare la tua forza vitale. Non si tratta di una tecnica standard, ma di un intervento personalizzato guidato dallo Spirito, capace di restituirti una profonda lucidità, centratura e leggerezza.
-        </li>
-
-        <li>
-          <strong class="ritual-title">La Voce della Terra (Cristalli e Pietre)</strong>
-          Un viaggio di guarigione che sfrutta le frequenze e le memorie millenarie dei cristalli. Posizionate sul corpo, le pietre risuonano con le tue cellule, aiutandoti a rilasciare ciò che non ti serve più e a sintonizzarti su frequenze di pace e protezione.
-        </li>
-
-        <li>
-          <strong class="ritual-title">Il Rituale Andino Chumpy Paqo (Riallineamento con le Pietre Khuya)</strong>
-          Un antico rituale di guarigione della Tradizione Andina, ideale quando ti senti saturo, confuso o bloccato. Attraverso l'uso delle Khuya – pietre sacre andine collegate alle forze della Natura – questo trattamento agisce come un vero e proprio "reset" del tuo sistema energetico. Le pietre vengono utilizzate per decomprimere le tensioni sottili, ripulire il campo energetico e riaprire i canali intuitivi, aiutandoti a ritrovare lucidità e ad aprirti con fiducia a nuove soluzioni e possibilità nella tua vita.
-        </li>
-
-        <li>
-          <strong class="ritual-title">Spazi di Silenzio (Meditazione Individuale e di Gruppo)</strong>
-          Pratiche guidate per addomesticare la mente e connetterti alla tua parte più autentica. Che tu scelga l'intimità del percorso individuale o l'energia amplificata del Cerchio di gruppo, la meditazione è l'allenamento quotidiano per la tua consapevolezza.
-        </li>
-      </ul>
-
-      <div class="info-note">
-        <strong>Non sai da dove iniziare?</strong><br>
-        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
+      <div class="quote-box">
+        In questo spazio non troverai semplici interventi isolati, ma vere e proprie Pratiche di Benessere. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande. Il vero equilibrio non si raggiunge in un giorno: si coltiva con&nbsp;costanza.
       </div>
 
-      <div class="shamanic-link-box">
-        Se senti il richiamo di esplorare le dimensioni dello spirito e lavorare sulle memorie profonde della tua anima, scopri <a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico →</a>, disponibile sia in sessioni individuali che nei Cerchi di gruppo.
-      </div>
-    </div>
+      <div class="card-body">
+        <p>
+          Ogni corpo e ogni anima hanno un proprio ritmo. I Rituali di Benessere che trovi qui sotto non sono interventi isolati, ma strumenti complementari pensati per accompagnarti passo dopo passo verso la tua armonia. Puoi iniziare da ciò che risuona di più con te oggi, sapendo che la vera trasformazione nasce dalla continuità e dall’ascolto nel tempo.
+        </p>
 
-    <div class="card-footer">
+        <ul>
+          <li>
+            <strong class="ritual-title">Rituali di Tocco e Presenza (Massaggi)</strong>
+            Un tempo sacro per rilasciare le tensioni fisiche e mentali. Attraverso il tocco consapevole, questo rituale ti aiuta a riabitare il corpo, sciogliere i blocchi quotidiani e ritrovare un profondo senso di radicamento. Ideale come appuntamento regolare per mantenere il corpo fluido e leggero.
+          </li>
+
+          <li>
+            <strong class="ritual-title">Allineamento Sottile (Riequilibrio Energetico)</strong>
+            Una sessione profonda e unica, dedicata a ripulire e armonizzare i tuoi centri energetici (Chakra). La particolarità di questo rituale risiede nella mia connessione con le Guide dei mondi spirituali: muovendomi sotto la loro guida e protezione, andiamo a lavorare sui tuoi flussi invisibili per sciogliere i nodi emotivi più radicati e ricaricare la tua forza vitale. Non si tratta di una tecnica standard, ma di un intervento personalizzato guidato dallo Spirito, capace di restituirti una profonda lucidità, centratura e leggerezza.
+          </li>
+
+          <li>
+            <strong class="ritual-title">La Voce della Terra (Cristalli e Pietre)</strong>
+            Un viaggio di guarigione che sfrutta le frequenze e le memorie millenarie dei cristalli. Posizionate sul corpo, le pietre risuonano con le tue cellule, aiutandoti a rilasciare ciò che non ti serve più e a sintonizzarti su frequenze di pace e protezione.
+          </li>
+
+          <li>
+            <strong class="ritual-title">Il Rituale Andino Chumpy Paqo (Riallineamento con le Pietre Khuya)</strong>
+            Un antico rituale di guarigione della Tradizione Andina, ideale quando ti senti saturo, confuso o bloccato. Attraverso l'uso delle Khuya – pietre sacre andine collegate alle forze della Natura – questo trattamento agisce come un vero e proprio "reset" del tuo sistema energetico. Le pietre vengono utilizzate per decomprimere le tensioni sottili, ripulire il campo energetico e riaprire i canali intuitivi, aiutandoti a ritrovare lucidità e ad aprirti con fiducia a nuove soluzioni e possibilità nella tua vita.
+          </li>
+
+          <li>
+            <strong class="ritual-title">Spazi di Silenzio (Meditazione Individuale e di Gruppo)</strong>
+            Pratiche guidate per addomesticare la mente e connetterti alla tua parte più autentica. Che tu scelga l'intimità del percorso individuale o l'energia amplificata del Cerchio di gruppo, la meditazione è l'allenamento quotidiano per la tua consapevolezza.
+          </li>
+        </ul>
+
+        <div class="info-note">
+          <strong>Non sai da dove iniziare?</strong><br>
+          Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
+        </div>
+
+        <div class="shamanic-link-box">
+          Se senti il richiamo di esplorare le dimensioni dello spirito e lavorare sulle memorie profonde della tua anima, scopri <a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico →</a>, disponibile sia in sessioni individuali che nei Cerchi di gruppo.
+        </div>
+      </div>
+    </main>
+
+    <footer class="card-footer">
       <p class="signature-gold">Un abbraccio di luce,</p>
       <h2 class="signature-name">Simona</h2>
-      <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
+      <a href="calendario.html" class="btn-back-bottom">Guarda il Calendario Incontri →</a>
       <br>
       <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
-    </div>
+    </footer>
 
   </div>
 
