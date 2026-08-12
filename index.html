@@ -506,7 +506,7 @@
                     
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
                     
-                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimension spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
+                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
                     <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
                     
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
@@ -525,11 +525,11 @@
 
             <aside class="sidebar">
                 
-                <!-- SEZIONE PROSSIMI INCONTRI DINAMICA -->
+                <!-- SEZIONE PROSSIMI INCONTRI AUTOMATICA CON TESTI CORTI -->
                 <div class="widget">
                     <h3 class="widget-title">Prossimi Incontri</h3>
                     
-                    <!-- Gli eventi verranno caricati qui dal file calendario.html -->
+                    <!-- Contenitore svuotato: si riempie da solo via codice -->
                     <div id="dinamico-prossimi-incontri">
                         <p style="color: var(--text-muted); font-size: 0.78rem; font-style: italic;">Aggiornamento incontri...</p>
                     </div>
@@ -571,7 +571,7 @@
         </a>
     </div>
 
-    <!-- CODE SCRIPT AGGIUNTIVO PER L'AUTOMATIZZAZIONE -->
+    <!-- CODE SCRIPT AUTOMATIZZAZIONE + TAGLIO CURIOSITÀ -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('calendario.html')
@@ -580,40 +580,37 @@
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    // Cerca le card degli eventi dentro calendario.html (usa la classe tipica .calendar-item)
-                    // Se usi classi diverse in calendario.html (es. .event-card), ti basta cambiare questa stringa.
                     let eventi = doc.querySelectorAll('.calendar-item');
-                    
-                    // Fallback se usi una classe generica come .event-item anche lì
                     if (eventi.length === 0) {
                         eventi = doc.querySelectorAll('.event-item');
                     }
                     
                     const container = document.getElementById('dinamico-prossimi-incontri');
-                    
                     if (eventi.length === 0) {
                         container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun incontro in programma al momento.</p>';
                         return;
                     }
 
-                    container.innerHTML = ''; // Pulisce il testo di caricamento
+                    container.innerHTML = ''; 
 
-                    // Prende solo i primi 3 eventi
                     const primiTre = Array.from(eventi).slice(0, 3);
 
                     primiTre.forEach(evento => {
-                        // Estrae i testi in modo sicuro
                         const titolo = evento.querySelector('h3') ? evento.querySelector('h3').innerText : 
                                        (evento.querySelector('.event-title') ? evento.querySelector('.event-title').innerText : 'Incontro');
                         
-                        const descrizione = evento.querySelector('.event-desc') ? evento.querySelector('.event-desc').innerText : 
+                        let descrizione = evento.querySelector('.event-desc') ? evento.querySelector('.event-desc').innerText : 
                                             (evento.querySelector('p') ? evento.querySelector('p').innerText : 'Consulta i dettagli');
                         
-                        // Cerca il link WhatsApp del pulsante prenota
+                        // Taglio intelligente a 65 caratteri per generare curiosità
+                        const limiteCaratteri = 65;
+                        if (descrizione.length > limiteCaratteri) {
+                            descrizione = descrizione.substring(0, limiteCaratteri).trim() + "...";
+                        }
+
                         const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
                         const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
 
-                        // Crea la struttura HTML esatta del tuo vecchio widget
                         const itemHTML = `
                             <div class="event-item">
                                 <div class="event-title">${titolo}</div>
@@ -628,7 +625,7 @@
                     });
                 })
                 .catch(error => {
-                    console.error("Impossibile sincronizzare il calendario:", error);
+                    console.error("Errore sincronizzazione:", error);
                     container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">I dettagli sono disponibili nella pagina Calendario.</p>';
                 });
         });
