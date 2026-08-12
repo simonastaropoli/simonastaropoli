@@ -169,6 +169,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
+            overflow: hidden;
         }
 
         .oracle-message {
@@ -177,6 +178,15 @@
             font-style: italic;
             color: #2c3531;
             line-height: 1.6;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Classe applicata durante la transizione del messaggio */
+        .oracle-message.animating {
+            opacity: 0;
+            transform: translateY(12px);
         }
 
         .btn-oracle {
@@ -198,6 +208,10 @@
             background: #a85232;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(140, 67, 39, 0.4);
+        }
+
+        .btn-oracle:active {
+            transform: translateY(0);
         }
 
         /* --- MEDIA QUERIES PER SMARTPHONE --- */
@@ -338,15 +352,29 @@
             "Respira la bellezza del momento presente; qui e ora sei al sicuro."
         ];
 
+        let ultimoIndice = -1;
+
         function pescaMessaggio() {
-            const indiceCasuale = Math.floor(Math.random() * messaggiOracolo.length);
             const box = document.getElementById('messaggio-oracolo');
-            box.style.opacity = 0;
+            
+            // Applica la classe per sfumare e spostare verso il basso
+            box.classList.add('animating');
+
             setTimeout(() => {
-                box.innerText = `"${messaggiOracolo[indiceCasuale]}"`;
-                box.style.opacity = 1;
-                box.style.transition = "opacity 0.5s ease-in-out";
-            }, 200);
+                let nuovoIndice;
+                // Generazione casuale per evitare l'estrazione consecutiva dello stesso messaggio
+                do {
+                    nuovoIndice = Math.floor(Math.random() * messaggiOracolo.length);
+                } while (nuovoIndice === ultimoIndice && messaggiOracolo.length > 1);
+
+                ultimoIndice = nuovoIndice;
+                
+                // Aggiorna il testo
+                box.innerText = `"${messaggiOracolo[nuovoIndice]}"`;
+                
+                // Rimuove la classe per far riapparire il testo con un'animazione fluida
+                box.classList.remove('animating');
+            }, 400);
         }
     </script>
 
