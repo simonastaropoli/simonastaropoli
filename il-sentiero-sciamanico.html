@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Il Sentiero Sciamanico - Simona Staropoli</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+    /* Font ad alta leggibilità e definizione - Montserrat sostituito con Inter */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
     * {
       box-sizing: border-box;
@@ -14,7 +15,7 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
@@ -22,17 +23,18 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
-      color: #2c2c2c;
+      color: #1f1b18;
+      -webkit-font-smoothing: antialiased;
     }
 
     .card-container {
-      background: rgba(235, 230, 224, 0.94);
-      backdrop-filter: blur(8px);
+      background: rgba(244, 241, 236, 0.96);
+      backdrop-filter: blur(10px);
       max-width: 850px;
       width: 100%;
-      border-radius: 16px;
-      padding: 45px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border-radius: 20px;
+      padding: 50px 45px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
       position: relative;
     }
 
@@ -45,208 +47,209 @@
 
     .btn-back, .btn-back-bottom {
       display: inline-block;
-      border: 1px solid #7a7060;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #736758;
       border-radius: 30px;
-      padding: 8px 18px;
-      color: #4a4237;
+      padding: 9px 20px;
+      color: #423a30;
       text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       font-weight: 500;
       transition: all 0.3s ease;
     }
 
     .btn-back:hover, .btn-back-bottom:hover {
-      background: #7a7060;
+      background: #736758;
       color: #fff;
     }
 
-    /* Cerchio con Stella Fluttuante Nelle 4 Direzioni */
+    /* Cerchio con Stella Fluttuante (Sfondo Trasparente ed Elemento Dorato) */
     .symbol-circle {
       width: 48px;
       height: 48px;
       border-radius: 50%;
-      background: #2b3a2a;
-      color: #e5c158;
+      background: transparent;
+      border: 1.5px solid #c29b38;
+      color: #c29b38;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.3rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
       animation: float4Directions 5s ease-in-out infinite;
     }
 
-    /* Animazione movimento continuo nelle 4 direzioni (Su, Destra, Giù, Sinistra) */
     @keyframes float4Directions {
-      0% {
-        transform: translate(0, 0);
-      }
-      25% {
-        transform: translate(0, -7px); /* Alto */
-      }
-      50% {
-        transform: translate(7px, 0); /* Destra */
-      }
-      75% {
-        transform: translate(0, 7px); /* Basso */
-      }
-      87.5% {
-        transform: translate(-7px, 0); /* Sinistra */
-      }
-      100% {
-        transform: translate(0, 0);
-      }
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(0, -7px); }
+      50% { transform: translate(7px, 0); }
+      75% { transform: translate(0, 7px); }
+      87.5% { transform: translate(-7px, 0); }
+      100% { transform: translate(0, 0); }
     }
 
     .page-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       text-align: center;
-      color: #1a1a1a;
-      font-weight: 400;
+      color: #141210;
+      font-weight: 500;
       margin-bottom: 6px;
     }
 
     .subtitle-gold {
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', serif;
       font-style: italic;
-      color: #c29b38;
+      color: #a88122;
       font-size: 1.2rem;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
     .quote-box {
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', serif;
       font-style: italic;
-      font-size: 1.25rem;
-      color: #5a5247;
-      margin-bottom: 30px;
-      padding: 15px 20px;
-      border-top: 1px solid rgba(194, 155, 56, 0.2);
-      border-bottom: 1px solid rgba(194, 155, 56, 0.2);
+      font-size: 1.2rem;
+      color: #241d15;
+      background: rgba(225, 201, 138, 0.22);
+      margin-bottom: 40px;
+      padding: 28px 45px;
+      border-radius: 14px;
+      border: 1px solid #c29b38;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      line-height: 1.75;
+      text-wrap: balance;
     }
 
     .card-body p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.8;
-      color: #3d3a36;
-      margin-bottom: 20px;
+      color: #2c2723;
+      margin-bottom: 24px;
       text-align: justify;
     }
 
     .card-body h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.9rem;
-      color: #1a1a1a;
-      margin-top: 40px;
-      margin-bottom: 20px;
+      font-size: 2.2rem;
+      color: #8c4327;
+      margin-top: 45px;
+      margin-bottom: 25px;
       text-align: center;
-      border-bottom: 1px solid rgba(122, 112, 96, 0.3);
-      padding-bottom: 8px;
+      border-bottom: 1px solid #d5dfd9;
+      padding-bottom: 10px;
     }
 
     .card-body h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      color: #2b3a2a;
-      margin-top: 25px;
-      margin-bottom: 12px;
+      font-size: 1.6rem;
+      color: #1b281a;
+      margin-top: 30px;
+      margin-bottom: 14px;
       font-weight: 600;
       letter-spacing: 0.5px;
     }
 
     .card-body h5.subheading-large {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: #2b3a2a;
+      font-size: 1.35rem;
+      color: #1b281a;
       font-weight: 700;
-      margin-top: 25px;
-      margin-bottom: 15px;
+      margin-top: 30px;
+      margin-bottom: 18px;
       letter-spacing: 0.5px;
     }
 
     .card-body ul {
       list-style-type: none;
-      margin-bottom: 25px;
-      padding-left: 10px;
+      margin-bottom: 30px;
+      padding-left: 0;
     }
 
     .card-body ul li {
       position: relative;
-      padding-left: 25px;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-      line-height: 1.6;
-      color: #3d3a36;
+      padding-left: 32px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #2c2723;
     }
 
     .card-body ul li::before {
       content: "✦";
       position: absolute;
-      left: 0;
+      left: 2px;
+      top: 0;
       color: #c29b38;
-      font-size: 0.85rem;
+      font-size: 1rem;
     }
 
     .highlight-red {
       color: #8c4327;
       font-weight: 600;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
     }
 
     .ritual-box {
-      background: rgba(255, 255, 255, 0.45);
-      border-left: 3px solid #c29b38;
-      padding: 20px;
-      margin: 25px 0;
-      border-radius: 0 8px 8px 0;
+      background: #eef2ef;
+      border-left: 4px solid #c29b38;
+      padding: 26px 28px;
+      margin: 35px 0;
+      border-radius: 0 14px 14px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     }
 
     .ritual-box h5 {
-      font-size: 1rem;
-      color: #2b3a2a;
-      margin-bottom: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #1b281a;
+      margin-bottom: 12px;
       font-weight: 600;
     }
 
+    .ritual-box p {
+      margin-bottom: 14px;
+    }
+
+    .ritual-box p:last-child {
+      margin-bottom: 0;
+    }
+
     .info-note {
-      font-size: 0.88rem;
-      font-style: italic;
-      color: #5a6b62;
-      background: rgba(194, 155, 56, 0.08);
-      padding: 15px;
-      border-radius: 8px;
-      margin-top: 25px;
-      border: 1px solid rgba(194, 155, 56, 0.15);
+      font-size: 0.98rem;
+      color: #2c2723;
+      background: rgba(194, 155, 56, 0.1);
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 35px;
+      border: 1px solid rgba(194, 155, 56, 0.3);
+      line-height: 1.75;
     }
 
     .card-footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 45px;
       padding-top: 20px;
     }
 
     .signature-gold {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', serif;
       font-style: italic;
-      color: #c29b38;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
+      color: #a88122;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
     }
 
     .signature-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      color: #2c2c2c;
-      font-weight: 400;
-      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #1a1512;
+      font-weight: 500;
+      margin-bottom: 35px;
     }
 
-    /* Stili per i pulsanti fluttuanti di contatto */
     .floating-contact-container {
       position: fixed;
       bottom: 20px;
@@ -278,13 +281,8 @@
       fill: #ffffff;
     }
 
-    .btn-whatsapp {
-      background-color: #25d366;
-    }
-
-    .btn-email {
-      background-color: #c29b38;
-    }
+    .btn-whatsapp { background-color: #25d366; }
+    .btn-email { background-color: #c29b38; }
   </style>
 </head>
 <body>
@@ -306,7 +304,7 @@
     <div class="card-body">
       <h4>Cos'è lo Sciamanesimo</h4>
       <p>
-        Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continente, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
+        Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continentale, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
       </p>
       <p>
         Oggi, i principi dello sciamanesimo si rivelano straordinariamente attuali: ci offrono una mappa per ritrovare equilibrio e centratura all'interno di una società frenetica e materialista, ricordandoci che siamo parte di una rete sacra in cui tutto è vivo e interconnesso.
@@ -321,11 +319,11 @@
       </p>
 
       <p>
-        In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspetto dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
+        In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspect dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
       </p>
 
       <p>
-        I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimensione spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individuale che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
+        I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimension spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individuale che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
       </p>
 
       <p>
@@ -386,7 +384,6 @@
 
   </div>
 
-  <!-- Contenitore Pulsanti Fluttuanti di Contatto -->
   <div class="floating-contact-container">
     <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
       <svg viewBox="0 0 24 24">
