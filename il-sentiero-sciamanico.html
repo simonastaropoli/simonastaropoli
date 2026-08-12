@@ -164,7 +164,7 @@
       line-height: 1.8;
       color: #2c2723;
       margin-bottom: 24px;
-      text-align: left; /* Allineamento a sinistra per evitare spaziature strane */
+      text-align: left;
     }
 
     .card-body h3 {
@@ -263,26 +263,45 @@
       line-height: 1.75;
     }
 
+    /* Stile Footer & Firma Aggiornato */
     .card-footer {
-      text-align: center;
+      text-align: left;
       margin-top: 45px;
-      padding-top: 20px;
-    }
-
-    .signature-gold {
-      font-family: 'Lora', serif;
-      font-style: italic;
-      color: #a88122;
-      font-size: 1.25rem;
-      margin-bottom: 6px;
+      padding-top: 30px;
     }
 
     .signature-name {
       font-family: 'Cormorant Garamond', serif;
       font-size: 2.5rem;
-      color: #1a1512;
-      font-weight: 500;
-      margin-bottom: 35px;
+      color: #5a6b62;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .footer-divider {
+      border: 0;
+      border-top: 1px solid #d5dfd9;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: #55635c;
+      margin-bottom: 30px;
+    }
+
+    .contact-info strong {
+      color: #2c3531;
+    }
+
+    .contact-info a {
+      color: #2c3531;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .footer-actions {
+      text-align: center;
     }
 
     .legal-footer-link {
@@ -452,12 +471,18 @@
       </div>
     </div>
 
+    <!-- FIRMA E CONTATTI CORRETTI -->
     <div class="card-footer">
-      <p class="signature-gold">Un abbraccio di luce,</p>
       <h2 class="signature-name">Simona</h2>
-      <a href="index.html" class="btn-back-bottom">← TORNA ALLA HOME</a>
-      <br>
-      <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
+      <hr class="footer-divider">
+      <div class="contact-info">
+        <strong>Contattami qui:</strong><br>
+        Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+      </div>
+      <div class="footer-actions">
+        <a href="index.html" class="btn-back-bottom">← TORNA ALLA HOME</a><br>
+        <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
+      </div>
     </div>
 
   </div>
@@ -477,4 +502,3 @@
 
 </body>
 </html>
-
