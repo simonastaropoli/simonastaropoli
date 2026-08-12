@@ -1,1 +1,349 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rituali di Benessere - Simona Staropoli</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      color: #2c2c2c;
+    }
+
+    .card-container {
+      background: rgba(235, 230, 224, 0.94);
+      backdrop-filter: blur(8px);
+      max-width: 850px;
+      width: 100%;
+      border-radius: 16px;
+      padding: 45px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    .btn-back, .btn-back-bottom {
+      display: inline-block;
+      border: 1px solid #7a7060;
+      border-radius: 30px;
+      padding: 8px 18px;
+      color: #4a4237;
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover, .btn-back-bottom:hover {
+      background: #7a7060;
+      color: #fff;
+    }
+
+    /* Cerchio con Stella Fluttuante Nelle 4 Direzioni */
+    .symbol-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #2b3a2a;
+      color: #e5c158;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      animation: float4Directions 5s ease-in-out infinite;
+    }
+
+    @keyframes float4Directions {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(0, -7px);
+      }
+      50% {
+        transform: translate(7px, 0);
+      }
+      75% {
+        transform: translate(0, 7px);
+      }
+      87.5% {
+        transform: translate(-7px, 0);
+      }
+      100% {
+        transform: translate(0, 0);
+      }
+    }
+
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      text-align: center;
+      color: #1a1a1a;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .subtitle-gold {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: #c29b38;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    .quote-box {
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #5a5247;
+      margin-bottom: 30px;
+      padding: 15px 20px;
+      border-top: 1px solid rgba(194, 155, 56, 0.2);
+      border-bottom: 1px solid rgba(194, 155, 56, 0.2);
+      line-height: 1.6;
+    }
+
+    .card-body p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #3d3a36;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    .card-body ul {
+      list-style-type: none;
+      margin-bottom: 25px;
+      padding-left: 0;
+    }
+
+    .card-body ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #3d3a36;
+    }
+
+    .card-body ul li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #c29b38;
+      font-size: 0.9rem;
+    }
+
+    .ritual-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #2b3a2a;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .info-note {
+      font-size: 0.9rem;
+      color: #3d3a36;
+      background: rgba(194, 155, 56, 0.08);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      border: 1px solid rgba(194, 155, 56, 0.2);
+      line-height: 1.7;
+    }
+
+    .info-note a {
+      color: #8c4327;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .shamanic-link-box {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.5);
+      border-left: 3px solid #8c4327;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.93rem;
+    }
+
+    .shamanic-link-box a {
+      color: #8c4327;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .card-footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+    }
+
+    .signature-gold {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: #c29b38;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .signature-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #2c2c2c;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    /* Stili per i pulsanti fluttuanti di contatto */
+    .floating-contact-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 9999;
+    }
+
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .floating-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: #ffffff;
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+    }
+
+    .btn-email {
+      background-color: #c29b38;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-container">
+    
+    <div class="card-header">
+      <a href="index.html#comincia" class="btn-back">← Torna alla Home</a>
+      <div class="symbol-circle">✦</div>
+    </div>
+
+    <h1 class="page-title">Rituali di Benessere</h1>
+    <p class="subtitle-gold">Presenza, Armonia e Rigenerazione Interiore</p>
+
+    <div class="quote-box">
+      In questo spazio non troverai semplici interventi isolati, ma vere e proprie Pratiche di Benessere[cite: 10]. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande[cite: 10]. Il vero equilibrio non si raggiunge in un giorno: si coltiva con costanza[cite: 10].
+    </div>
+
+    <div class="card-body">
+      <p>
+        Ogni corpo e ogni anima hanno un proprio ritmo[cite: 10]. I Rituali di Benessere che trovi qui sotto non sono interventi isolati, ma strumenti complementari pensati per accompagnarti passo dopo passo verso la tua armonia[cite: 10]. Puoi iniziare da ciò che risuona di più con te oggi, sapendo che la vera trasformazione nasce dalla continuità e dall’ascolto nel tempo[cite: 10].
+      </p>
+
+      <ul>
+        <li>
+          <strong class="ritual-title">Rituali di Tocco e Presenza (Massaggi)[cite: 10]</strong>
+          Un tempo sacro per rilasciare le tensioni fisiche e mentali[cite: 10]. Attraverso il tocco consapevole, questo rituale ti aiuta a riabitare il corpo, sciogliere i blocchi quotidiani e ritrovare un profondo senso di radicamento[cite: 10]. Ideale come appuntamento regolare per mantenere il corpo fluido e leggero[cite: 10].
+        </li>
+
+        <li>
+          <strong class="ritual-title">Allineamento Sottile (Riequilibrio Energetico)[cite: 10]</strong>
+          Una sessione profonda e unica, dedicata a ripulire e armonizzare i tuoi centri energetici (Chakra)[cite: 10]. La particolarità di questo rituale risiede nella mia connessione con le Guide dei mondi spirituali: muovendomi sotto la loro guida e protezione, andiamo a lavorare sui tuoi flussi invisibili per sciogliere i nodi emotivi più radicati e ricaricare la tua forza vitale[cite: 10]. Non si tratta di una tecnica standard, ma di un intervento personalizzato guidato dallo Spirito, capace di restituirti una profonda lucidità, centratura e leggerezza[cite: 10].
+        </li>
+
+        <li>
+          <strong class="ritual-title">La Voce della Terra (Cristalli e Pietre)[cite: 10]</strong>
+          Un viaggio di guarigione che sfrutta le frequenze e le memorie millenarie dei cristalli[cite: 10]. Posizionate sul corpo, le pietre risuonano con le tue cellule, aiutandoti a rilasciare ciò che non ti serve più e a sintonizzarti su frequenze di pace e protezione[cite: 10].
+        </li>
+
+        <li>
+          <strong class="ritual-title">Il Rituale Andino Chumpy Paqo (Riallineamento con le Pietre Khuya)[cite: 10]</strong>
+          Un antico rituale di guarigione della Tradizione Andina, ideale quando ti senti saturo, confuso o bloccato[cite: 10]. Attraverso l'uso delle Khuya – pietre sacre andine collegate alle forze della Natura – questo trattamento agisce come un vero e proprio "reset" del tuo sistema energetico[cite: 10]. Le pietre vengono utilizzate per decomprimere le tensioni sottili, ripulire il campo energetico e riaprire i canali intuitivi, aiutandoti a ritrovare lucidità e ad aprirti con fiducia a nuove soluzioni e possibilità nella tua vita[cite: 10].
+        </li>
+
+        <li>
+          <strong class="ritual-title">Spazi di Silenzio (Meditazione Individuale e di Gruppo)[cite: 10]</strong>
+          Pratiche guidate per addomesticare la mente e connetterti alla tua parte più autentica[cite: 10]. Che tu scelga l'intimità del percorso individuale o l'energia amplificata del Cerchio di gruppo, la meditazione è l'allenamento quotidiano per la tua consapevolezza[cite: 10].
+        </li>
+      </ul>
+
+      <div class="info-note">
+        <strong>Non sai da dove iniziare?[cite: 10]</strong><br>
+        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione[cite: 10]. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato[cite: 10].</a>
+      </div>
+
+      <div class="shamanic-link-box">
+        Se senti il richiamo di esplorare le dimensioni dello spirito e lavorare sulle memorie profonde della tua anima, scopri <a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico →</a>, disponibile sia in sessioni individuali che nei Cerchi di gruppo[cite: 10].
+      </div>
+    </div>
+
+    <div class="card-footer">
+      <p class="signature-gold">Un abbraccio di luce,</p>
+      <h2 class="signature-name">Simona</h2>
+      <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
+    </div>
+
+  </div>
+
+  <!-- Contenitore Pulsanti Fluttuanti di Contatto -->
+  <div class="floating-contact-container">
+    <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.992-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.52 5.242 1.521 5.404 0 9.8-4.396 9.802-9.8.001-2.615-1.017-5.074-2.868-6.927-1.851-1.854-4.309-2.873-6.926-2.874-5.406 0-9.803 4.398-9.806 9.801-.001 1.988.521 3.548 1.545 5.234l-.995 3.637 3.737-.981zm12.333-6.324c-.319-.16-1.891-.933-2.185-1.039-.295-.107-.51-.16-.724.16-.213.319-.826 1.039-1.012 1.252-.186.213-.372.24-.691.08-1.484-.743-2.522-1.282-3.525-3.009-.265-.455.265-.422.757-1.407.082-.165.042-.308-.021-.439-.063-.13-.51-1.229-.698-1.68-.184-.441-.371-.381-.51-.388-.13-.007-.279-.008-.428-.008-.15 0-.395.056-.601.279-.206.223-.787.77-.787 1.878 0 1.108.805 2.176.916 2.327.112.152 1.583 2.417 3.835 3.391 1.666.721 2.285.783 3.102.662.492-.073 1.892-.774 2.159-1.52.266-.746.266-1.387.186-1.52-.08-.132-.295-.213-.615-.373z"/>
+      </svg>
+    </a>
+    <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+  </div>
+
+</body>
+</html>
