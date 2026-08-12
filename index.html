@@ -61,10 +61,10 @@
             color: var(--text-light);
         }
 
-        /* MODIFICATO: Simbolo più grande, fluttuante e pulsante */
+        /* Stella più grande, fluttuante e pulsante */
         .symbol {
-            width: 50px; /* Più grande (era 40px) */
-            height: 50px; /* Più grande (era 40px) */
+            width: 50px;
+            height: 50px;
             margin: 0 auto 20px auto;
             border-radius: 50%;
             border: 1px solid var(--accent-gold);
@@ -72,21 +72,18 @@
             align-items: center;
             justify-content: center;
             color: var(--accent-gold);
-            font-size: 22px; /* Stella interna più grande (era 18px) */
-            
-            /* Animazioni combinate: fluttuante + pulsante */
+            font-size: 22px;
             animation: floatAndGlow 4s ease-in-out infinite;
         }
 
-        /* Nuova animazione per l'effetto magico */
         @keyframes floatAndGlow {
             0% {
                 transform: translateY(0px);
                 box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
             }
             50% {
-                transform: translateY(-8px); /* Effetto fluttuante */
-                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.4); /* Effetto pulsante luminoso */
+                transform: translateY(-8px);
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.4);
             }
             100% {
                 transform: translateY(0px);
@@ -428,7 +425,6 @@
 
     <div class="container">
         <header>
-            <!-- Il simbolo ora fluttua e risplende autonomamente grazie al nuovo CSS -->
             <div class="symbol">✦</div>
             <h1 class="site-title">Simona Staropoli</h1>
             <p class="tagline">Fai brillare la tua Luce</p>
@@ -447,31 +443,35 @@
         <div class="main-layout">
             
             <main class="main-card">
-                <h2 class="section-label">Home</h2>
-                <h3 class="welcome-title">Ben Arrivata!</h3>
+                <h2 class="section-label">Spazio di Ascolto</h2>
+                <h3 class="welcome-title">Benvenuta/o nel tuo Spazio di Ascolto e Trasformazione</h3>
 
-                <p>Ben arrivata o ben arrivato!</p>
-                <p>Non so chi sei e cosa ti abbia portato qui, ma sono sicura che se sei qui non è un caso.</p>
-                <p>Anche se qualcuno ti ha suggerito di guardare questo blog, anche se mi hai trovata in una ricerca, anche se...</p>
-                <p>Non importa il come o il perché, te lo ripeto: se sei qui <strong>NON è un caso</strong>.</p>
-                <p>Se deciderai di addentrarti in questo blog, porta sempre con te questo pensiero: sei arrivata perché era giusto o importante che lo facessi.</p>
+                <p>Se sei qui, stai muovendo un passo verso te stessa/o[cite: 2]. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro[cite: 2].</p>
+                <p>Sono Simona, e attraverso il tocco curativo, il suono e le pratiche ancestrali della meditazione e dello sciamanesimo, ti accompagno a ritrovare equilibrio, energia e serenità[cite: 2].</p>
+                <p>Sia che tu stia cercando un momento di profondo relax corporeo, sia che tu voglia intraprendere un cammino di guarigione spirituale più profondo, qui troverai uno spazio sacro, sicuro e privo di giudizio[cite: 2].</p>
 
-                <p style="margin-top: 25px; font-weight: 600;">Arrivata a questo punto, hai due possibilità:</p>
+                <p style="margin-top: 25px; font-weight: 600; color: #8c4327;">Da dove vuoi iniziare il tuo Cammino?[cite: 2]</p>
 
                 <div class="option-box">
-                    <p><strong>1 -</strong> Chiudere tutto o pensare che è il solito blog new age o di tendenza e continuare con la tua vita così com'è, pensando che è solamente un caso se mi stai leggendo e che hai solo sbagliato la ricerca.</p>
-                    <p style="margin-top: 15px;"><strong>2 -</strong> Aprire la tua mente e il tuo cuore e ricevere ciò che queste parole ti diranno, leggere queste pagine come se tu fossi una bambina, come quando a scuola inizi a leggere, non hai barriere mentali, la società non ti ha ancora imposto ciò che è giusto e ciò che è sbagliato, hai solo voglia di scoprire il mondo.</p>
+                    <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione[cite: 2].</p>
+                    <p style="margin-top: 10px;"><a href="#trattamenti" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a>[cite: 2]</p>
+                    
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
+                    
+                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo[cite: 2].</p>
+                    <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a>[cite: 2]</p>
+                    
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
+                    
+                    <p><strong>La Mia Storia e il Sogno dell'Anima:</strong> Per conoscere chi sono, il mio percorso di trasformazione personale e la mia formazione più che trentennale[cite: 2].</p>
+                    <p style="margin-top: 10px;"><a href="il-sogno-dell-anima.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Leggi la mia storia</a>[cite: 2]</p>
                 </div>
-
-                <p>Se opti per la solution due ti ringrazio di aver capito che la vita ti sta regalando un'opportunità, ti ringrazio di essere qui, ti ringrazio di essere un'anima che si sta risvegliando dal torpore dei limiti mentali che altri hanno deciso per te.</p>
-                <p>Grazie di essere semplicemente tu!</p>
-                <p><em>Che tu possa far risplendere la tua luce e camminare nella Bellezza ogni giorno.</em></p>
 
                 <div class="signature">Simona</div>
 
                 <div class="contact-info">
                     <strong>Contattami qui:</strong><br>
-                    Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                    Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>[cite: 2]
                 </div>
             </main>
 
