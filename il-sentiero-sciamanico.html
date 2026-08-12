@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Il Sentiero Sciamanico - Simona Staropoli</title>
   <style>
-    /* Font ad alta leggibilità e definizione - Montserrat sostituito con Inter */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
     * {
@@ -27,7 +26,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Stile Navigazione coerente */
+    /* Stile Navigazione */
     nav {
       margin-bottom: 25px;
       width: 100%;
@@ -114,6 +113,7 @@
       font-size: 1.3rem;
       box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
       animation: float4Directions 5s ease-in-out infinite;
+      flex-shrink: 0;
     }
 
     @keyframes float4Directions {
@@ -132,6 +132,7 @@
       color: #141210;
       font-weight: 500;
       margin-bottom: 6px;
+      word-wrap: break-word;
     }
 
     .subtitle-gold {
@@ -263,7 +264,6 @@
       line-height: 1.75;
     }
 
-    /* Stile Footer & Firma Aggiornato */
     .card-footer {
       text-align: left;
       margin-top: 45px;
@@ -352,20 +352,77 @@
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
 
-    /* MEDIA QUERIES PER SMARTPHONE */
+    /* MEDIA QUERIES PER SMARTPHONE AVANZATE */
     @media (max-width: 650px) {
       body {
-        padding: 15px 10px;
+        padding: 12px 8px;
+        background-attachment: scroll; /* Disabilita fixed per problemi di resa su iOS */
+      }
+      nav ul {
+        gap: 6px;
+      }
+      nav a {
+        padding: 6px 12px;
+        font-size: 0.7rem;
       }
       .card-container {
-        padding: 30px 20px;
+        padding: 24px 16px;
+        border-radius: 14px;
+      }
+      .card-header {
+        margin-bottom: 20px;
+        gap: 10px;
+      }
+      .btn-back {
+        padding: 7px 14px;
+        font-size: 0.72rem;
+      }
+      .symbol-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
       }
       .page-title {
-        font-size: 2.2rem;
+        font-size: 1.9rem;
+      }
+      .subtitle-gold {
+        font-size: 1.05rem;
+        margin-bottom: 20px;
       }
       .quote-box {
-        padding: 18px 20px;
-        font-size: 1.05rem;
+        padding: 16px 18px;
+        font-size: 0.98rem;
+        margin-bottom: 25px;
+      }
+      .card-body h3 {
+        font-size: 1.7rem;
+        margin-top: 30px;
+      }
+      .card-body h4 {
+        font-size: 1.35rem;
+      }
+      .card-body h5.subheading-large {
+        font-size: 1.15rem;
+      }
+      .ritual-box {
+        padding: 18px 16px;
+        margin: 25px 0;
+      }
+      .card-body ul li {
+        padding-left: 24px;
+        font-size: 0.95rem;
+      }
+      .floating-contact-container {
+        bottom: 15px;
+        right: 15px;
+      }
+      .floating-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .floating-btn svg {
+        width: 22px;
+        height: 22px;
       }
     }
   </style>
@@ -437,7 +494,7 @@
 
       <h5 class="subheading-large">Cosa imparerai e sperimenterai in gruppo:</h5>
       <ul>
-        <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare ed allearti con il tuo Animale di Potere (Animale Guida).</li>
+        <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare e allearti con il tuo Animale di Potere (Animale Guida).</li>
         <li><strong>Il Viaggio nel Mondo di Sopra:</strong> per connetterti con il tuo Maestro Spirituale in forma umana.</li>
         <li><strong>Il Viaggio nel Mondo di Mezzo:</strong> per incontrare ed entrare in sintonia con gli Spiriti della Natura.</li>
         <li><strong>La Connessione con gli Antenati:</strong> per onorare le tue radici e riceverne il supporto.</li>
