@@ -3,32 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO & Localizzazione -->
-  <title>Il Sentiero Sciamanico | Simona Staropoli - Naturopata</title>
-  <meta name="description" content="Esplora il Core Shamanism di Michael Harner a Brescia. Partecipa ai Cerchi Sciamanici di gruppo o richiedi una sessione individuale con Simona Staropoli.">
-
-  <!-- Dati Strutturati SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemPage",
-    "name": "Il Sentiero Sciamanico - Simona Staropoli",
-    "description": "Percorsi di gruppo e sessioni individuali di Core Shamanism, viaggi sciamanici e cerimonie di guarigione spirituale a Brescia e sul Lago di Garda.",
-    "provider": {
-      "@type": "Person",
-      "name": "Simona Staropoli",
-      "jobTitle": "Naturopata e Operatrice Olistica"
-    }
-  }
-  </script>
-
-  <!-- Google Fonts coerenti -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
-
+  <title>Il Sentiero Sciamanico - Simona Staropoli</title>
   <style>
+    /* Font ad alta leggibilità e definizione - Montserrat sostituito con Inter */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -36,8 +15,8 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
-      background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
       display: flex;
@@ -59,76 +38,60 @@
       position: relative;
     }
 
-    /* Nuovo Menu di Navigazione integrato */
-    header {
-      text-align: center;
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       margin-bottom: 30px;
     }
 
+    .btn-back, .btn-back-bottom {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #736758;
+      border-radius: 30px;
+      padding: 9px 20px;
+      color: #423a30;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .btn-back:hover, .btn-back-bottom:hover {
+      background: #736758;
+      color: #fff;
+    }
+
     .symbol-circle {
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
+      background: transparent;
       border: 1.5px solid #c29b38;
       color: #c29b38;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
-      margin: 0 auto 20px auto;
+      font-size: 1.3rem;
       box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
       animation: float4Directions 5s ease-in-out infinite;
     }
 
-    nav {
-      margin-bottom: 20px;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #423a30;
-      background: rgba(0, 0, 0, 0.04);
-      border: 1px solid rgba(115, 103, 88, 0.2);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background: rgba(194, 155, 56, 0.15);
-      border-color: #c29b38;
-      color: #141210;
-    }
-
-    .nav-active {
-      background: rgba(194, 155, 56, 0.25) !important;
-      border-color: #c29b38 !important;
-      font-weight: 600;
-    }
-
     @keyframes float4Directions {
       0% { transform: translate(0, 0); }
-      25% { transform: translate(0, -5px); }
-      50% { transform: translate(5px, 0); }
-      75% { transform: translate(0, 5px); }
+      25% { transform: translate(0, -7px); }
+      50% { transform: translate(7px, 0); }
+      75% { transform: translate(0, 7px); }
+      87.5% { transform: translate(-7px, 0); }
       100% { transform: translate(0, 0); }
     }
 
     .page-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
+      font-size: 3.2rem;
       text-align: center;
       color: #141210;
       font-weight: 500;
@@ -148,21 +111,24 @@
       text-align: center;
       font-family: 'Lora', serif;
       font-style: italic;
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       color: #241d15;
       background: rgba(225, 201, 138, 0.22);
       margin-bottom: 40px;
-      padding: 24px 35px;
+      padding: 28px 45px;
       border-radius: 14px;
       border: 1px solid #c29b38;
-      line-height: 1.7;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      line-height: 1.75;
+      text-wrap: balance;
     }
 
     .card-body p {
-      font-size: 0.95rem;
-      line-height: 1.75;
+      font-size: 1rem;
+      line-height: 1.8;
       color: #2c2723;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
+      text-align: left; /* Allineamento a sinistra per evitare spaziature strane */
     }
 
     .card-body h3 {
@@ -172,39 +138,42 @@
       margin-top: 45px;
       margin-bottom: 25px;
       text-align: center;
-      border-bottom: 1px solid rgba(115, 103, 88, 0.2);
+      border-bottom: 1px solid #d5dfd9;
       padding-bottom: 10px;
     }
 
     .card-body h4 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       color: #1b281a;
-      margin-top: 35px;
-      margin-bottom: 16px;
+      margin-top: 30px;
+      margin-bottom: 14px;
       font-weight: 600;
+      letter-spacing: 0.5px;
     }
 
-    .card-body h5 {
+    .card-body h5.subheading-large {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.35rem;
       color: #1b281a;
       font-weight: 700;
-      margin-top: 25px;
-      margin-bottom: 15px;
+      margin-top: 30px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
     }
 
     .card-body ul {
       list-style-type: none;
       margin-bottom: 30px;
+      padding-left: 0;
     }
 
     .card-body ul li {
       position: relative;
-      padding-left: 28px;
-      margin-bottom: 18px;
-      font-size: 0.95rem;
-      line-height: 1.7;
+      padding-left: 32px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.75;
       color: #2c2723;
     }
 
@@ -214,6 +183,7 @@
       left: 2px;
       top: 0;
       color: #c29b38;
+      font-size: 1rem;
     }
 
     .highlight-red {
@@ -224,18 +194,22 @@
     .ritual-box {
       background: #eef2ef;
       border-left: 4px solid #c29b38;
-      padding: 24px;
+      padding: 26px 28px;
       margin: 35px 0;
       border-radius: 0 14px 14px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     }
 
     .ritual-box h5 {
-      margin-top: 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #1b281a;
       margin-bottom: 12px;
+      font-weight: 600;
     }
 
     .ritual-box p {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .ritual-box p:last-child {
@@ -243,21 +217,20 @@
     }
 
     .info-note {
-      font-size: 0.92rem;
+      font-size: 0.98rem;
       color: #2c2723;
       background: rgba(194, 155, 56, 0.1);
-      padding: 20px;
+      padding: 22px;
       border-radius: 12px;
       margin-top: 35px;
       border: 1px solid rgba(194, 155, 56, 0.3);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .card-footer {
       text-align: center;
       margin-top: 45px;
-      padding-top: 25px;
-      border-top: 1px solid rgba(115, 103, 88, 0.15);
+      padding-top: 20px;
     }
 
     .signature-gold {
@@ -270,37 +243,19 @@
 
     .signature-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       color: #1a1512;
       font-weight: 500;
-      margin-bottom: 25px;
-    }
-
-    .btn-back-bottom {
-      display: inline-block;
-      border: 1px solid #736758;
-      border-radius: 30px;
-      padding: 9px 24px;
-      color: #423a30;
-      text-decoration: none;
-      font-size: 0.8rem;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .btn-back-bottom:hover {
-      background: #736758;
-      color: #fff;
+      margin-bottom: 35px;
     }
 
     .legal-footer-link {
       display: inline-block;
-      margin-top: 25px;
-      font-size: 0.8rem;
+      margin-top: 15px;
+      font-size: 0.85rem;
       color: #736758;
       text-decoration: none;
+      transition: color 0.3s ease;
     }
 
     .legal-footer-link:hover {
@@ -319,28 +274,44 @@
     }
 
     .floating-btn {
-      width: 46px;
-      height: 46px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    .floating-btn:hover { transform: scale(1.1); }
-    .floating-btn svg { width: 22px; height: 22px; fill: #ffffff; }
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .floating-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: #ffffff;
+    }
+
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
 
+    /* MEDIA QUERIES PER SMARTPHONE */
     @media (max-width: 650px) {
-      body { padding: 15px 10px; }
-      .card-container { padding: 35px 20px; }
-      .page-title { font-size: 2.2rem; }
-      .quote-box { padding: 18px 20px; font-size: 1.05rem; }
-      nav ul { gap: 8px; }
-      nav a { padding: 5px 10px; font-size: 0.7rem; }
+      body {
+        padding: 15px 10px;
+      }
+      .card-container {
+        padding: 30px 20px;
+      }
+      .page-title {
+        font-size: 2.2rem;
+      }
+      .quote-box {
+        padding: 18px 20px;
+        font-size: 1.05rem;
+      }
     }
   </style>
 </head>
@@ -348,104 +319,100 @@
 
   <div class="card-container">
     
-    <header>
+    <div class="card-header">
+      <a href="index.html#comincia" class="btn-back">← Home</a>
       <div class="symbol-circle">✦</div>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
-          <li><a href="#" class="nav-active">Il Sentiero Sciamanico</a></li>
-          <li><a href="calendario.html">📅 Calendario</a></li>
-          </ul>
-      </nav>
-    </header>
+    </div>
 
-    <main>
-      <h1 class="page-title">Il Sentiero Sciamanico</h1>
-      <p class="subtitle-gold">Svolta e Trasformazione Interiore</p>
+    <h1 class="page-title">Il Sentiero Sciamanico</h1>
+    <p class="subtitle-gold">Svolta e Trasformazione Interiore</p>
 
-      <div class="quote-box">
-        "Non cercare con gli occhi la strada del cuore, ma apri gli occhi del cuore e cerca la tua strada." <br><small>— Carlos Castaneda</small>
+    <div class="quote-box">
+      "Non cercare con gli occhi la strada del cuore, ma apri gli occhi del cuore e cerca la tua strada." <br><small>— Carlos Castaneda</small>
+    </div>
+
+    <div class="card-body">
+      <h4>Cos'è lo Sciamanesimo</h4>
+      <p>
+        Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continente, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
+      </p>
+      <p>
+        Oggi, i principi dello sciamanesimo si rivelano straordinariamente attuali: ci offrono una mappa per ritrovare equilibrio e centratura all'interno di una società frenetica e materialista, ricordandoci che siamo parte di una rete sacra in cui tutto è vivo e interconnesso.
+      </p>
+
+      <p>
+        Il sentiero sciamanico è un cammino spirituale profondo che conduce alla scoperta del nostro mondo interiore, oltre la materia fisica. L'obiettivo non è fuggire dalla realtà ordinaria o sminuirne l'importanza, bensì ampliare una visione spesso limitata, espandendola oltre i confini del conosciuto.
+      </p>
+
+      <p>
+        Si va al di là di una visione puramente materialistica della vita per accedere alla saggezza e ai poteri di guarigione dello spirito, capaci di portarci risposte chiare sul senso dell'esistenza e preziosi consigli per affrontare al meglio le sfide del quotidiano.
+      </p>
+
+      <p>
+        In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspetto dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
+      </p>
+
+      <p>
+        I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimensione spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individuale che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
+      </p>
+
+      <p>
+        All'interno dei percorsi qui proposti vengono trasmesse le tecniche del <strong>Core Shamanism di Michael Harner</strong>, arricchite e integrate dalla mia esperienza personale in tecniche di meditazione e pratiche di guarigione energetica provenienti da altre tradizioni.
+      </p>
+
+      <h3>I Due Sentieri: Scegli il tuo Cammino</h3>
+      <p>
+        Per rispondere al richiamo della tua Anima, puoi scegliere di sperimentare lo sciamanesimo attraverso due modalità distinte, che possono anche essere percorse contemporaneamente, nei tempi e nei modi richiesti dal tuo sentire.
+      </p>
+
+      <h4><span class="highlight-red">1. Il Cerchio Sciamanico</span> (Percorso di Gruppo)</h4>
+      <p>
+        Questo cammino è adatto a chi desidera acquisire gli strumenti per avere un accesso diretto alla conoscenza di sé e ai mondi spirituali, senza intermediari. Praticare all'interno di un Cerchio sacro dà l'opportunità di vedere il proprio lavoro personale amplificato e potenziato dall'unione di intenti e dall'energia di sostegno reciproco che si crea nel gruppo.
+      </p>
+
+      <h5 class="subheading-large">Cosa imparerai e sperimenterai in gruppo:</h5>
+      <ul>
+        <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare e allearti con il tuo Animale di Potere (Animale Guida).</li>
+        <li><strong>Il Viaggio nel Mondo di Sopra:</strong> per connetterti con il tuo Maestro Spirituale in forma umana.</li>
+        <li><strong>Il Viaggio nel Mondo di Mezzo:</strong> per incontrare ed entrare in sintonia con gli Spiriti della Natura.</li>
+        <li><strong>La Connessione con gli Antenati:</strong> per onorare le tue radici e riceverne il supporto.</li>
+        <li><strong>La Relazione con le Guide:</strong> come dialogare costantemente con i tuoi alleati spirituali per ricevere consigli, protezione e guarigione nella vita di tutti i giorni.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <h5>✨ Cerimonie e Rituali di Guarigione Collettiva</h5>
+        <p>Nel corso dell'anno, all'interno dei Cerchi di gruppo, celebriamo eventi speciali e potenti rituali per trasmutare le energie e risvegliare la nostra luce interiore:</p>
+        <p>• <strong>Cerimonie Sciamaniche con il Fuoco:</strong> Il Fuoco è un grande elemento di spinta e trasmutazione rapida. Portiamo in offerta ciò che desideriamo trasformare, rilasciando vecchi schemi per far spazio al nuovo.</p>
+        <p>• <strong>La Canoa Sciamanica:</strong> Un rituale di guarigione comunitaria di grande impatto, in cui il gruppo si unisce simbolicamente come un solo equipaggio per compiere un viaggio collettivo e portare forza e sostegno a un membro del Cerchio.</p>
+        <p>• <strong>Guarigione con la Luce (Metodo Sandra Ingerman):</strong> Una profonda pratica di trasmutazione spirituale. Impariamo a non "lottare" contro il disagio, ma a risvegliare la nostra essenza divina radiosa per emettere frequenze di luce pura.</p>
+        <p>• <strong>Rituali di Riconnessione ai Cicli di Natura:</strong> Incontri dedicati ai solstizi, agli equinozi e alle fasi lunari per riallineare i nostri ritmi al grande battito della Madre Terra.</p>
       </div>
 
-      <div class="card-body">
-        <h4>Cos'è lo Sciamanesimo</h4>
-        <p>
-          Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continente, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
-        </p>
-        <p>
-          Oggi, i principi dello sciamanesimo si rivelano straordinariamente attuali: ci offrono una mappa per ritrovare equilibrio e centratura all'interno di una società frenetica e materialista, ricordandoci che siamo parte di una rete sacra in cui tutto è vivo e interconnesso.
-        </p>
-        <p>
-          Il sentiero sciamanico è un cammino spirituale profondo che conduce alla scoperta del nostro mondo interiore, oltre la materia fisica. L'obiettivo non è fuggire dalla realtà ordinaria o sminuirne l'importanza, bensì ampliare una visione spesso limitata, espandendola oltre i confini del conosciuto.
-        </p>
-        <p>
-          Si va al di là di una visione puramente materialistica della vita per accedere alla saggezza e ai poteri di guarigione dello spirito, capaci di portarci risposte chiare sul senso dell'esistenza e preziosi consigli per affrontare al meglio le sfide del quotidiano.
-        </p>
-        <p>
-          In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspect dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
-        </p>
-        <p>
-          I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimensionale spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individuale che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
-        </p>
-        <p>
-          All'interno dei percorsi qui proposti vengono trasmesse le tecniche del <strong>Core Shamanism di Michael Harner</strong>, arricchite e integrate dalla mia esperienza personale in tecniche di meditazione e pratiche di guarigione energetica provenienti da altre tradizioni.
-        </p>
+      <h4><span class="highlight-red">2. Sessioni Individuali</span> (Cammino di Guarigione Spirituale)</h4>
+      <p>
+        Se preferisci un approccio intimo, protetto e mirato, la sessione individuale ti permette di affrontare blocchi, paure, traumi del passato o dinamiche disarmoniche che condizionano la tua vita. In questo caso, in qualità di praticante sciamanica esperta, sarò io ad accedere alle dimensioni spirituali per consultare le Guide e portare guarigione ed equilibrio alla tua anima.
+      </p>
 
-        <h3>I Due Sentieri: Scegli il tuo Cammino</h3>
-        <p>
-          Per rispondere al richiamo della tua Anima, puoi scegliere di sperimentare lo sciamanesimo attraverso due modalità distinte, che possono anche essere percorse contemporaneamente, nei tempi e nei modi richiesti dal tuo sentire.
-        </p>
+      <h5 class="subheading-large">Come si svolge la sessione individuale:</h5>
+      <ul>
+        <li><strong>L'Ascolto e l'Intento:</strong> Iniziamo con un colloquio conoscitivo in cui accogliamo la tua richiesta, formulando insieme un intento chiaro e focalizzato per il lavoro energetico.</li>
+        <li><strong>Il Viaggio Sciamanico (Il Lavoro Invisibile):</strong> Mentre ti rilassi in uno stato di ricettività, entro in uno stato ampliato di coscienza attraverso il battito del tamburo. Compio il viaggio nei mondi spirituali per individuare l'origine del blocco e ricevere gli strumenti necessari (come l'estrazione energetica o il recupero dell'anima).</li>
+        <li><strong>Condivisione e Integrazione:</strong> Al mio ritorno, ti trasmetto i messaggi delle Guide e ti fornisco indicazioni pratiche su come integrare questa guarigione nella tua quotidianità, affinché il cambiamento si stabilizzi nella materia.</li>
+      </ul>
 
-        <h4><span class="highlight-red">1. Il Cerchio Sciamanico</span> (Percorso di Gruppo)</h4>
-        <p>
-          Questo cammino è adatto a chi desidera acquisire gli strumenti per avere un accesso diretto alla conoscenza di sé e ai mondi spirituali, senza intermediari. Praticare all'interno di un Cerchio sacro dà l'opportunità di vedere il proprio lavoro personale amplificato e potenziato dall'unione di intenti e dall'energia di sostegno reciproco che si crea nel gruppo.
-        </p>
-
-        <h5>Cosa imparerai e sperimenterai in gruppo:</h5>
-        <ul>
-          <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare e allearti con il tuo Animale di Potere (Animale Guida).</li>
-          <li><strong>Il Viaggio nel Mondo di Sopra:</strong> per connetterti con il tuo Maestro Spirituale in forma umana.</li>
-          <li><strong>Il Viaggio nel Mondo di Mezzo:</strong> per incontrare ed entrare in sintonia con gli Spiriti della Natura.</li>
-          <li><strong>La Connessione con gli Antenati:</strong> per onorare le tue radici e riceverne il supporto.</li>
-          <li><strong>La Relazione con le Guide:</strong> come dialogare costantemente con i tuoi alleati spirituali per ricevere consigli, protezione e guarigione nella vita di tutti i giorni.</li>
-        </ul>
-
-        <div class="ritual-box">
-          <h5>✨ Cerimonie e Rituali di Guarigione Collettiva</h5>
-          <p>Nel corso dell'anno, all'interno dei Cerchi di gruppo, celebriamo eventi speciali e potenti rituali per trasmutare le energie e risvegliare la nostra luce interiore:</p>
-          <p>• <strong>Cerimonie Sciamaniche con il Fuoco:</strong> Il Fuoco è un grande elemento di spinta e trasmutazione rapida. Portiamo in offerta ciò che desideriamo trasformare, rilasciando vecchi schemi per far spazio al nuovo.</p>
-          <p>• <strong>La Canoa Sciamanica:</strong> Un rituale di guarigione comunitaria di grande impatto, in cui il gruppo si unisce simbolicamente come un solo equipaggio per compiere un viaggio collettivo e portare forza e sostegno a un membro del Cerchio.</p>
-          <p>• <strong>Guarigione con la Luce (Metodo Sandra Ingerman):</strong> Una profonda pratica di trasmutazione spirituale. Impariamo a non "lottare" contro il disagio, ma a risvegliare la nostra essenza divina radiosa per emettere frequenze di luce pura.</p>
-          <p>• <strong>Rituali di Riconnessione ai Cicli di Natura:</strong> Incontri dedicati ai solstizi, agli equinozi e alle fasi lunari per riallineare i nostri ritmi al grande battito della Madre Terra.</p>
-        </div>
-
-        <h4><span class="highlight-red">2. Sessioni Individuali</span> (Cammino di Guarigione Spirituale)</h4>
-        <p>
-          Se preferisci un approccio intimo, protetto e mirato, la sessione individuale ti permette di affrontare blocchi, paure, traumi del passato o dinamiche disarmoniche che condizionano la tua vita. In questo caso, in qualità di praticante sciamanica esperta, sarò io ad accedere alle dimensioni spirituali per consultare le Guide e portare guarigione ed equilibrio alla tua anima.
-        </p>
-
-        <h5>Come si svolge la sessione individuale:</h5>
-        <ul>
-          <li><strong>L'Ascolto e l'Intento:</strong> Iniziamo con un colloquio conoscitivo in cui accogliamo la tua richiesta, formulando insieme un intento chiaro e focalizzato per il lavoro energetico.</li>
-          <li><strong>Il Viaggio Sciamanico (Il Lavoro Invisibile):</strong> Mentre ti rilassi in uno stato di ricettività, entro in uno stato ampliato di coscienza attraverso il battito del tamburo. Compio il viaggio nei mondi spirituali per individuare l'origine del blocco e ricevere gli strumenti necessari (come l'estrazione energetica o il recupero dell'anima).</li>
-          <li><strong>Condivisione e Integrazione:</strong> Al mio ritorno, ti trasmetto i messaggi delle Guide e ti fornisco indicazioni pratiche su come integrare questa guarigione nella tua quotidianità, affinché il cambiamento si stabilizzi nella materia.</li>
-        </ul>
-
-        <div class="info-note">
-          <strong>Un consiglio d'Amore per il tuo Cammino:</strong><br>
-          Il lavoro sciamanico agisce a livello spirituale profondo. Per sostenere il corpo fisico e il campo energetico nell'assimilare queste potenti trasformazioni, puoi integrare questo percorso affiancandolo ai <strong>Rituali di Benessere</strong> (como il massaggio o il riequilibrio energetico con i cristalli).
-        </div>
+      <div class="info-note">
+        <strong>Un consiglio d'Amore per il tuo Cammino:</strong><br>
+        Il lavoro sciamanico agisce a livello spirituale profondo. Per sostenere il corpo fisico e il campo energetico nell'assimilare queste potenti trasformazioni, puoi integrare questo percorso affiancandolo ai <strong>Rituali di Benessere</strong> (come il massaggio o il riequilibrio energetico con i cristalli).
       </div>
-    </main>
+    </div>
 
-    <footer class="card-footer">
+    <div class="card-footer">
       <p class="signature-gold">Un abbraccio di luce,</p>
       <h2 class="signature-name">Simona</h2>
-      <a href="calendario.html" class="btn-back-bottom">Guarda il Calendario Incontri →</a>
+      <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
       <br>
       <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
-    </footer>
+    </div>
 
   </div>
 
