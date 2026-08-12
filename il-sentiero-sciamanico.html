@@ -65,7 +65,6 @@
       color: #fff;
     }
 
-    /* Cerchio con Stella Fluttuante (Sfondo Trasparente ed Elemento Dorato) */
     .symbol-circle {
       width: 48px;
       height: 48px;
@@ -129,7 +128,7 @@
       line-height: 1.8;
       color: #2c2723;
       margin-bottom: 24px;
-      text-align: justify;
+      text-align: left; /* Allineamento a sinistra per evitare spaziature strane */
     }
 
     .card-body h3 {
@@ -250,7 +249,6 @@
       margin-bottom: 35px;
     }
 
-    /* Stile per il link delle note legali nel footer */
     .legal-footer-link {
       display: inline-block;
       margin-top: 15px;
@@ -298,6 +296,23 @@
 
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
+
+    /* MEDIA QUERIES PER SMARTPHONE */
+    @media (max-width: 650px) {
+      body {
+        padding: 15px 10px;
+      }
+      .card-container {
+        padding: 30px 20px;
+      }
+      .page-title {
+        font-size: 2.2rem;
+      }
+      .quote-box {
+        padding: 18px 20px;
+        font-size: 1.05rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -305,7 +320,7 @@
   <div class="card-container">
     
     <div class="card-header">
-      <a href="index.html#comincia" class="btn-back">← Torna alla Home</a>
+      <a href="index.html#comincia" class="btn-back">← Home</a>
       <div class="symbol-circle">✦</div>
     </div>
 
@@ -319,7 +334,7 @@
     <div class="card-body">
       <h4>Cos'è lo Sciamanesimo</h4>
       <p>
-        Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continentale, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
+        Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continente, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
       </p>
       <p>
         Oggi, i principi dello sciamanesimo si rivelano straordinariamente attuali: ci offrono una mappa per ritrovare equilibrio e centratura all'interno di una società frenetica e materialista, ricordandoci che siamo parte di una rete sacra in cui tutto è vivo e interconnesso.
@@ -334,11 +349,11 @@
       </p>
 
       <p>
-        In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspect dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
+        In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspetto dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
       </p>
 
       <p>
-        I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimension spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individual che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
+        I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimensione spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individuale che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
       </p>
 
       <p>
@@ -396,7 +411,6 @@
       <h2 class="signature-name">Simona</h2>
       <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
       <br>
-      <!-- INTERVENTO NOTE LEGALI -->
       <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
     </div>
 
