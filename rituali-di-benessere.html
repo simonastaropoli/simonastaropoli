@@ -3,9 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rituali di Benessere - Simona Staropoli</title>
+  
+  <!-- 1. TITOLO E META DESCRIPTION SEO -->
+  <title>Rituali di Benessere | Simona Staropoli - Naturopata Gavardo</title>
+  <meta name="description" content="Scopri i Rituali di Benessere di Simona Staropoli: Massaggi, Riequilibrio Energetico, Cristalloterapia, Rituale Andino Chumpy Paqo e Meditazione a Gavardo (Brescia).">
+
+  <!-- 2. DATI STRUTTURATI SCHEMA.ORG -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Rituali di Benessere",
+    "provider": {
+      "@type": "Person",
+      "name": "Simona Staropoli",
+      "jobTitle": "Naturopata e Operatrice Olistica",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gavardo",
+        "addressRegion": "BS",
+        "addressCountry": "IT"
+      }
+    },
+    "description": "Trattamenti olistici e rituali di benessere: massaggi, riequilibrio energetico, cristalli e meditazione.",
+    "areaServed": "Brescia"
+  }
+  </script>
+
   <style>
-    /* Font ad alta leggibilità e definizione */
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
     * {
@@ -20,11 +45,47 @@
       background-size: cover;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 40px 20px;
       color: #1f1b18;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Stile Navigazione coerente */
+    nav {
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 850px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a:hover {
+      background: rgba(194, 155, 56, 0.8);
+      border-color: #c29b38;
+      color: #fff;
     }
 
     .card-container {
@@ -65,7 +126,6 @@
       color: #fff;
     }
 
-    /* Cerchio con Stella Fluttuante (Sfondo Trasparente) */
     .symbol-circle {
       width: 56px;
       height: 56px;
@@ -134,7 +194,7 @@
       line-height: 1.8;
       color: #2c2723;
       margin-bottom: 24px;
-      text-align: left; /* Modificato da justify a left per evitare disallineamenti su mobile */
+      text-align: left;
     }
 
     .card-body ul {
@@ -150,7 +210,7 @@
       font-size: 1rem;
       line-height: 1.75;
       color: #2c2723;
-      text-align: left; /* Allineamento a sinistra sicuro anche per gli elementi della lista */
+      text-align: left;
     }
 
     .card-body ul li::before {
@@ -226,7 +286,6 @@
       margin-bottom: 35px;
     }
 
-    /* Stile per il link delle note legali nel footer */
     .legal-footer-link {
       display: inline-block;
       margin-top: 15px;
@@ -275,7 +334,6 @@
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
 
-    /* MEDIA QUERIES PER SMARTPHONE */
     @media (max-width: 650px) {
       body {
         padding: 15px 10px;
@@ -297,6 +355,16 @@
   </style>
 </head>
 <body>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi Sono</a></li>
+      <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
+      <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
+      <li><a href="calendario.html">📅 Calendario</a></li>
+    </ul>
+  </nav>
 
   <div class="card-container">
     
