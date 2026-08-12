@@ -178,12 +178,6 @@
             align-items: start;
         }
 
-        @media (max-width: 900px) {
-            .main-layout {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -413,7 +407,6 @@
             transition: fill 0.3s ease;
         }
 
-        /* EFFETTI HOVER CROMATICI REALI DEI SOCIAL BRAND */
         .social-icon[title="Instagram"]:hover {
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
             border-color: transparent;
@@ -484,6 +477,18 @@
         .btn-whatsapp { background-color: #25D366; }
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
+
+        @media (max-width: 900px) {
+            body {
+                background-attachment: scroll; /* Ottimizza lo scorrimento su iOS[cite: 12] */
+            }
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .main-card {
+                padding: 30px 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -513,32 +518,32 @@
                 <h2 class="section-label">Home</h2>
                 <h3 class="welcome-title">Benvenuta/o nel tuo Spazio di Ascolto e Trasformazione</h3>
 
-                <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
-                <p>Sono Simona, e nel mio spazio a <strong>Gavardo (Brescia)</strong>, attraverso il tocco curativo, il suono e le pratiche ancestrali della meditazione e dello sciamanesimo, ti accompagno a ritrovare equilibrio, energia e serenità.</p>
-                <p>Sia che tu stia cercando un momento di profondo relax corporeo, sia che tu voglia intraprendere un cammino di guarigione spirituale più profondo, qui troverai uno spazio sacro, sicuro e privo di giudizio.</p>
+                <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro[cite: 12].</p>
+                <p>Sono Simona, e nel mio spazio a <strong>Gavardo (Brescia)</strong>, attraverso il tocco curativo, il suono e le pratiche ancestrali della meditazione e dello sciamanesimo, ti accompagno a ritrovare equilibrio, energia e serenità[cite: 12].</p>
+                <p>Sia che tu stia cercando un momento di profondo relax corporeo, sia che tu voglia intraprendere un cammino di guarigione spirituale più profondo, qui troverai uno spazio sacro, sicuro e privo di giudizio[cite: 12].</p>
 
                 <p style="margin-top: 25px; font-weight: 600; color: #8c4327;">Da dove vuoi iniziare il tuo Cammino?</p>
 
                 <div class="option-box">
-                    <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
-                    <p style="margin-top: 10px;"><a href="rituali-di-benessere.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a></p>
+                    <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione[cite: 12].</p>
+                    <p style="margin-top: 10px;"><a href="rituali-di-benessere.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a>[cite: 12]</p>
                     
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
                     
-                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
-                    <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
+                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo[cite: 12].</p>
+                    <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a>[cite: 12]</p>
                     
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
                     
-                    <p><strong>La Mia Storia e il Sogno dell'Anima:</strong> Per conoscere chi sono, il mio percorso di trasformazione personale e la mia formazione più che trentennale.</p>
-                    <p style="margin-top: 10px;"><a href="approfondisci.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Leggi la mia storia</a></p>
+                    <p><strong>La Mia Storia e il Sogno dell'Anima:</strong> Per conoscere chi sono, il mio percorso di trasformazione personale e la mia formazione più che trentennale[cite: 12].</p>
+                    <p style="margin-top: 10px;"><a href="chi-sono.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Leggi la mia storia</a></p>
                 </div>
 
                 <div class="signature">Simona</div>
 
                 <div class="contact-info">
                     <strong>Contattami qui:</strong><br>
-                    Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                    Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>[cite: 12]
                 </div>
             </main>
 
@@ -558,9 +563,9 @@
                     <h3 class="widget-title">Chi Sono</h3>
                     <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
                     <p class="profile-text">
-                        Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
+                        Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...[cite: 12]
                     </p>
-                    <a href="approfondisci.html" class="btn-outline">Approfondisci</a>
+                    <a href="chi-sono.html" class="btn-outline">Approfondisci</a>
 
                     <!-- SOCIAL LINKS CON LINK INSTAGRAM PULITO -->
                     <div class="social-links">
