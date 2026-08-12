@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rituali di Benessere - Simona Staropoli</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+    /* Font ad alta leggibilità e definizione */
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
     * {
       box-sizing: border-box;
@@ -14,7 +15,7 @@
     }
 
     body {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
       background-size: cover;
       min-height: 100vh;
@@ -22,17 +23,18 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
-      color: #2c2c2c;
+      color: #1f1b18;
+      -webkit-font-smoothing: antialiased;
     }
 
     .card-container {
-      background: rgba(235, 230, 224, 0.94);
-      backdrop-filter: blur(8px);
+      background: rgba(244, 241, 236, 0.96);
+      backdrop-filter: blur(10px);
       max-width: 850px;
       width: 100%;
-      border-radius: 16px;
-      padding: 45px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      border-radius: 20px;
+      padding: 50px 45px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
       position: relative;
     }
 
@@ -45,30 +47,31 @@
 
     .btn-back, .btn-back-bottom {
       display: inline-block;
-      border: 1px solid #7a7060;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #736758;
       border-radius: 30px;
-      padding: 8px 18px;
-      color: #4a4237;
+      padding: 9px 20px;
+      color: #423a30;
       text-decoration: none;
-      font-size: 0.75rem;
-      letter-spacing: 1.5px;
+      font-size: 0.8rem;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       font-weight: 500;
       transition: all 0.3s ease;
     }
 
     .btn-back:hover, .btn-back-bottom:hover {
-      background: #7a7060;
+      background: #736758;
       color: #fff;
     }
 
-    /* Cerchio con Stella come da Immagine - Fluttuante Nelle 4 Direzioni */
+    /* Cerchio con Stella Fluttuante */
     .symbol-circle {
       width: 56px;
       height: 56px;
       border-radius: 50%;
-      background: #111a13; /* Fondo scuro profondo come l'immagine */
-      border: 1.5px solid #c29b38; /* Anello dorato sottile */
+      background: #111a13;
+      border: 1.5px solid #c29b38;
       color: #e5c158;
       display: flex;
       align-items: center;
@@ -78,116 +81,105 @@
     }
 
     .symbol-circle svg {
-      width: 26px; /* Stella ingrandita */
+      width: 26px;
       height: 26px;
       fill: #e5c158;
     }
 
     @keyframes float4Directions {
-      0% {
-        transform: translate(0, 0);
-      }
-      25% {
-        transform: translate(0, -7px);
-      }
-      50% {
-        transform: translate(7px, 0);
-      }
-      75% {
-        transform: translate(0, 7px);
-      }
-      87.5% {
-        transform: translate(-7px, 0);
-      }
-      100% {
-        transform: translate(0, 0);
-      }
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(0, -7px); }
+      50% { transform: translate(7px, 0); }
+      75% { transform: translate(0, 7px); }
+      87.5% { transform: translate(-7px, 0); }
+      100% { transform: translate(0, 0); }
     }
 
     .page-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
+      font-size: 3.2rem;
       text-align: center;
-      color: #1a1a1a;
-      font-weight: 400;
+      color: #141210;
+      font-weight: 500;
       margin-bottom: 6px;
     }
 
     .subtitle-gold {
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', serif;
       font-style: italic;
-      color: #c29b38;
+      color: #a88122;
       font-size: 1.2rem;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
     }
 
-    /* Box Citazione Oro Caldo / Bronzo Spazzolato */
+    /* Box Citazione Armonizzato e Bilanciato */
     .quote-box {
       text-align: center;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', serif;
       font-style: italic;
-      font-size: 1.25rem;
-      color: #2c251e;
-      background: rgba(212, 175, 55, 0.18);
-      margin-bottom: 35px;
-      padding: 22px 28px;
-      border-radius: 12px;
+      font-size: 1.2rem;
+      color: #241d15;
+      background: rgba(225, 201, 138, 0.22);
+      margin-bottom: 40px;
+      padding: 28px 45px;
+      border-radius: 14px;
       border: 1px solid #c29b38;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-      line-height: 1.6;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      line-height: 1.75;
+      text-wrap: balance; /* Distribuisce le righe in modo armonioso */
     }
 
     .card-body p {
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.8;
-      color: #3d3a36;
-      margin-bottom: 20px;
+      color: #2c2723;
+      margin-bottom: 24px;
       text-align: justify;
     }
 
     .card-body ul {
       list-style-type: none;
-      margin-bottom: 25px;
+      margin-bottom: 30px;
       padding-left: 0;
     }
 
     .card-body ul li {
       position: relative;
-      padding-left: 28px;
-      margin-bottom: 20px;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      color: #3d3a36;
+      padding-left: 32px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #2c2723;
     }
 
     .card-body ul li::before {
       content: "✦";
       position: absolute;
-      left: 0;
+      left: 2px;
       top: 0;
       color: #c29b38;
-      font-size: 0.9rem;
+      font-size: 1rem;
     }
 
     .ritual-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      color: #2b3a2a;
+      font-size: 1.5rem;
+      color: #1b281a;
       font-weight: 600;
       display: block;
       margin-bottom: 4px;
     }
 
     .info-note {
-      font-size: 0.9rem;
-      color: #3d3a36;
-      background: rgba(194, 155, 56, 0.08);
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 30px;
-      border: 1px solid rgba(194, 155, 56, 0.2);
-      line-height: 1.7;
+      font-size: 0.98rem;
+      color: #2c2723;
+      background: rgba(194, 155, 56, 0.1);
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 35px;
+      border: 1px solid rgba(194, 155, 56, 0.3);
+      line-height: 1.75;
     }
 
     .info-note a {
@@ -197,12 +189,13 @@
     }
 
     .shamanic-link-box {
-      margin-top: 20px;
-      padding: 15px;
-      background: rgba(255, 255, 255, 0.5);
-      border-left: 3px solid #8c4327;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.93rem;
+      margin-top: 25px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.65);
+      border-left: 4px solid #8c4327;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.98rem;
+      line-height: 1.7;
     }
 
     .shamanic-link-box a {
@@ -213,27 +206,27 @@
 
     .card-footer {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 45px;
       padding-top: 20px;
     }
 
     .signature-gold {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Lora', serif;
       font-style: italic;
-      color: #c29b38;
-      font-size: 1.2rem;
-      margin-bottom: 5px;
+      color: #a88122;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
     }
 
     .signature-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      color: #2c2c2c;
-      font-weight: 400;
-      margin-bottom: 30px;
+      font-size: 2.5rem;
+      color: #1a1512;
+      font-weight: 500;
+      margin-bottom: 35px;
     }
 
-    /* Stili per i pulsanti fluttuanti di contatto */
+    /* Stili pulsanti fluttuanti */
     .floating-contact-container {
       position: fixed;
       bottom: 20px;
@@ -265,13 +258,8 @@
       fill: #ffffff;
     }
 
-    .btn-whatsapp {
-      background-color: #25d366;
-    }
-
-    .btn-email {
-      background-color: #c29b38;
-    }
+    .btn-whatsapp { background-color: #25d366; }
+    .btn-email { background-color: #c29b38; }
   </style>
 </head>
 <body>
@@ -280,7 +268,6 @@
     
     <div class="card-header">
       <a href="index.html#comincia" class="btn-back">← Torna alla Home</a>
-      <!-- Icona Stella Vettoriale (SVG) Identica all'Immagine -->
       <div class="symbol-circle">
         <svg viewBox="0 0 24 24">
           <path d="M12,2 14.8,9.2 22,12 14.8,14.8 12,22 9.2,14.8 2,12 9.2,9.2 Z" />
@@ -292,7 +279,7 @@
     <p class="subtitle-gold">Presenza, Armonia e Rigenerazione Interiore</p>
 
     <div class="quote-box">
-      In questo spazio non troverai semplici interventi isolati, ma vere e proprie Pratiche di Benessere. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande. Il vero equilibrio non si raggiunge in un giorno: si coltiva con costanza.
+      In questo spazio non troverai semplici interventi isolati, ma vere e proprie Pratiche di Benessere. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande. Il vero equilibrio non si raggiunge in un giorno: si coltiva con&nbsp;costanza.
     </div>
 
     <div class="card-body">
@@ -329,7 +316,7 @@
 
       <div class="info-note">
         <strong>Non sai da dove iniziare?</strong><br>
-        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare las tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
+        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
       </div>
 
       <div class="shamanic-link-box">
@@ -345,7 +332,6 @@
 
   </div>
 
-  <!-- Contenitore Pulsanti Fluttuanti di Contatto -->
   <div class="floating-contact-container">
     <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
       <svg viewBox="0 0 24 24">
