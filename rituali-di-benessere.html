@@ -134,7 +134,7 @@
       line-height: 1.8;
       color: #2c2723;
       margin-bottom: 24px;
-      text-align: justify;
+      text-align: left; /* Modificato da justify a left per evitare disallineamenti su mobile */
     }
 
     .card-body ul {
@@ -150,6 +150,7 @@
       font-size: 1rem;
       line-height: 1.75;
       color: #2c2723;
+      text-align: left; /* Allineamento a sinistra sicuro anche per gli elementi della lista */
     }
 
     .card-body ul li::before {
@@ -273,6 +274,26 @@
 
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
+
+    /* MEDIA QUERIES PER SMARTPHONE */
+    @media (max-width: 650px) {
+      body {
+        padding: 15px 10px;
+      }
+      .card-container {
+        padding: 30px 20px;
+      }
+      .page-title {
+        font-size: 2.2rem;
+      }
+      .quote-box {
+        padding: 18px 20px;
+        font-size: 1.05rem;
+      }
+      .ritual-title {
+        font-size: 1.35rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -292,7 +313,7 @@
     <p class="subtitle-gold">Presenza, Armonia e Rigenerazione Interiore</p>
 
     <div class="quote-box">
-      In questo spazio non troverai semplici interventi isolati, ma vere e proprie Pratiche di Benessere. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande. Il vero equilibrio non si raggiunge in un giorno: si coltiva con&nbsp;costanza.
+      In questo spazio non troverai semplici interventions isolati, ma vere e proprie Pratiche di Benessere. Che tu scelga la delicatezza dei cristalli, il tocco di un massaggio o il silenzio della meditazione, ogni incontro è la tappa di un viaggio più grande. Il vero equilibrio non si raggiunge in un giorno: si coltiva con&nbsp;costanza.
     </div>
 
     <div class="card-body">
@@ -313,7 +334,7 @@
 
         <li>
           <strong class="ritual-title">La Voce della Terra (Cristalli e Pietre)</strong>
-          Un viaggio di guarigione che sfrutta le frequenze e le memorie millenarie dei cristalli. Posizionate sul corpo, le pietre risuonano con le deine cellule, aiutandoti a rilasciare ciò che non ti serve più e a sintonizzarti su frequenze di pace e protezione.
+          Un viaggio di guarigione che sfrutta le frequenze e le memorie millenarie dei cristalli. Posizionate sul corpo, le pietre risuonano con le tue cellule, aiutandoti a rilasciare ciò che non ti serve più e a sintonizzarti su frequenze di pace e protezione.
         </li>
 
         <li>
@@ -329,7 +350,7 @@
 
       <div class="info-note">
         <strong>Non sai da dove iniziare?</strong><br>
-        Sposto il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
+        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
       </div>
 
       <div class="shamanic-link-box">
@@ -342,7 +363,6 @@
       <h2 class="signature-name">Simona</h2>
       <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
       <br>
-      <!-- NUOVO LINK NOTE LEGALI INSERITO QUI -->
       <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
     </div>
 
