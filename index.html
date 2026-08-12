@@ -61,18 +61,37 @@
             color: var(--text-light);
         }
 
+        /* MODIFICATO: Simbolo più grande, fluttuante e pulsante */
         .symbol {
-            width: 40px;
-            height: 40px;
-            margin: 0 auto 15px auto;
+            width: 50px; /* Più grande (era 40px) */
+            height: 50px; /* Più grande (era 40px) */
+            margin: 0 auto 20px auto;
             border-radius: 50%;
             border: 1px solid var(--accent-gold);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
             color: var(--accent-gold);
-            font-size: 18px;
+            font-size: 22px; /* Stella interna più grande (era 18px) */
+            
+            /* Animazioni combinate: fluttuante + pulsante */
+            animation: floatAndGlow 4s ease-in-out infinite;
+        }
+
+        /* Nuova animazione per l'effetto magico */
+        @keyframes floatAndGlow {
+            0% {
+                transform: translateY(0px);
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                transform: translateY(-8px); /* Effetto fluttuante */
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.4); /* Effetto pulsante luminoso */
+            }
+            100% {
+                transform: translateY(0px);
+                box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            }
         }
 
         h1.site-title {
@@ -409,6 +428,7 @@
 
     <div class="container">
         <header>
+            <!-- Il simbolo ora fluttua e risplende autonomamente grazie al nuovo CSS -->
             <div class="symbol">✦</div>
             <h1 class="site-title">Simona Staropoli</h1>
             <p class="tagline">Fai brillare la tua Luce</p>
@@ -443,7 +463,7 @@
                     <p style="margin-top: 15px;"><strong>2 -</strong> Aprire la tua mente e il tuo cuore e ricevere ciò che queste parole ti diranno, leggere queste pagine come se tu fossi una bambina, come quando a scuola inizi a leggere, non hai barriere mentali, la società non ti ha ancora imposto ciò che è giusto e ciò che è sbagliato, hai solo voglia di scoprire il mondo.</p>
                 </div>
 
-                <p>Se opti per la soluzione due ti ringrazio di aver capito che la vita ti sta regalando un'opportunità, ti ringrazio di essere qui, ti ringrazio di essere un'anima che si sta risvegliando dal torpore dei limiti mentali che altri hanno deciso per te.</p>
+                <p>Se opti per la solution due ti ringrazio di aver capito che la vita ti sta regalando un'opportunità, ti ringrazio di essere qui, ti ringrazio di essere un'anima che si sta risvegliando dal torpore dei limiti mentali che altri hanno deciso per te.</p>
                 <p>Grazie di essere semplicemente tu!</p>
                 <p><em>Che tu possa far risplendere la tua luce e camminare nella Bellezza ogni giorno.</em></p>
 
