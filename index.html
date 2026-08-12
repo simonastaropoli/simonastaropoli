@@ -506,7 +506,7 @@
                     
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
                     
-                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
+                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimension spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
                     <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
                     
                     <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
@@ -525,34 +525,13 @@
 
             <aside class="sidebar">
                 
+                <!-- SEZIONE PROSSIMI INCONTRI DINAMICA -->
                 <div class="widget">
                     <h3 class="widget-title">Prossimi Incontri</h3>
                     
-                    <div class="event-item">
-                        <div class="event-title">Meditazione di Luna Piena</div>
-                        <div class="event-desc">19 Ottobre - Un'ora di pratica per connettersi...</div>
-                        <div class="event-actions">
-                            <a href="https://wa.me/393498615665?text=Ciao%20Simona,%20vorrei%20prenotare%20un%20posto%20per%20la%20Meditazione%20di%20Luna%20Piena" class="btn-small" target="_blank">Prenota</a>
-                            <a href="calendario.html" class="btn-small-sec">Dettagli</a>
-                        </div>
-                    </div>
-
-                    <div class="event-item">
-                        <div class="event-title">Workshop Sciamanico</div>
-                        <div class="event-desc">22 Ottobre - La Voce del Tamburo</div>
-                        <div class="event-actions">
-                            <a href="https://wa.me/393498615665?text=Ciao%20Simona,%20vorrei%20ricevere%20informazioni%20e%20prenotare%20per%20il%20Workshop%20Sciamanico" class="btn-small" target="_blank">Prenota</a>
-                            <a href="calendario.html" class="btn-small-sec">Dettagli</a>
-                        </div>
-                    </div>
-
-                    <div class="event-item">
-                        <div class="event-title">Incontro di Guarigione Energetica</div>
-                        <div class="event-desc">3 Novembre - Sessione di riequilibrio di gruppo</div>
-                        <div class="event-actions">
-                            <a href="https://wa.me/393498615665?text=Ciao%20Simona,%20vorrei%20prenotare%20per%20l'Incontro%20di%20Guarigione%20Energetica" class="btn-small" target="_blank">Prenota</a>
-                            <a href="calendario.html" class="btn-small-sec">Dettagli</a>
-                        </div>
+                    <!-- Gli eventi verranno caricati qui dal file calendario.html -->
+                    <div id="dinamico-prossimi-incontri">
+                        <p style="color: var(--text-muted); font-size: 0.78rem; font-style: italic;">Aggiornamento incontri...</p>
                     </div>
 
                     <a href="calendario.html" class="btn-outline" style="margin-top: 15px; border-color: var(--accent-gold); color: var(--accent-gold);">📅 Vedi Tutto il Calendario</a>
@@ -591,6 +570,69 @@
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
     </div>
+
+    <!-- CODE SCRIPT AGGIUNTIVO PER L'AUTOMATIZZAZIONE -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('calendario.html')
+                .then(response => response.text())
+                .then(htmlText => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(htmlText, 'text/html');
+                    
+                    // Cerca le card degli eventi dentro calendario.html (usa la classe tipica .calendar-item)
+                    // Se usi classi diverse in calendario.html (es. .event-card), ti basta cambiare questa stringa.
+                    let eventi = doc.querySelectorAll('.calendar-item');
+                    
+                    // Fallback se usi una classe generica come .event-item anche lì
+                    if (eventi.length === 0) {
+                        eventi = doc.querySelectorAll('.event-item');
+                    }
+                    
+                    const container = document.getElementById('dinamico-prossimi-incontri');
+                    
+                    if (eventi.length === 0) {
+                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun incontro in programma al momento.</p>';
+                        return;
+                    }
+
+                    container.innerHTML = ''; // Pulisce il testo di caricamento
+
+                    // Prende solo i primi 3 eventi
+                    const primiTre = Array.from(eventi).slice(0, 3);
+
+                    primiTre.forEach(evento => {
+                        // Estrae i testi in modo sicuro
+                        const titolo = evento.querySelector('h3') ? evento.querySelector('h3').innerText : 
+                                       (evento.querySelector('.event-title') ? evento.querySelector('.event-title').innerText : 'Incontro');
+                        
+                        const descrizione = evento.querySelector('.event-desc') ? evento.querySelector('.event-desc').innerText : 
+                                            (evento.querySelector('p') ? evento.querySelector('p').innerText : 'Consulta i dettagli');
+                        
+                        // Cerca il link WhatsApp del pulsante prenota
+                        const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
+                        const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
+
+                        // Crea la struttura HTML esatta del tuo vecchio widget
+                        const itemHTML = `
+                            <div class="event-item">
+                                <div class="event-title">${titolo}</div>
+                                <div class="event-desc">${descrizione}</div>
+                                <div class="event-actions">
+                                    <a href="${linkWhatsApp}" class="btn-small" target="_blank">Prenota</a>
+                                    <a href="calendario.html" class="btn-small-sec">Dettagli</a>
+                                </div>
+                            </div>
+                        `;
+                        container.innerHTML += itemHTML;
+                    });
+                })
+                .catch(error => {
+                    console.error("Impossibile sincronizzare il calendario:", error);
+                    container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">I dettagli sono disponibili nella pagina Calendario.</p>';
+                });
+        });
+    </script>
 
 </body>
 </html>
