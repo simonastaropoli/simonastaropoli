@@ -62,19 +62,25 @@
       color: #fff;
     }
 
-    /* Cerchio con Stella Fluttuante Nelle 4 Direzioni */
+    /* Cerchio con Stella come da Immagine - Fluttuante Nelle 4 Direzioni */
     .symbol-circle {
-      width: 48px;
-      height: 48px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
-      background: #2b3a2a;
+      background: #111a13; /* Fondo scuro profondo come l'immagine */
+      border: 1.5px solid #c29b38; /* Anello dorato sottile */
       color: #e5c158;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 15px rgba(194, 155, 56, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2);
       animation: float4Directions 5s ease-in-out infinite;
+    }
+
+    .symbol-circle svg {
+      width: 26px; /* Stella ingrandita */
+      height: 26px;
+      fill: #e5c158;
     }
 
     @keyframes float4Directions {
@@ -116,16 +122,19 @@
       margin-bottom: 25px;
     }
 
+    /* Box Citazione Oro Caldo / Bronzo Spazzolato */
     .quote-box {
       text-align: center;
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.2rem;
-      color: #5a5247;
-      margin-bottom: 30px;
-      padding: 15px 20px;
-      border-top: 1px solid rgba(194, 155, 56, 0.2);
-      border-bottom: 1px solid rgba(194, 155, 56, 0.2);
+      font-size: 1.25rem;
+      color: #2c251e;
+      background: rgba(212, 175, 55, 0.18);
+      margin-bottom: 35px;
+      padding: 22px 28px;
+      border-radius: 12px;
+      border: 1px solid #c29b38;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
       line-height: 1.6;
     }
 
@@ -271,7 +280,12 @@
     
     <div class="card-header">
       <a href="index.html#comincia" class="btn-back">← Torna alla Home</a>
-      <div class="symbol-circle">✦</div>
+      <!-- Icona Stella Vettoriale (SVG) Identica all'Immagine -->
+      <div class="symbol-circle">
+        <svg viewBox="0 0 24 24">
+          <path d="M12,2 14.8,9.2 22,12 14.8,14.8 12,22 9.2,14.8 2,12 9.2,9.2 Z" />
+        </svg>
+      </div>
     </div>
 
     <h1 class="page-title">Rituali di Benessere</h1>
@@ -315,7 +329,7 @@
 
       <div class="info-note">
         <strong>Non sai da dove iniziare?</strong><br>
-        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare le tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
+        Spesso il cammino ideale unisce il corpo allo spirito: potresti iniziare con un massaggio per rilasciare las tensioni, per poi proseguire con il riequilibrio energetico o la meditazione. <a href="https://wa.me/393498615665" target="_blank">Clicca qui per fare una breve consulenza iniziale e disegnare insieme il tuo percorso personalizzato.</a>
       </div>
 
       <div class="shamanic-link-box">
