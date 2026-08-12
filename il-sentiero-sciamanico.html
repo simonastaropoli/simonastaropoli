@@ -20,11 +20,47 @@
       background-size: cover;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 40px 20px;
       color: #1f1b18;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Stile Navigazione coerente */
+    nav {
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 850px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a:hover {
+      background: rgba(194, 155, 56, 0.8);
+      border-color: #c29b38;
+      color: #fff;
     }
 
     .card-container {
@@ -317,10 +353,20 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi Sono</a></li>
+      <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
+      <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
+      <li><a href="calendario.html">📅 Calendario</a></li>
+    </ul>
+  </nav>
+
   <div class="card-container">
     
     <div class="card-header">
-      <a href="index.html#comincia" class="btn-back">← Home</a>
+      <a href="index.html" class="btn-back">← Torna alla Home</a>
       <div class="symbol-circle">✦</div>
     </div>
 
@@ -372,7 +418,7 @@
 
       <h5 class="subheading-large">Cosa imparerai e sperimenterai in gruppo:</h5>
       <ul>
-        <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare e allearti con il tuo Animale di Potere (Animale Guida).</li>
+        <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare ed allearti con il tuo Animale di Potere (Animale Guida).</li>
         <li><strong>Il Viaggio nel Mondo di Sopra:</strong> per connetterti con il tuo Maestro Spirituale in forma umana.</li>
         <li><strong>Il Viaggio nel Mondo di Mezzo:</strong> per incontrare ed entrare in sintonia con gli Spiriti della Natura.</li>
         <li><strong>La Connessione con gli Antenati:</strong> per onorare le tue radici e riceverne il supporto.</li>
@@ -409,7 +455,7 @@
     <div class="card-footer">
       <p class="signature-gold">Un abbraccio di luce,</p>
       <h2 class="signature-name">Simona</h2>
-      <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
+      <a href="index.html" class="btn-back-bottom">← TORNA ALLA HOME</a>
       <br>
       <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
     </div>
@@ -431,3 +477,4 @@
 
 </body>
 </html>
+
