@@ -62,16 +62,41 @@
       color: #fff;
     }
 
+    /* Cerchio con Stella Fluttuante Nelle 4 Direzioni */
     .symbol-circle {
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: #2b3a2a;
       color: #e5c158;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      animation: float4Directions 5s ease-in-out infinite;
+    }
+
+    /* Animazione movimento continuo nelle 4 direzioni (Su, Destra, Giù, Sinistra) */
+    @keyframes float4Directions {
+      0% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(0, -7px); /* Alto */
+      }
+      50% {
+        transform: translate(7px, 0); /* Destra */
+      }
+      75% {
+        transform: translate(0, 7px); /* Basso */
+      }
+      87.5% {
+        transform: translate(-7px, 0); /* Sinistra */
+      }
+      100% {
+        transform: translate(0, 0);
+      }
     }
 
     .page-title {
@@ -220,6 +245,46 @@
       font-weight: 400;
       margin-bottom: 30px;
     }
+
+    /* Stili per i pulsanti fluttuanti di contatto */
+    .floating-contact-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 9999;
+    }
+
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .floating-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: #ffffff;
+    }
+
+    .btn-whatsapp {
+      background-color: #25d366;
+    }
+
+    .btn-email {
+      background-color: #c29b38;
+    }
   </style>
 </head>
 <body>
@@ -319,6 +384,20 @@
       <a href="index.html#comincia" class="btn-back-bottom">← COMINCIA DA QUI</a>
     </div>
 
+  </div>
+
+  <!-- Contenitore Pulsanti Fluttuanti di Contatto -->
+  <div class="floating-contact-container">
+    <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.992-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.52 5.242 1.521 5.404 0 9.8-4.396 9.802-9.8.001-2.615-1.017-5.074-2.868-6.927-1.851-1.854-4.309-2.873-6.926-2.874-5.406 0-9.803 4.398-9.806 9.801-.001 1.988.521 3.548 1.545 5.234l-.995 3.637 3.737-.981zm12.333-6.324c-.319-.16-1.891-.933-2.185-1.039-.295-.107-.51-.16-.724.16-.213.319-.826 1.039-1.012 1.252-.186.213-.372.24-.691.08-1.484-.743-2.522-1.282-3.525-3.009-.265-.455.265-.422.757-1.407.082-.165.042-.308-.021-.439-.063-.13-.51-1.229-.698-1.68-.184-.441-.371-.381-.51-.388-.13-.007-.279-.008-.428-.008-.15 0-.395.056-.601.279-.206.223-.787.77-.787 1.878 0 1.108.805 2.176.916 2.327.112.152 1.583 2.417 3.835 3.391 1.666.721 2.285.783 3.102.662.492-.073 1.892-.774 2.159-1.52.266-.746.266-1.387.186-1.52-.08-.132-.295-.213-.615-.373z"/>
+      </svg>
+    </a>
+    <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
   </div>
 
 </body>
