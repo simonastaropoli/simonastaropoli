@@ -170,6 +170,18 @@
             justify-content: center;
             flex-direction: column;
             overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Effetto pulsante delicato e continuo sulla scatola dell'oracolo in stato di attesa */
+        .oracle-box.pulse-idle {
+            animation: gentle-glow 3s infinite ease-in-out;
+        }
+
+        @keyframes gentle-glow {
+            0% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.1); transform: scale(1); }
+            50% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.3); transform: scale(1.01); }
+            100% { box-shadow: 0 0 5px rgba(212, 175, 55, 0.1); transform: scale(1); }
         }
 
         .oracle-message {
@@ -178,15 +190,32 @@
             font-style: italic;
             color: #2c3531;
             line-height: 1.6;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            opacity: 1;
-            transform: translateY(0);
         }
 
-        /* Classe applicata durante la transizione del messaggio */
-        .oracle-message.animating {
-            opacity: 0;
-            transform: translateY(12px);
+        /* Animazione energetica attivata al click (Pulsazione ed espansione di luce) */
+        .pulse-active {
+            animation: energy-pulse 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        @keyframes energy-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            30% {
+                transform: scale(0.95);
+                opacity: 0.4;
+                background-color: rgba(212, 175, 55, 0.1);
+            }
+            60% {
+                transform: scale(1.04);
+                opacity: 0.8;
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .btn-oracle {
@@ -319,7 +348,7 @@
             <h2 class="section-label">✨ L'Oracolo dell'Anima ✨</h2>
             <p class="oracle-intro">Fermati un istante, fai un respiro profondo, porta l'attenzione al centro del tuo cuore e clicca sul pulsante per ricevere il messaggio che l'Universo ha in dono per te oggi.</p>
 
-            <div class="oracle-box">
+            <div id="oracle-container" class="oracle-box pulse-idle">
                 <div id="messaggio-oracolo" class="oracle-message">
                     "Il tuo spazio sacro ti attende. Clicca qui sotto per pescare il tuo messaggio di luce."
                 </div>
@@ -355,26 +384,34 @@
         let ultimoIndice = -1;
 
         function pescaMessaggio() {
+            const container = document.getElementById('oracle-container');
             const box = document.getElementById('messaggio-oracolo');
             
-            // Applica la classe per sfumare e spostare verso il basso
-            box.classList.add('animating');
+            // Rimuove temporaneamente l'effetto di attesa e applica la pulsazione attiva ed energetica
+            container.classList.remove('pulse-idle');
+            container.classList.remove('pulse-active');
+            
+            // Forza il reflow del browser per riavviare l'animazione CSS
+            void container.offsetWidth;
+            
+            container.classList.add('pulse-active');
 
+            // A metà della pulsazione (quando si contrae ed è meno opaca) cambiamo il testo
             setTimeout(() => {
                 let nuovoIndice;
-                // Generazione casuale per evitare l'estrazione consecutiva dello stesso messaggio
                 do {
                     nuovoIndice = Math.floor(Math.random() * messaggiOracolo.length);
                 } while (nuovoIndice === ultimoIndice && messaggiOracolo.length > 1);
 
                 ultimoIndice = nuovoIndice;
-                
-                // Aggiorna il testo
                 box.innerText = `"${messaggiOracolo[nuovoIndice]}"`;
-                
-                // Rimuove la classe per far riapparire il testo con un'animazione fluida
-                box.classList.remove('animating');
-            }, 400);
+            }, 180);
+
+            // Finita l'animazione energetica del click, ripristina la pulsazione calma di sottofondo
+            setTimeout(() => {
+                container.classList.remove('pulse-active');
+                container.classList.add('pulse-idle');
+            }, 600);
         }
     </script>
 
