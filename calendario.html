@@ -1,1 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Incontri - Simona Staropoli</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #121d17;
+            --card-bg: rgba(244, 241, 234, 0.95);
+            --accent-gold: #d4af37;
+            --text-dark: #2c3531;
+            --text-light: #e0e6e3;
+            --text-muted: #8a9a90;
+            --box-accent: #e8eee9;
+            --border-color: rgba(212, 175, 55, 0.3);
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--text-dark);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .body-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 20, 15, 0.65);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px; /* Più stretto e focalizzato visto che non c'è la sidebar */
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 20px 20px;
+            color: var(--text-light);
+        }
+
+        .symbol {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 1px solid var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 22px;
+        }
+
+        h1.site-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        nav {
+            margin-bottom: 40px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(212, 175, 55, 0.25);
+            border-color: var(--accent-gold);
+            color: #fff;
+        }
+
+        .main-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 45px 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            color: #5a6b62;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #d5dfd9;
+            padding-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 0.95rem;
+            color: #55635c;
+            margin-bottom: 35px;
+        }
+
+        /* --- STILE CALENDARIO --- */
+        .month-section {
+            margin-bottom: 40px;
+        }
+
+        .month-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: #8c4327;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-left: 3px solid #8c4327;
+            padding-left: 10px;
+        }
+
+        .calendar-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .calendar-item {
+            background: var(--box-accent);
+            border: 1px solid #d5dfd9;
+            border-radius: 12px;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            align-items: center;
+            gap: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        .calendar-item:hover {
+            transform: translateY(-2px);
+            border-color: #8c4327;
+        }
+
+        .date-box {
+            background: #ffffff;
+            border: 1px solid #8c4327;
+            border-radius: 8px;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .date-day {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #8c4327;
+            line-height: 1;
+        }
+
+        .date-day-name {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #5a6b62;
+            margin-top: 4px;
+        }
+
+        .event-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #2c3531;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .event-details p {
+            font-size: 0.88rem;
+            color: #55635c;
+            line-height: 1.5;
+        }
+
+        .event-time {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #8c4327;
+            margin-bottom: 4px;
+        }
+
+        .btn-booking {
+            display: inline-block;
+            padding: 8px 20px;
+            background: #121d17;
+            border: 1px solid #121d17;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-booking:hover {
+            background: transparent;
+            color: #121d17;
+        }
+
+        @media (max-width: 650px) {
+            .calendar-item {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 15px;
+            }
+            .date-box {
+                max-width: 100px;
+                margin: 0 auto;
+            }
+            .btn-booking {
+                width: 100%;
+            }
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            width: 100%;
+        }
+        footer a { color: var(--text-muted); }
+    </style>
+</head>
+<body>
+
+    <div class="body-overlay"></div>
+
+    <div class="container">
+        <header>
+            <div class="symbol">✦</div>
+            <h1 class="site-title">Simona Staropoli</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rituali-di-benessere.html">Rituali</a></li>
+                    <li><a href="il-sentiero-sciamanico.html">Sentiero Sciamanico</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="main-card">
+            <h2 class="section-label">Cerchi & Incontri</h2>
+            <p class="subtitle">Uno spazio sacro per condividere, meditare e ritrovare il proprio centro. Scegli l'appuntamento più vicino a te.</p>
+
+            <!-- SEZIONE MESE -->
+            <div class="month-section">
+                <div class="month-title">Ottobre</div>
+                <div class="calendar-grid">
+                    
+                    <!-- EVENTO 1 -->
+                    <div class="calendar-item">
+                        <div class="date-box">
+                            <div class="date-day">19</div>
+                            <div class="date-day-name">Lun</div>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-time">🕒 Ore 20:30 - 21:30</div>
+                            <h3>Meditazione di Luna Piena</h3>
+                            <p>Un'ora di pratica meditativa guidata per connettersi alle energie lunari, favorire il rilascio emozionale e ritrovare fluidità interiore.</p>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/393498615665?text=Ciao%20Simona,%20vorrei%20prenotare%20un%20posto%20per%20la%20Meditazione%20di%20Luna%20Piena" class="btn-booking" target="_blank">Prenota</a>
+                        </div>
+                    </div>
+
+                    <!-- EVENTO 2 -->
+                    <div class="calendar-item">
+                        <div class="date-box">
+                            <div class="date-day">22</div>
+                            <div class="date-day-name">Gio</div>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-time">🕒 Ore 10:00 - 17:00</div>
+                            <h3>Workshop Sciamanico: La Voce del Tamburo</h3>
+                            <p>Una giornata intensiva dedicata al viaggio sciamanico. Impareremo ad ascoltare il battito del tamburo per incontrare i propri Animali di Potere.</p>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/393498615665?text=Ciao%20Simona,%20vorrei%20ricevere%20informazioni%20e%20prenotare%20per%20il%20Workshop%20Sciamanico" class="btn-booking" target="_blank">Prenota</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- SEZIONE MESE SUCCESSIVO -->
+            <div class="month-section">
+                <div class="month-title">Novembre</div>
+                <div class="calendar-grid">
+                    
+                    <!-- EVENTO 3 -->
+                    <div class="calendar-item">
+                        <div class="date-box">
+                            <div class="date-day">03</div>
+                            <div class="date-day-name">Mar</div>
+                        </div>
+                        <div class="event-details">
+                            <div class="event-time">🕒 Ore 20:00 - 22:00</div>
+                            <h3>Incontro di Guarigione Energetica</h3>
+                            <p>Sessione di riequilibrio di gruppo attraverso il suono ancestrale e le campane tibetane. Ideale per ripulire il campo energetico.</p>
+                        </div>
+                        <div>
+                            <a href="https://wa.me/393498615665?text=Ciao%20Simona,%20vorrei%20prenotare%20per%20l'Incontro%20di%20Guarigione%20Energetica" class="btn-booking" target="_blank">Prenota</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
+            <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+        </footer>
+    </div>
+
+</body>
+</html>
