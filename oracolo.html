@@ -37,6 +37,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            -webkit-font-smoothing: antialiased;
         }
 
         .body-overlay {
@@ -58,7 +59,7 @@
 
         header {
             text-align: center;
-            padding: 40px 20px 20px 20px;
+            padding: 40px 15px 20px 15px;
             color: var(--text-light);
         }
 
@@ -83,6 +84,7 @@
             text-transform: uppercase;
             color: #ffffff;
             margin-bottom: 5px;
+            word-wrap: break-word;
         }
 
         p.tagline {
@@ -94,7 +96,8 @@
         }
 
         nav {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
+            width: 100%;
         }
 
         nav ul {
@@ -102,21 +105,27 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
+        }
+
+        nav li {
+            display: inline-block;
         }
 
         nav a {
+            display: inline-block;
             text-decoration: none;
             color: var(--text-light);
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 18px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-size: 0.78rem;
             font-weight: 500;
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         nav a:hover {
@@ -131,6 +140,7 @@
             padding: 45px 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             text-align: center;
+            backdrop-filter: blur(10px);
         }
 
         h2.section-label {
@@ -190,12 +200,78 @@
             box-shadow: 0 6px 20px rgba(140, 67, 39, 0.4);
         }
 
+        /* --- MEDIA QUERIES PER SMARTPHONE --- */
+        @media (max-width: 650px) {
+            body {
+                background-attachment: scroll;
+                padding: 10px 0;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px 10px 10px 10px;
+            }
+
+            h1.site-title {
+                font-size: 2.1rem;
+                letter-spacing: 2px;
+            }
+
+            p.tagline {
+                font-size: 1.1rem;
+                margin-bottom: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            nav li {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+                padding: 10px 14px;
+            }
+
+            .main-card {
+                padding: 30px 20px;
+            }
+
+            h2.section-label {
+                font-size: 1.7rem;
+            }
+
+            .oracle-box {
+                padding: 20px 15px;
+                min-height: 120px;
+            }
+
+            .oracle-message {
+                font-size: 1.2rem;
+            }
+
+            .btn-oracle {
+                width: 100%;
+                padding: 14px 20px;
+            }
+        }
+
         footer {
             margin-top: 50px;
             padding: 30px 20px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.75rem;
+            width: 100%;
         }
 
         footer a {
@@ -246,21 +322,20 @@
 
     <script>
         const messaggiOracolo = [
-            “Fermati un istante: il tuo respiro è il ponte verso la tua vera casa.”
-            “Ascolta il battito del tuo tamburo interiore: sa già dove condurti.”
-            “Oggi concediti il permesso di rallentare e di accogliere la tua pace.”
-            “Lascia andare il rumore del mondo; la tua luce sa brillare da sola.”
-            “Radicati nella terra e lascia che le tue emozioni scorrano libere.”
-            “Ogni passo fatto con consapevolezza è un ritorno al tuo centro sacro.”
-            “Accogli il silenzio: è lì che la tua anima ti parla sottovoce.”
-            “Affidati al flusso della vita: ciò che è per te troverà la sua strada.”
-            “Il tuo corpo è un tempio saggio: ascolta i messaggi che ti sta inviando.”
-            “Coltiva la gentilezza verso te stessa/o, specialmente nei momenti di trasformazione.”
-            “La natura non ha fretta, eppure tutto si compie. Concediti il tuo tempo.”
-            “Libera lo spazio dentro di te: il nuovo ha bisogno di un luogo in cui nascere.”
-            “Il fuoco della tua passione interiore può dissolvere ogni ombra.”
-            “Respira la bellezza del momento presente; qui e ora sei al sicuro.”
-
+            "Fermati un istante: il tuo respiro è il ponte verso la tua vera casa.",
+            "Ascolta il battito del tuo tamburo interiore: sa già dove condurti.",
+            "Oggi concediti il permesso di rallentare e di accogliere la tua pace.",
+            "Lascia andare il rumore del mondo; la tua luce sa brillare da sola.",
+            "Radicati nella terra e lascia che le tue emozioni scorrano libere.",
+            "Ogni passo fatto con consapevolezza è un ritorno al tuo centro sacro.",
+            "Accogli il silenzio: è lì che la tua anima ti parla sottovoce.",
+            "Affidati al flusso della vita: ciò che è per te troverà la sua strada.",
+            "Il tuo corpo è un tempio saggio: ascolta i messaggi che ti sta inviando.",
+            "Coltiva la gentilezza verso te stessa/o, specialmente nei momenti di trasformazione.",
+            "La natura non ha fretta, eppure tutto si compie. Concediti il tuo tempo.",
+            "Libera lo spazio dentro di te: il nuovo ha bisogno di un luogo in cui nascere.",
+            "Il fuoco della tua passione interiore può dissolvere ogni ombra.",
+            "Respira la bellezza del momento presente; qui e ora sei al sicuro."
         ];
 
         function pescaMessaggio() {
