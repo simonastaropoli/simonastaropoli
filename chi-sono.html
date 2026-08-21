@@ -126,7 +126,6 @@
             backdrop-filter: blur(5px);
         }
 
-        /* Stile per la voce attiva ("spuntata") */
         nav a.active {
             background: rgba(212, 175, 55, 0.35);
             border-color: var(--accent-gold);
@@ -186,7 +185,6 @@
             margin: 30px 0 20px 0;
         }
 
-        /* Sezione Contatti con layout flessibile per la dicitura */
         .contact-info {
             margin-top: 30px;
             padding-top: 20px;
@@ -267,6 +265,43 @@
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
 
+        /* Stili per il nuovo blocco "La mia Guida" */
+        .values-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .value-item {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .value-item::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+        }
+
+        .value-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .value-desc {
+            font-size: 0.82rem;
+            color: #c2d1c9;
+            line-height: 1.5;
+            font-weight: 300;
+        }
+
         footer {
             margin-top: 50px;
             padding: 30px 20px;
@@ -303,7 +338,6 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
-        /* REGOLE SPECIFICHE PER SMARTPHONE */
         @media (max-width: 900px) {
             body {
                 background-attachment: scroll;
@@ -421,6 +455,7 @@
             </main>
 
             <aside class="sidebar">
+                <!-- Widget Foto e Profilo -->
                 <div class="widget">
                     <h3 class="widget-title">Chi Sono</h3>
                     <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
@@ -428,6 +463,25 @@
                         Naturopata ed esperta in pratiche olistiche e sciamanesimo transculturale a Gavardo (BS).
                     </p>
                     <a href="approfondisci.html" class="btn-more">Approfondisci</a>
+                </div>
+
+                <!-- Nuovo Widget Elegante: La mia Guida -->
+                <div class="widget">
+                    <h3 class="widget-title">🌿 La mia Guida</h3>
+                    <div class="values-list">
+                        <div class="value-item">
+                            <div class="value-title">Presenza</div>
+                            <div class="value-desc">Un ascolto profondo e privo di giudizio.</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-title">Natura</div>
+                            <div class="value-desc">La terra e i suoi cicli come maestri di guarigione.</div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-title">Consapevolezza</div>
+                            <div class="value-desc">Accendere la tua luce interiore per ritrovare il tuo centro.</div>
+                        </div>
+                    </div>
                 </div>
             </aside>
 
