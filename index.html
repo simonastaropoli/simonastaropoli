@@ -183,6 +183,15 @@
             text-align: center;
         }
 
+        /* Stile per la voce attiva ("spuntata") */
+        nav a.active {
+            background: rgba(212, 175, 55, 0.35);
+            border-color: var(--accent-gold);
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+            font-weight: 600;
+        }
+
         nav a:hover {
             background: rgba(212, 175, 55, 0.25);
             border-color: var(--accent-gold);
@@ -647,7 +656,7 @@
 
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="chi-sono.html">Chi Sono</a></li>
                     <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
                     <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
