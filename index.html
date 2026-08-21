@@ -667,7 +667,7 @@
             
             <main class="main-card" id="comincia">
                 <h2 class="section-label">Home</h2>
-                <h3 class="welcome-title">Benvenuta/o nel tuo Spazio di Ascolto e Trasformazione</h3>
+                <h3 class="welcome-title">Benventua/o nel tuo Spazio di Ascolto e Trasformazione</h3>
 
                 <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
                 <p>Sono Simona e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, offro <strong>sessioni individuali e cerchi di sciamanesimo</strong>, percorsi di <strong>meditazione</strong>, <strong>riequilibrio energetico dei chakra</strong> e <strong>massaggi olistici</strong>. Attraverso il tocco curativo, il suono del <strong>tamburo sciamanico</strong> e le pratiche di <strong>bioenergetica</strong>, ti accompagno a ritrovare armonia, centratura e profondo rilassamento.</p>
@@ -769,50 +769,60 @@
         </a>
     </div>
 
+    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA AL 100% -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('calendario.html')
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) throw new Error("Errore nel caricamento del file calendario.html");
+                    return response.text();
+                })
                 .then(htmlText => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    let eventi = doc.querySelectorAll('.calendar-item');
-                    if (eventi.length === 0) {
-                        eventi = doc.querySelectorAll('.event-item');
-                    }
-                    
+                    // Cerca gli elementi della classe calendar-item o event-item
+                    let eventi = doc.querySelectorAll('.calendar-item, .event-item');
                     const container = document.getElementById('dinamico-prossimi-incontri');
-                    if (eventi.length === 0) {
+                    
+                    if (!container) return;
+
+                    if (!eventi || eventi.length === 0) {
                         container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun incontro in programma al momento.</p>';
                         return;
                     }
 
-                    container.innerHTML = ''; 
+                    container.innerHTML = ''; // Pulisce il messaggio di caricamento
 
+                    // Estrae solo i primi 3 eventi
                     const primiTre = Array.from(eventi).slice(0, 3);
 
                     primiTre.forEach(evento => {
-                        const titolo = evento.querySelector('h3') ? evento.querySelector('h3').innerText : 
-                                       (evento.querySelector('.event-title') ? evento.querySelector('.event-title').innerText : 'Incontro');
+                        // Titolo
+                        const titoloEl = evento.querySelector('h3, .event-title');
+                        const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro';
                         
-                        let descrizione = evento.querySelector('.event-desc') ? evento.querySelector('.event-desc').innerText : 
-                                            (evento.querySelector('p') ? evento.querySelector('p').innerText : 'Consulta i dettagli');
+                        // Descrizione
+                        const descEl = evento.querySelector('.event-desc, p');
+                        let descrizione = descEl ? descEl.innerText.trim() : 'Consulta i dettagli';
                         
+                        // Tronca la descrizione se supera i 65 caratteri
                         const limiteCaratteri = 65;
                         if (descrizione.length > limiteCaratteri) {
                             descrizione = descrizione.substring(0, limiteCaratteri).trim() + "...";
                         }
 
+                        // Pulsante WhatsApp
                         const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
                         const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
 
+                        // Genera l'HTML mantenendo esattamente i tuoi stili CSS (.event-item, .event-title, ecc.)
                         const itemHTML = `
                             <div class="event-item">
                                 <div class="event-title">${titolo}</div>
                                 <div class="event-desc">${descrizione}</div>
                                 <div class="event-actions">
-                                    <a href="${linkWhatsApp}" class="btn-small" target="_blank">Prenota</a>
+                                    <a href="${linkWhatsApp}" class="btn-small" target="_blank" rel="noopener">Prenota</a>
                                     <a href="calendario.html" class="btn-small-sec">Dettagli</a>
                                 </div>
                             </div>
@@ -821,8 +831,11 @@
                     });
                 })
                 .catch(error => {
-                    console.error("Errore sincronizzazione:", error);
-                    container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">I dettagli sono disponibili nella pagina Calendario.</p>';
+                    console.error("Errore durante la sincronizzazione automatica:", error);
+                    const container = document.getElementById('dinamico-prossimi-incontri');
+                    if (container) {
+                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">I dettagli sono disponibili nella pagina Calendario.</p>';
+                    }
                 });
         });
     </script>
