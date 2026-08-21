@@ -28,6 +28,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
@@ -282,21 +286,27 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            text-decoration: none;
         }
         .floating-btn svg { width: 22px; height: 22px; fill: #ffffff; }
         .btn-whatsapp { background-color: #25D366; }
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
+        /* REGOLE SPECIFICHE PER SMARTPHONE */
         @media (max-width: 900px) {
             body {
                 background-attachment: scroll;
                 padding: 10px 0;
             }
+            
+            /* Usiamo il contenitore Flexbox su mobile per l'ordinamento naturale */
             .main-layout {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
                 gap: 20px;
             }
+
             .container {
                 padding: 10px;
             }
@@ -321,13 +331,25 @@
             .main-card {
                 padding: 24px 18px;
                 border-radius: 12px;
+                order: 1; /* Il contenuto principale viene per primo */
             }
             .main-card h3.welcome-title {
                 font-size: 1.7rem;
             }
+
+            .sidebar {
+                order: 2; /* La barra laterale si posiziona subito sotto */
+            }
+
             .widget {
                 padding: 18px;
             }
+
+            footer {
+                order: 3; /* Il piè di pagina si posiziona in fondo a tutto */
+                margin-top: 30px;
+            }
+
             .floating-contact-container {
                 bottom: 15px;
                 right: 15px;
@@ -343,7 +365,7 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <div class="body-overlay"></div>
 
@@ -384,7 +406,7 @@
                         Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
                     </div>
                     <div>
-                        <a href="#" class="back-to-top-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
+                        <a href="#top" class="back-to-top-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
                     </div>
                 </div>
             </main>
