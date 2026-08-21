@@ -163,7 +163,10 @@
         }
 
         nav a {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             text-decoration: none;
             color: var(--text-light);
             background: rgba(255, 255, 255, 0.08);
@@ -184,6 +187,31 @@
             border-color: var(--accent-gold);
             color: #fff;
             transform: translateY(-2px);
+        }
+
+        /* STILI E ANIMAZIONE ICONA CALENDARIO BRILANTE */
+        .calendar-icon {
+            width: 22px;
+            height: 22px;
+            fill: #ffd700;
+            filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.9));
+            animation: pulseGlow 2s infinite ease-in-out;
+            vertical-align: middle;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7));
+            }
+            50% {
+                transform: scale(1.22);
+                filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.8));
+            }
+            100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7));
+            }
         }
 
         .main-layout {
@@ -434,7 +462,10 @@
         }
 
         .btn-outline {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             text-align: center;
             padding: 8px 15px;
             border: 1px solid rgba(255,255,255,0.3);
@@ -571,7 +602,7 @@
             }
 
             nav a {
-                display: inline-block;
+                display: inline-flex;
                 width: auto;
                 padding: 8px 14px;
                 font-size: 0.75rem;
@@ -612,7 +643,14 @@
                     <li><a href="chi-sono.html">Chi Sono</a></li>
                     <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
                     <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
-                    <li><a href="calendario.html">📅 Calendario Incontri</a></li>
+                    <li>
+                        <a href="calendario.html">
+                            <svg class="calendar-icon" viewBox="0 0 24 24">
+                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/>
+                            </svg>
+                            Calendario Incontri
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </header>
@@ -675,7 +713,12 @@
                         <p style="color: var(--text-muted); font-size: 0.78rem; font-style: italic;">Aggiornamento incontri...</p>
                     </div>
 
-                    <a href="calendario.html" class="btn-outline" style="margin-top: 15px; border-color: var(--accent-gold); color: var(--accent-gold);">📅 Vedi Tutto il Calendario</a>
+                    <a href="calendario.html" class="btn-outline" style="margin-top: 15px; border-color: var(--accent-gold); color: var(--accent-gold);">
+                        <svg class="calendar-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/>
+                        </svg>
+                        Vedi Tutto il Calendario
+                    </a>
                 </div>
 
                 <div class="widget widget-last">
