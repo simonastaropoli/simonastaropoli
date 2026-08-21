@@ -4,21 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- TITOLO STRATEGICO PER GOOGLE -->
+    <!-- 1. TITOLO STRATEGICO PER GOOGLE -->
     <title>Simona Staropoli | Sciamanesimo, Meditazione e Benessere a Brescia</title>
 
-    <!-- META DESCRIPTION E KEYWORDS -->
+    <!-- 2. LA META DESCRIPTION E KEYWORDS -->
     <meta name="description" content="Simona Staropoli a Gavardo (Brescia). Sessioni individuali e cerchi di sciamanesimo, percorsi di meditazione, riequilibrio energetico chakra, massaggi olistici e suoni curativi.">
-    <meta name="keywords" content="Sciamanesimo Brescia, Massaggi Olistici Gavardo, Meditazione Brescia, Simona Staropoli, Riequilibrio Chakra, Guarigione Sciamanica">
+    <meta name="keywords" content="Sessioni individuali e cerchi di sciamanesimo, Percorsi di meditazione, Riequilibrio energetico dei chakra, Massaggi olistici a Gavardo, Brescia, Lombardia, Veneto, Emilia Romagna, Trentino, Piemonte, Guarigione Sciamanica, Spiritualità, Emozioni, Mindfulness, Benessere, Naturopata e Naturopatia, Olistica, Bioenergetica, Antistress, Rilassamento, Forest Therapy, Tamburo Sciamanico, Suoni curativi">
 
-    <!-- TAG OPEN GRAPH (PER ANTEPRIME SOCIAL E WHATSAPP) -->
-    <meta property="og:title" content="Simona Staropoli | Sciamanesimo e Benessere a Brescia">
-    <meta property="og:description" content="Sessioni individuali e cerchi di sciamanesimo, percorsi di meditazione e massaggi olistici a Gavardo (Brescia).">
-    <meta property="og:image" content="https://simonastaropoli.github.io/simo.jpg">
-    <meta property="og:url" content="https://simonastaropoli.github.io/">
-    <meta property="og:type" content="website">
-
-    <!-- DATI STRUTTURATI FOR GOOGLE SCHEMA.ORG -->
+    <!-- 3. I DATI STRUTTURATI -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -498,7 +491,8 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
-        @media (max-width: 900px) {
+        /* --- MEDIA QUERIES AGGIORNATE PER SMARTPHONE IN ORIZZONTALE E TABLET --- */
+        @media (max-width: 1024px) {
             body {
                 background-attachment: scroll;
             }
@@ -522,20 +516,21 @@
             }
 
             nav ul {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
                 gap: 8px;
             }
 
             nav li {
-                width: 100%;
-                max-width: 280px;
+                width: auto;
             }
 
             nav a {
-                display: block;
-                width: 100%;
-                padding: 10px 14px;
+                display: inline-block;
+                width: auto;
+                padding: 8px 14px;
+                font-size: 0.75rem;
             }
 
             .main-layout {
