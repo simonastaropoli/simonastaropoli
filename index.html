@@ -59,6 +59,10 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Montserrat', sans-serif;
             background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
@@ -186,7 +190,7 @@
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: start;
+            align-items: stretch; /* Pareggia le altezze */
         }
 
         .main-card {
@@ -195,6 +199,8 @@
             padding: 45px 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
         }
 
         .main-card h2.section-label {
@@ -250,7 +256,7 @@
         }
 
         .contact-info {
-            margin-top: 30px;
+            margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid #d5dfd9;
             font-size: 0.88rem;
@@ -263,6 +269,7 @@
             text-decoration: none;
         }
 
+        /* CARD FOOTER CON PULSANTE TORNA SU */
         .card-footer {
             margin-top: 25px;
             padding-top: 20px;
@@ -270,7 +277,7 @@
             text-align: center;
             color: #55635c;
             font-size: 0.78rem;
-            line-height: 1.5;
+            line-height: 1.8;
         }
 
         .card-footer a {
@@ -283,10 +290,34 @@
             color: #2c3531;
         }
 
+        .back-to-top-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #5a6b62 !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            padding: 4px 12px;
+            border: 1px solid #d5dfd9;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .back-to-top-link:hover {
+            color: #8c4327 !important;
+            border-color: #8c4327;
+            background-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
         .sidebar {
             display: flex;
             flex-direction: column;
             gap: 25px;
+            height: 100%;
         }
 
         .widget {
@@ -297,6 +328,10 @@
             color: var(--text-light);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .widget-last {
+            margin-top: auto;
         }
 
         .widget-title {
@@ -474,6 +509,8 @@
             text-decoration: none;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
             transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+            border: none;
         }
 
         .floating-btn svg {
@@ -491,7 +528,6 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
-        /* --- MEDIA QUERIES AGGIORNATE PER SMARTPHONE IN ORIZZONTALE E TABLET --- */
         @media (max-width: 1024px) {
             body {
                 background-attachment: scroll;
@@ -535,6 +571,7 @@
 
             .main-layout {
                 grid-template-columns: 1fr;
+                align-items: start;
             }
 
             .main-card {
@@ -544,6 +581,10 @@
             .main-card h3.welcome-title {
                 font-size: 1.6rem;
             }
+
+            .widget-last {
+                margin-top: 0;
+            }
         }
     </style>
 </head>
@@ -552,7 +593,7 @@
     <div class="body-overlay"></div>
 
     <div class="container">
-        <header>
+        <header id="top">
             <div class="symbol">✦</div>
             <h1 class="site-title">Simona Staropoli</h1>
             <p class="tagline">Fai brillare la tua Luce</p>
@@ -604,7 +645,8 @@
 
                 <div class="card-footer">
                     Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
-                    <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+                    <a href="note-legali.html">Privacy, Cookie & Disclaimer</a><br>
+                    <a href="#top" class="back-to-top-link">↑ Torna in alto</a>
                 </div>
             </main>
 
@@ -628,7 +670,7 @@
                     <a href="calendario.html" class="btn-outline" style="margin-top: 15px; border-color: var(--accent-gold); color: var(--accent-gold);">📅 Vedi Tutto il Calendario</a>
                 </div>
 
-                <div class="widget">
+                <div class="widget widget-last">
                     <h3 class="widget-title">Chi Sono</h3>
                     <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
                     <p class="profile-text">
@@ -655,11 +697,14 @@
         </div>
     </div>
 
+    <!-- Gruppo pulsanti fluttuanti (solo WhatsApp ed Email) -->
     <div class="floating-contact-container">
+        <!-- Pulsante WhatsApp -->
         <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         </a>
 
+        <!-- Pulsante Email -->
         <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         </a>
@@ -667,6 +712,7 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // Script Calendario Dinamico
             fetch('calendario.html')
                 .then(response => response.text())
                 .then(htmlText => {
