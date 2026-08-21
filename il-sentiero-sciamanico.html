@@ -1,267 +1,562 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Sentiero Sciamanico | Massimo Bonfanti Brescia</title>
-    
-    <!-- Meta SEO -->
-    <meta name="description" content="Scopri il Sentiero Sciamanico: percorsi esperienziali, recupero dell'anima, viaggi con il tamburo e armonizzazione energetica con Massimo Bonfanti.">
-    <meta name="keywords" content="Sentiero Sciamanico, Recupero dell'Anima Brescia, Viaggio Sciamanico, Pulizia Energetica, Sciamanesimo Transculturale">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Sentiero Sciamanico - Simona Staropoli</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&family=Lora:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <style>
-        :root {
-            --primary: #2c3e2e; 
-            --accent: #8b5e3c;  
-            --text-dark: #2b2b2b;
-            --text-light: #4a4a4a;
-            --bg-light: #fbf9f5;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0,0,0,0.05);
-            --transition: all 0.3s ease;
-        }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #1f1b18;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    /* Stile Navigazione */
+    nav {
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 850px;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-dark);
-            background-color: #f4f0ea;
-            line-height: 1.7;
-            padding: 20px 10px;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
 
-        nav {
-            background: var(--white);
-            padding: 15px 20px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            margin-bottom: 25px;
-            border-radius: 8px;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
 
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            margin: 0 12px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: var(--transition);
-            display: inline-block;
-        }
+    nav a:hover {
+      background: rgba(194, 155, 56, 0.8);
+      border-color: #c29b38;
+      color: #fff;
+    }
 
-        nav a:hover {
-            color: var(--accent);
-        }
+    .card-container {
+      background: rgba(244, 241, 236, 0.96);
+      backdrop-filter: blur(10px);
+      max-width: 850px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 50px 45px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      position: relative;
+    }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-            overflow: hidden;
-            padding: 40px;
-        }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px 20px;
-            }
-        }
+    .btn-back, .btn-back-bottom {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #736758;
+      border-radius: 30px;
+      padding: 9px 20px;
+      color: #423a30;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
 
-        .hero-section {
-            text-align: center;
-            border-bottom: 2px solid #f0e6da;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
+    .btn-back:hover, .btn-back-bottom:hover {
+      background: #736758;
+      color: #fff;
+    }
 
-        .hero-section h1 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+    .symbol-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1.5px solid #c29b38;
+      color: #c29b38;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
+      animation: float4Directions 5s ease-in-out infinite;
+      flex-shrink: 0;
+    }
 
-        .hero-section p {
-            font-family: 'Lora', serif;
-            font-size: 1.1rem;
-            color: var(--text-light);
-            font-style: italic;
-        }
+    @keyframes float4Directions {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(0, -7px); }
+      50% { transform: translate(7px, 0); }
+      75% { transform: translate(0, 7px); }
+      87.5% { transform: translate(-7px, 0); }
+      100% { transform: translate(0, 0); }
+    }
 
-        .content-block {
-            margin-bottom: 35px;
-        }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      text-align: center;
+      color: #141210;
+      font-weight: 500;
+      margin-bottom: 6px;
+      word-wrap: break-word;
+    }
 
-        .content-block h2 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
+    .subtitle-gold {
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: #a88122;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
 
-        .content-block p {
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
+    .quote-box {
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #241d15;
+      background: rgba(225, 201, 138, 0.22);
+      margin-bottom: 40px;
+      padding: 28px 45px;
+      border-radius: 14px;
+      border: 1px solid #c29b38;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      line-height: 1.75;
+      text-wrap: balance;
+    }
 
-        .feature-list {
-            list-style: none;
-            margin: 20px 0;
-        }
+    .card-body p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #2c2723;
+      margin-bottom: 24px;
+      text-align: left;
+    }
 
-        .feature-list li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 15px;
-            color: var(--text-light);
-        }
+    .card-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #8c4327;
+      margin-top: 45px;
+      margin-bottom: 25px;
+      text-align: center;
+      border-bottom: 1px solid #d5dfd9;
+      padding-bottom: 10px;
+    }
 
-        .feature-list li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
+    .card-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: #1b281a;
+      margin-top: 30px;
+      margin-bottom: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-        .cta-box {
-            background-color: var(--bg-light);
-            border: 1px solid #eef0ec;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            margin-top: 40px;
-        }
+    .card-body h5.subheading-large {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #1b281a;
+      font-weight: 700;
+      margin-top: 30px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
 
-        .cta-box h3 {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.6rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+    .card-body ul {
+      list-style-type: none;
+      margin-bottom: 30px;
+      padding-left: 0;
+    }
 
-        .cta-box p {
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
+    .card-body ul li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 24px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #2c2723;
+    }
 
-        .btn-cta {
-            display: inline-block;
-            background: var(--accent);
-            color: var(--white);
-            text-decoration: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
+    .card-body ul li::before {
+      content: "✦";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #c29b38;
+      font-size: 1rem;
+    }
 
-        .btn-cta:hover {
-            background: var(--primary);
-        }
+    .highlight-red {
+      color: #8c4327;
+      font-weight: 600;
+    }
 
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            z-index: 1000;
-        }
+    .ritual-box {
+      background: #eef2ef;
+      border-left: 4px solid #c29b38;
+      padding: 26px 28px;
+      margin: 35px 0;
+      border-radius: 0 14px 14px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
 
-        .float-btn {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            transition: var(--transition);
-        }
+    .ritual-box h5 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: #1b281a;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
 
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-email { background-color: var(--accent); }
+    .ritual-box p {
+      margin-bottom: 14px;
+    }
 
-        footer {
-            max-width: 900px;
-            margin: 30px auto 0;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #777;
-            padding: 20px;
-        }
-    </style>
+    .ritual-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-note {
+      font-size: 0.98rem;
+      color: #2c2723;
+      background: rgba(194, 155, 56, 0.1);
+      padding: 22px;
+      border-radius: 12px;
+      margin-top: 35px;
+      border: 1px solid rgba(194, 155, 56, 0.3);
+      line-height: 1.75;
+    }
+
+    .card-footer {
+      text-align: left;
+      margin-top: 45px;
+      padding-top: 30px;
+    }
+
+    .signature-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: #5a6b62;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .footer-divider {
+      border: 0;
+      border-top: 1px solid #d5dfd9;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      font-size: 0.9rem;
+      color: #55635c;
+      margin-bottom: 30px;
+    }
+
+    .contact-info strong {
+      color: #2c3531;
+    }
+
+    .contact-info a {
+      color: #2c3531;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    .footer-actions {
+      text-align: center;
+    }
+
+    .legal-footer-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #736758;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .legal-footer-link:hover {
+      color: #8c4327;
+      text-decoration: underline;
+    }
+
+    .floating-contact-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 9999;
+    }
+
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .floating-btn svg {
+      width: 26px;
+      height: 26px;
+      fill: #ffffff;
+    }
+
+    .btn-whatsapp { background-color: #25d366; }
+    .btn-email { background-color: #c29b38; }
+
+    /* MEDIA QUERIES PER SMARTPHONE AVANZATE */
+    @media (max-width: 650px) {
+      body {
+        padding: 12px 8px;
+        background-attachment: scroll; /* Disabilita fixed per problemi di resa su iOS */
+      }
+      nav ul {
+        gap: 6px;
+      }
+      nav a {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+      }
+      .card-container {
+        padding: 24px 16px;
+        border-radius: 14px;
+      }
+      .card-header {
+        margin-bottom: 20px;
+        gap: 10px;
+      }
+      .btn-back {
+        padding: 7px 14px;
+        font-size: 0.72rem;
+      }
+      .symbol-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+      }
+      .page-title {
+        font-size: 1.9rem;
+      }
+      .subtitle-gold {
+        font-size: 1.05rem;
+        margin-bottom: 20px;
+      }
+      .quote-box {
+        padding: 16px 18px;
+        font-size: 0.98rem;
+        margin-bottom: 25px;
+      }
+      .card-body h3 {
+        font-size: 1.7rem;
+        margin-top: 30px;
+      }
+      .card-body h4 {
+        font-size: 1.35rem;
+      }
+      .card-body h5.subheading-large {
+        font-size: 1.15rem;
+      }
+      .ritual-box {
+        padding: 18px 16px;
+        margin: 25px 0;
+      }
+      .card-body ul li {
+        padding-left: 24px;
+        font-size: 0.95rem;
+      }
+      .floating-contact-container {
+        bottom: 15px;
+        right: 15px;
+      }
+      .floating-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .floating-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="chi-sono.html">Chi Sono</a>
-        <a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a>
-        <a href="calendario.html">📅 Calendario Incontri</a>
-    </nav>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi Sono</a></li>
+      <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
+      <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
+      <li><a href="calendario.html">📅 Calendario</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <header class="hero-section">
-            <h1>Il Sentiero Sciamanico</h1>
-            <p>Un percorso antico di riconnessione, guarigione interiore ed evoluzione spirituale</p>
-        </header>
-
-        <section class="content-block">
-            <h2>Cos'è lo Sciamanesimo Transculturale</h2>
-            <p>Lo Sciamanesimo è la più antica pratica spirituale conosciuta dall'umanità. Non si tratta di una religione o di un dogma, ma di un metodo pratico per accedere alla realtà non ordinaria, attingere alla saggezza profonda e ripristinare l'equilibrio tra mente, corpo e spirito.</p>
-            <p>Nel lavoro che propongo, utilizzo la metodologia dello Sciamanesimo Transculturale, estrapolata e sintetizzata dai principi comuni condivisi dalle tradizioni tribali di tutto il mondo.</p>
-        </section>
-
-        <section class="content-block">
-            <h2>I Principali Strumenti di Lavoro</h2>
-            <ul class="feature-list">
-                <li><strong>Il Viaggio Sciamanico:</strong> Attraverso il ritmo costante del tamburo o dei sonagli, si accede a uno stato alterato di coscienza leggero per incontrare i propri Animali di Potere e Guide Spirituali.</li>
-                <li><strong>Recupero dell'Anima:</strong> Pratica volta a reintegrare parti vitali di sé disperse a causa di traumi, shock, perdite o periodi di forte stress.</li>
-                <li><strong>Estrazione Energetica:</strong> Rimozione di intrusioni ed energie pesanti localizzate nel corpo sottile che ostacolano il benessere.</li>
-                <li><strong>Pulizia ed Equilibrio degli Spazi:</strong> Armonizzazione degli ambienti abitativi e di lavoro per favorire il libero flusso dell'energia.</li>
-            </ul>
-        </section>
-
-        <div class="cta-box">
-            <h3>Senti la chiamata ad iniziare questo percorso?</h3>
-            <p>Puoi richiedere un incontro individuale conoscitivo o partecipare ai prossimi cerchi di gruppo.</p>
-            <a href="https://wa.me/393355430263?text=Desidero%20maggiori%20informazioni%20sul%20Sentiero%20Sciamanico" class="btn-cta" target="_blank">Contattami su WhatsApp</a>
-        </div>
+  <div class="card-container">
+    
+    <div class="card-header">
+      <a href="index.html" class="btn-back">← Torna alla Home</a>
+      <div class="symbol-circle">✦</div>
     </div>
 
-    <div class="floating-buttons">
-        <a href="https://wa.me/393355430263" class="float-btn btn-whatsapp" target="_blank" aria-label="WhatsApp">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-        </a>
-        <a href="mailto:info@massimobonfanti.it" class="float-btn btn-email" aria-label="Email">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.036l-9.518 7.713-9.518-7.713zm5.694 6.488l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-.559l4.616-3.741v9.448l-4.616-5.707z"/></svg>
-        </a>
+    <h1 class="page-title">Il Sentiero Sciamanico</h1>
+    <p class="subtitle-gold">Svolta e Trasformazione Interiore</p>
+
+    <div class="quote-box">
+      "Non cercare con gli occhi la strada del cuore, ma apri gli occhi del cuore e cerca la tua strada." <br><small>— Carlos Castaneda</small>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Massimo Bonfanti - Operatore Olistico. Tutti i diritti riservati.</p>
-    </footer>
+    <div class="card-body">
+      <h4>Cos'è lo Sciamanesimo</h4>
+      <p>
+        Lo sciamanesimo è la forma di spiritualità più antica dell'umanità, una pratica ancestrale nata dalla profonda connessione tra l'essere umano, la Natura e il mondo invisibile. Presente in culture di ogni continente, lo sciamanesimo non è una religione o un dogma, ma una via diretta di conoscenza basata sull'esperienza personale.
+      </p>
+      <p>
+        Oggi i principi dello sciamanesimo si rivelano straordinariamente attuali: ci offrono una mappa per ritrovare equilibrio e centratura all'interno di una società frenetica e materialista, ricordandoci che siamo parte di una rete sacra in cui tutto è vivo e interconnesso.
+      </p>
+
+      <p>
+        Il sentiero sciamanico è un cammino spirituale profondo che conduce alla scoperta del nostro mondo interiore, oltre la materia fisica. L'obiettivo non è fuggire dalla realtà ordinaria o sminuirne l'importanza, bensì ampliare una visione spesso limitata, espandendola oltre i confini del conosciuto.
+      </p>
+
+      <p>
+        Si va al di là di una visione puramente materialistica della vita per accedere alla saggezza e ai poteri di guarigione dello spirito, capaci di portarci risposte chiare sul senso dell'esistenza e preziosi consigli per affrontare al meglio le sfide del quotidiano.
+      </p>
+
+      <p>
+        In un'epoca di grandi cambiamenti collettivi e planetari, questo sentiero permette di portare lo spirito nella materia, unificando ogni aspetto dell'essere umano per permettergli di realizzare il potenziale custodito nel proprio seme-anima. Attraverso la tecnica del viaggio sciamanico, impariamo a superare i limiti della mente razionale per esplorare i mondi dello spirito attraverso l'intuizione e la creatività, portando armonia in noi stessi e nelle nostre relazioni.
+      </p>
+
+      <p>
+        I tempi di grandi mutamenti che stiamo vivendo richiamano sempre più persone a prestare attenzione alla dimensione spirituale, per non cadere nel baratro della mancata comprensione di ciò che accade nel nostro quotidiano, sia a livello individuale che collettivo. Strada facendo si diviene consapevoli dell'importanza di attuare una profonda trasformazione interiore, condizione necessaria per rinnovare radicalmente la propria vita.
+      </p>
+
+      <p>
+        All'interno dei percorsi qui proposti vengono trasmesse le tecniche del <strong>Core Shamanism di Michael Harner</strong>, arricchite e integrate dalla mia esperienza personale in tecniche di meditazione e pratiche di guarigione energetica provenienti da altre tradizioni.
+      </p>
+
+      <h3>I Due Sentieri: Scegli il tuo Cammino</h3>
+      <p>
+        Per rispondere al richiamo della tua Anima, puoi scegliere di sperimentare lo sciamanesimo attraverso due modalità distinte, che possono anche essere percorse contemporaneamente, nei tempi e nei modi richiesti dal tuo sentire.
+      </p>
+
+      <h4><span class="highlight-red">1. Il Cerchio Sciamanico</span> (Percorso di Gruppo)</h4>
+      <p>
+        Questo cammino è adatto a chi desidera acquisire gli strumenti per avere un accesso diretto alla conoscenza di sé e ai mondi spirituali, senza intermediari. Praticare all'interno di un Cerchio sacro dà l'opportunità di vedere il proprio lavoro personale amplificato e potenziato dall'unione di intenti e dall'energia di sostegno reciproco che si crea nel gruppo.
+      </p>
+
+      <h5 class="subheading-large">Cosa imparerai e sperimenterai in gruppo:</h5>
+      <ul>
+        <li><strong>Il Viaggio nel Mondo di Sotto:</strong> per incontrare e allearti con il tuo Animale di Potere (Animale Guida).</li>
+        <li><strong>Il Viaggio nel Mondo di Sopra:</strong> per connetterti con il tuo Maestro Spirituale in forma umana.</li>
+        <li><strong>Il Viaggio nel Mondo di Mezzo:</strong> per incontrare ed entrare in sintonia con gli Spiriti della Natura.</li>
+        <li><strong>La Connessione con gli Antenati:</strong> per onorare le tue radici e riceverne il supporto.</li>
+        <li><strong>La Relazione con le Guide:</strong> come dialogare costantemente con i tuoi alleati spirituali per ricevere consigli, protezione e guarigione nella vita di tutti i giorni.</li>
+      </ul>
+
+      <div class="ritual-box">
+        <h5>✨ Cerimonie e Rituali di Guarigione Collettiva</h5>
+        <p>Nel corso dell'anno, all'interno dei Cerchi di gruppo, celebriamo eventi speciali e potenti rituali per trasmutare le energie e risvegliare la nostra luce interiore:</p>
+        <p>• <strong>Cerimonie Sciamaniche con il Fuoco:</strong> Il Fuoco è un grande elemento di spinta e trasmutazione rapida. Portiamo in offerta ciò che desideriamo trasformare, rilasciando vecchi schemi per far spazio al nuovo.</p>
+        <p>• <strong>La Canoa Sciamanica:</strong> Un rituale di guarigione comunitaria di grande impatto, in cui il gruppo si unisce simbolicamente come un solo equipaggio per compiere un viaggio collettivo e portare forza e sostegno a un membro del Cerchio.</p>
+        <p>• <strong>Guarigione con la Luce (Metodo Sandra Ingerman):</strong> Una profonda pratica di trasmutazione spirituale. Impariamo a non "lottare" contro il disagio, ma a risvegliare la nostra essenza divina radiosa per emettere frequenze di luce pura.</p>
+        <p>• <strong>Rituali di Riconnessione ai Cicli di Natura:</strong> Incontri dedicati ai solstizi, agli equinozi e alle fasi lunari per riallineare i nostri ritmi al grande battito della Madre Terra.</p>
+        <p>• <strong>Caccia all'Anima:</strong> Un rituale collettivo di recupero dell'anima. Serve a reintegrare i frammenti di energia vitale che i membri della comunità hanno perso a causa di traumi, spaventi o malattie.</p>
+      </div>
+
+      <h4><span class="highlight-red">2. Sessioni Individuali</span> (Cammino di Guarigione Spirituale)</h4>
+      <p>
+        Se preferisci un approccio intimo, protetto e mirato, la sessione individuale ti permette di affrontare blocchi, paure, traumi del passato o dinamiche disarmoniche che condizionano la tua vita. In questo caso, in qualità di praticante sciamanica esperta, sarò io ad accedere alle dimensioni spirituali per consultare le Guide e portare guarigione ed equilibrio alla tua anima.
+      </p>
+
+      <h5 class="subheading-large">Come si svolge la sessione individuale:</h5>
+      <ul>
+        <li><strong>L'Ascolto e l'Intento:</strong> Iniziamo con un colloquio conoscitivo in cui accogliamo la tua richiesta, formulando insieme un intento chiaro e focalizzato per il lavoro energetico.</li>
+        <li><strong>Il Viaggio Sciamanico (Il Lavoro Invisibile):</strong> Mentre ti rilassi in uno stato di ricettività, entro in uno stato ampliato di coscienza attraverso il battito del tamburo. Compio il viaggio nei mondi spirituali per individuare l'origine del blocco e ricevere gli strumenti necessari (come l'estrazione energetica o il recupero dell'anima) per facilitare la tua guarigione spirituale.</li>
+        <li><strong>Condivisione e Integrazione:</strong> Al mio ritorno, ti trasmetto i messaggi delle Guide e ti fornisco indicazioni pratiche su come integrare la guarigione spirituale nella tua quotidianità, affinché il cambiamento si stabilizzi nella materia.</li>
+      </ul>
+
+      <div class="info-note">
+        <strong>Un consiglio d'Amore per il tuo Cammino:</strong><br>
+        Il lavoro sciamanico agisce a livello spirituale profondo. Per sostenere il corpo fisico e il campo energetico nell'assimilare queste potenti trasformazioni, puoi integrare questo percorso affiancandolo ai <strong>Rituali di Benessere</strong> (come il massaggio o il riequilibrio energetico con i cristalli).
+      </div>
+    </div>
+
+    <!-- FIRMA E CONTATTI CORRETTI -->
+    <div class="card-footer">
+      <h2 class="signature-name">Simona</h2>
+      <hr class="footer-divider">
+      <div class="contact-info">
+        <strong>Contattami qui:</strong><br>
+        Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+      </div>
+      <div class="footer-actions">
+        <a href="index.html" class="btn-back-bottom">← TORNA ALLA HOME</a><br>
+        <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="floating-contact-container">
+    <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.992-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.52 5.242 1.521 5.404 0 9.8-4.396 9.802-9.8.001-2.615-1.017-5.074-2.868-6.927-1.851-1.854-4.309-2.873-6.926-2.874-5.406 0-9.803 4.398-9.806 9.801-.001 1.988.521 3.548 1.545 5.234l-.995 3.637 3.737-.981zm12.333-6.324c-.319-.16-1.891-.933-2.185-1.039-.295-.107-.51-.16-.724.16-.213.319-.826 1.039-1.012 1.252-.186.213-.372.24-.691.08-1.484-.743-2.522-1.282-3.525-3.009-.265-.455.265-.422.757-1.407.082-.165.042-.308-.021-.439-.063-.13-.51-1.229-.698-1.68-.184-.441-.371-.381-.51-.388-.13-.007-.279-.008-.428-.008-.15 0-.395.056-.601.279-.206.223-.787.77-.787 1.878 0 1.108.805 2.176.916 2.327.112.152 1.583 2.417 3.835 3.391 1.666.721 2.285.783 3.102.662.492-.073 1.892-.774 2.159-1.52.266-.746.266-1.387.186-1.52-.08-.132-.295-.213-.615-.373z"/>
+      </svg>
+    </a>
+    <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+  </div>
 
 </body>
 </html>
