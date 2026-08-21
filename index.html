@@ -214,11 +214,12 @@
             }
         }
 
+        /* CORREZIONE LAYOUT: align-items impostato su start per eliminare lo spazio vuoto */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: stretch;
+            align-items: start;
         }
 
         .main-card {
@@ -601,7 +602,6 @@
                 font-size: 0.75rem;
             }
 
-            /* Usiamo Flexbox in colonna per riordinare visivamente gli elementi su mobile */
             .main-layout {
                 display: flex;
                 flex-direction: column;
@@ -617,13 +617,11 @@
                 font-size: 1.6rem;
             }
 
-            /* La barra laterale viene collocata subito sotto il contenuto principale */
             .sidebar {
                 order: 2;
                 margin-top: 25px;
             }
 
-            /* Il footer viene spostato visivamente in fondo a TUTTO tramite l'order CSS */
             .card-footer {
                 order: 3;
                 background: var(--card-bg);
@@ -736,7 +734,7 @@
                     </a>
                 </div>
 
-                <!-- WIDGET 3: PRIMA VOLTA / MINI FAQ (NUOVO BOX INSERITO QUI) -->
+                <!-- WIDGET 3: PRIMA VOLTA -->
                 <div class="widget">
                     <h3 class="widget-title">🌸 È la tua prima volta?</h3>
                     <p style="font-size: 0.82rem; color: #c2d1c9; line-height: 1.5; margin-bottom: 12px;">
