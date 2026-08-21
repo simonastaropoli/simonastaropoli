@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- 1. TITOLO E META DESCRIPTION SEO -->
   <title>Rituali di Benessere | Simona Staropoli - Naturopata Gavardo</title>
   <meta name="description" content="Scopri i Rituali di Benessere di Simona Staropoli: Massaggi, Riequilibrio Energetico, Cristalloterapia, Rituale Andino Chumpy Paqo e Meditazione a Gavardo (Brescia).">
 
-  <!-- 2. DATI STRUTTURATI SCHEMA.ORG -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,7 +50,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Stile Navigazione coerente */
     nav {
       margin-bottom: 25px;
       width: 100%;
@@ -88,23 +85,24 @@
       color: #fff;
     }
 
+    /* CARD CONTAINER: Spazio superiore ridotto a 25px per eliminare lo spazio vuoto */
     .card-container {
       background: rgba(244, 241, 236, 0.96);
       backdrop-filter: blur(10px);
       max-width: 850px;
       width: 100%;
       border-radius: 20px;
-      padding: 50px 45px;
+      padding: 25px 45px 50px 45px;
       box-shadow: 0 20px 45px rgba(0,0,0,0.25);
       position: relative;
     }
 
-    /* BARRA SUPERIORE CON SIMBOLO FLUTTUANTE */
+    /* HEADER DELLA SCHEDA: Margine inferiore ridotto a 5px */
     .card-header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 5px;
     }
 
     .btn-back-bottom {
@@ -127,34 +125,40 @@
       color: #fff;
     }
 
+    /* SIMBOLO BUSSOLA: Con bagliore dorato e fluttuazione */
     .symbol-circle {
-      width: 56px;
-      height: 56px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      background: transparent;
-      border: 1.5px solid #c29b38;
+      background: rgba(244, 241, 236, 0.8);
+      border: 1px solid #c29b38;
       color: #c29b38;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
-      animation: float4Directions 5s ease-in-out infinite;
+      animation: floatAndGlow 4s ease-in-out infinite;
       flex-shrink: 0;
     }
 
     .symbol-circle svg {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       fill: #c29b38;
     }
 
-    @keyframes float4Directions {
-      0% { transform: translate(0, 0); }
-      25% { transform: translate(0, -7px); }
-      50% { transform: translate(7px, 0); }
-      75% { transform: translate(0, 7px); }
-      87.5% { transform: translate(-7px, 0); }
-      100% { transform: translate(0, 0); }
+    @keyframes floatAndGlow {
+      0% {
+        transform: translateY(0px);
+        box-shadow: 0 0 12px rgba(194, 155, 56, 0.4);
+      }
+      50% {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(194, 155, 56, 0.85);
+      }
+      100% {
+        transform: translateY(0px);
+        box-shadow: 0 0 12px rgba(194, 155, 56, 0.4);
+      }
     }
 
     .page-title {
@@ -267,7 +271,6 @@
       text-decoration: underline;
     }
 
-    /* Card Footer Aggiornato */
     .card-footer {
       text-align: left;
       margin-top: 45px;
@@ -356,7 +359,6 @@
     .btn-whatsapp { background-color: #25d366; }
     .btn-email { background-color: #c29b38; }
 
-    /* MEDIA QUERIES PER SMARTPHONE AVANZATE */
     @media (max-width: 650px) {
       body {
         padding: 12px 8px;
@@ -370,11 +372,11 @@
         font-size: 0.7rem;
       }
       .card-container {
-        padding: 24px 16px;
+        padding: 16px 16px 24px 16px;
         border-radius: 14px;
       }
       .card-header {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
       }
       .symbol-circle {
         width: 40px;
@@ -433,7 +435,7 @@
   <div class="card-container">
     
     <div class="card-header">
-      <div class="symbol-circle">
+      <div class="symbol-circle" title="Bussola del Benessere">
         <svg viewBox="0 0 24 24">
           <path d="M12,2 14.8,9.2 22,12 14.8,14.8 12,22 9.2,14.8 2,12 9.2,9.2 Z" />
         </svg>
@@ -489,7 +491,6 @@
       </div>
     </div>
 
-    <!-- FIRMA E CONTATTI CORRETTI -->
     <div class="card-footer">
       <h2 class="signature-name">Simona</h2>
       <hr class="footer-divider">
