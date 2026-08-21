@@ -136,20 +136,24 @@
 
         nav a:hover { background: rgba(212, 175, 55, 0.25); border-color: var(--accent-gold); color: #fff; }
 
+        /* ALLINEAMENTO: stretch per pareggiare le altezze delle colonne */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: start;
+            align-items: stretch;
         }
 
-        /* OPZIONE 2: Aumentato il padding e lo spazio tra i paragrafi per bilanciare l'altezza */
+        /* ALLINEAMENTO: flexbox con space-between per distribuire l'altezza in automatico */
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 48px 40px 42px 40px;
+            padding: 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .main-card h2.section-label {
@@ -172,10 +176,10 @@
         }
 
         .main-card p {
-            margin-bottom: 28px;
+            margin-bottom: 24px;
             font-size: 0.95rem;
             color: #38423d;
-            line-height: 1.85;
+            line-height: 1.8;
         }
 
         .signature {
@@ -183,11 +187,11 @@
             font-size: 2.2rem;
             font-style: italic;
             color: #5a6b62;
-            margin: 35px 0 25px 0;
+            margin: 25px 0 20px 0;
         }
 
         .contact-info {
-            margin-top: 35px;
+            margin-top: auto;
             padding-top: 20px;
             border-top: 1px solid #d5dfd9;
             font-size: 0.88rem;
@@ -432,16 +436,18 @@
         <div class="main-layout">
             
             <main class="main-card">
-                <h2 class="section-label">CHI SONO</h2>
-                <h3 class="welcome-title">La mia storia e il Sogno dell'Anima</h3>
+                <div>
+                    <h2 class="section-label">CHI SONO</h2>
+                    <h3 class="welcome-title">La mia storia e il Sogno dell'Anima</h3>
 
-                <p>Benvenuta/o. Sono Simona Staropoli, Naturopata e Operatrice Olistica specializzata in pratiche sciamaniche ancestrali, meditazione e riequilibrio energetico a Gavardo (Brescia).</p>
+                    <p>Benvenuta/o. Sono Simona Staropoli, Naturopata e Operatrice Olistica specializzata in pratiche sciamaniche ancestrali, meditazione e riequilibrio energetico a Gavardo (Brescia).</p>
 
-                <p>Il mio cammino nasce da una profonda ricerca personale e da oltre trent'anni di formazione dedicata al benessere integrato dell'essere umano. Credo fermamente che ognuno di noi possieda una luce interiore capace di guidarci nei momenti di ombra.</p>
+                    <p>Il mio cammino nasce da una profonda ricerca personale e da oltre trent'anni di formazione dedicata al benessere integrato dell'essere umano. Credo fermamente che ognuno di noi possieda una luce interiore capace di guidarci nei momenti di ombra.</p>
 
-                <p>Attraverso l'arte del massaggio e strumenti come il Core Shamanism, la Mindfulness e il contatto profondo con la Natura (Shinrin Yoku), ti offro uno spazio sicuro in cui riscoprire chi sei veramente e sciogliere ciò che ti impedisce di fluire liberamente nella vita.</p>
+                    <p>Attraverso l'arte del massaggio e strumenti come il Core Shamanism, la Mindfulness e il contatto profondo con la Natura (Shinrin Yoku), ti offro uno spazio sicuro in cui riscoprire chi sei veramente e sciogliere ciò che ti impedisce di fluire liberamente nella vita.</p>
 
-                <div class="signature">Simona</div>
+                    <div class="signature">Simona</div>
+                </div>
 
                 <div class="contact-info">
                     <div>
