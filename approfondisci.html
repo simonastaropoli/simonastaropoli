@@ -75,12 +75,12 @@
 
     .card-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       margin-bottom: 30px;
     }
 
-    .btn-back, .btn-back-bottom {
+    .btn-back-bottom {
       display: inline-block;
       font-family: 'Inter', sans-serif;
       border: 1px solid #736758;
@@ -95,7 +95,7 @@
       transition: all 0.3s ease;
     }
 
-    .btn-back:hover, .btn-back-bottom:hover {
+    .btn-back-bottom:hover {
       background: #736758;
       color: #fff;
     }
@@ -322,7 +322,7 @@
 
     @media (max-width: 650px) {
       body {
-        background-attachment: scroll; /* Ottimizza lo scorrimento su iOS[cite: 10] */
+        background-attachment: scroll;
         padding: 15px 10px;
       }
       .card-container { padding: 30px 20px; }
@@ -346,7 +346,6 @@
   <div class="card-container">
     
     <div class="card-header">
-      <a href="index.html" class="btn-back">← Torna alla Home</a>
       <div class="symbol-circle">✦</div>
     </div>
 
