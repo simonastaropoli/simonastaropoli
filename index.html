@@ -223,21 +223,24 @@
             }
         }
 
+        /* Layout Principale bilanciato */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
-            gap: 30px;
-            align-items: stretch;
+            gap: 24px;
+            align-items: stretch; /* Mantiene le colonne allineate in altezza */
         }
 
+        /* Card Principale (sinistra) */
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 45px 40px;
+            padding: 35px; /* Spaziatura interna bilanciata */
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .main-card h2.section-label {
@@ -350,40 +353,40 @@
             box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
         }
 
+        /* Sidebar e Widget (destra) */
         .sidebar {
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            height: 100%;
+            justify-content: space-between; /* Distribuisce le finestre uniformemente */
+            gap: 20px; /* Distanza uniforme tra i widget */
         }
 
         .widget {
             background: var(--sidebar-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 25px;
+            padding: 24px; /* Padding coerente con la colonna di sinistra */
             color: var(--text-light);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .widget-last {
-            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .widget-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.4rem;
             color: #ffffff;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
             letter-spacing: 1px;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             padding-bottom: 8px;
         }
 
         .event-item {
-            margin-bottom: 16px;
-            padding-bottom: 12px;
+            margin-bottom: 14px;
+            padding-bottom: 10px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
@@ -448,10 +451,10 @@
 
         .profile-img {
             width: 100%;
-            height: 240px;
+            height: 200px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
@@ -460,7 +463,7 @@
             font-size: 0.82rem;
             color: #c2d1c9;
             line-height: 1.5;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .btn-outline {
@@ -487,14 +490,14 @@
             display: flex;
             justify-content: center;
             gap: 15px;
-            margin-top: 15px;
-            padding-top: 12px;
+            margin-top: 12px;
+            padding-top: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .social-icon {
-            width: 44px;
-            height: 44px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             background: rgba(255,255,255,0.08);
             display: flex;
@@ -507,8 +510,8 @@
         }
 
         .social-icon svg {
-            width: 26px;
-            height: 26px;
+            width: 22px;
+            height: 22px;
             fill: var(--text-light);
             transition: fill 0.3s ease;
         }
@@ -626,7 +629,8 @@
 
             .sidebar {
                 order: 2;
-                margin-top: 25px;
+                margin-top: 20px;
+                gap: 20px;
             }
 
             .card-footer {
@@ -634,12 +638,8 @@
                 background: var(--card-bg);
                 border-radius: 16px;
                 padding: 20px;
-                margin-top: 25px;
+                margin-top: 20px;
                 box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            }
-
-            .widget-last {
-                margin-top: 0;
             }
         }
     </style>
@@ -675,41 +675,45 @@
         <div class="main-layout">
             
             <main class="main-card" id="comincia">
-                <h2 class="section-label">Home</h2>
-                <h3 class="welcome-title">Benventua/o nel tuo Spazio di Ascolto e Trasformazione</h3>
+                <div>
+                    <h2 class="section-label">Home</h2>
+                    <h3 class="welcome-title">Benventua/o nel tuo Spazio di Ascolto e Trasformazione</h3>
 
-                <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
-                <p>Sono Simona e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, offro <strong>sessioni individuali e cerchi di sciamanesimo</strong>, percorsi di <strong>meditazione</strong>, <strong>riequilibrio energetico dei chakra</strong> e <strong>massaggi olistici</strong>. Attraverso il tocco curativo, il suono del <strong>tamburo sciamanico</strong> e le pratiche di <strong>bioenergetica</strong>, ti accompagno a ritrovare armonia, centratura e profondo rilassamento.</p>
-                <p>Sia che tu stia cercando un momento di benessere attraverso la <strong>forest therapy</strong> e i <strong>suoni curativi</strong>, sia che tu voglia intraprendere un cammino di guarigione spirituale, qui troverai uno spazio sacro, sicuro e orientato alla crescita della tua consapevolezza.</p>
+                    <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
+                    <p>Sono Simona e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, offro <strong>sessioni individuali e cerchi di sciamanesimo</strong>, percorsi di <strong>meditazione</strong>, <strong>riequilibrio energetico dei chakra</strong> e <strong>massaggi olistici</strong>. Attraverso il tocco curativo, il suono del <strong>tamburo sciamanico</strong> e le pratiche di <strong>bioenergetica</strong>, ti accompagno a ritrovare armonia, centratura e profondo rilassamento.</p>
+                    <p>Sia che tu stia cercando un momento di benessere attraverso la <strong>forest therapy</strong> e i <strong>suoni curativi</strong>, sia che tu voglia intraprendere un cammino di guarigione spirituale, qui troverai uno spazio sacro, sicuro e orientato alla crescita della tua consapevolezza.</p>
 
-                <p style="margin-top: 25px; font-weight: 600; color: #8c4327;">Da dove vuoi iniziare il tuo Cammino?</p>
+                    <p style="margin-top: 25px; font-weight: 600; color: #8c4327;">Da dove vuoi iniziare il tuo Cammino?</p>
 
-                <div class="option-box">
-                    <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
-                    <p style="margin-top: 10px;"><a href="rituali-di-benessere.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a></p>
-                    
-                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
-                    
-                    <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
-                    <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
-                    
-                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
-                    
-                    <p><strong>La Mia Storia e il Sogno dell'Anima:</strong> Per conoscere chi sono, il mio percorso di trasformazione personale e la mia formazione come operatrice olistica.</p>
-                    <p style="margin-top: 10px;"><a href="chi-sono.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Leggi la mia storia</a></p>
+                    <div class="option-box">
+                        <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
+                        <p style="margin-top: 10px;"><a href="rituali-di-benessere.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a></p>
+                        
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
+                        
+                        <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
+                        <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
+                        
+                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
+                        
+                        <p><strong>La Mia Storia e il Sogno dell'Anima:</strong> Per conoscere chi sono, il mio percorso di trasformazione personale e la mia formazione come operatrice olistica.</p>
+                        <p style="margin-top: 10px;"><a href="chi-sono.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Leggi la mia storia</a></p>
+                    </div>
+
+                    <div class="signature">Simona</div>
                 </div>
 
-                <div class="signature">Simona</div>
+                <div>
+                    <div class="contact-info">
+                        <strong>Contattami qui:</strong><br>
+                        Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                    </div>
 
-                <div class="contact-info">
-                    <strong>Contattami qui:</strong><br>
-                    Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
-                </div>
-
-                <div class="card-footer">
-                    <span>Copyright 2026 - Simona Staropoli - Gavardo (BS)</span>
-                    <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
-                    <a href="#top" class="back-to-top-link">↑ Torna in alto</a>
+                    <div class="card-footer">
+                        <span>Copyright 2026 - Simona Staropoli - Gavardo (BS)</span>
+                        <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+                        <a href="#top" class="back-to-top-link">↑ Torna in alto</a>
+                    </div>
                 </div>
             </main>
 
@@ -717,19 +721,23 @@
                 
                 <!-- WIDGET 1: ORACOLO -->
                 <div class="widget">
-                    <h3 class="widget-title">✨ L'Oracolo dell'Anima</h3>
-                    <p class="profile-text">
-                        Ascolta la tua guida interiore. Clicca sul pulsante e ricevi l'ispirazione per la tua giornata.
-                    </p>
-                    <a href="oracolo.html" class="btn-outline" style="border-color: var(--accent-gold); color: var(--accent-gold);">🔮 Consulta l'Oracolo</a>
+                    <div>
+                        <h3 class="widget-title">✨ L'Oracolo dell'Anima</h3>
+                        <p class="profile-text">
+                            Ascolta la tua guida interiore. Clicca sul pulsante e ricevi l'ispirazione per la tua giornata.
+                        </p>
+                    </div>
+                    <a href="oracolo.html" class="btn-outline" style="border-color: var(--accent-gold); color: var(--accent-gold); margin-top: 15px;">🔮 Consulta l'Oracolo</a>
                 </div>
 
                 <!-- WIDGET 2: CALENDARIO -->
                 <div class="widget">
-                    <h3 class="widget-title">Prossimi Incontri</h3>
-                    
-                    <div id="dinamico-prossimi-incontri">
-                        <p style="color: var(--text-muted); font-size: 0.78rem; font-style: italic;">Aggiornamento incontri...</p>
+                    <div>
+                        <h3 class="widget-title">Prossimi Incontri</h3>
+                        
+                        <div id="dinamico-prossimi-incontri">
+                            <p style="color: var(--text-muted); font-size: 0.78rem; font-style: italic;">Aggiornamento incontri...</p>
+                        </div>
                     </div>
 
                     <a href="calendario.html" class="btn-outline" style="margin-top: 15px; border-color: var(--accent-gold); color: var(--accent-gold);">
@@ -741,25 +749,30 @@
                 </div>
 
                 <!-- WIDGET 3: CHI SONO -->
-                <div class="widget widget-last">
-                    <h3 class="widget-title">Chi Sono</h3>
-                    <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
-                    <p class="profile-text">
-                        Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
-                    </p>
-                    <a href="chi-sono.html" class="btn-outline">Approfondisci</a>
+                <div class="widget">
+                    <div>
+                        <h3 class="widget-title">Chi Sono</h3>
+                        <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
+                        <p class="profile-text">
+                            Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <a href="chi-sono.html" class="btn-outline">Approfondisci</a>
 
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/simostar72/" class="social-icon" title="Instagram" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.youtube.com/@simonastaropoli" class="social-icon" title="YouTube" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                            </svg>
-                        </a>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/simostar72/" class="social-icon" title="Instagram" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.youtube.com/@simonastaropoli" class="social-icon" title="YouTube" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -790,7 +803,6 @@
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    // Cerca gli elementi della classe calendar-item o event-item
                     let eventi = doc.querySelectorAll('.calendar-item, .event-item');
                     const container = document.getElementById('dinamico-prossimi-incontri');
                     
@@ -801,31 +813,25 @@
                         return;
                     }
 
-                    container.innerHTML = ''; // Pulisce il messaggio di caricamento
+                    container.innerHTML = '';
 
-                    // Estrae solo i primi 3 eventi
                     const primiTre = Array.from(eventi).slice(0, 3);
 
                     primiTre.forEach(evento => {
-                        // Titolo
                         const titoloEl = evento.querySelector('h3, .event-title');
                         const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro';
                         
-                        // Descrizione
                         const descEl = evento.querySelector('.event-desc, p');
                         let descrizione = descEl ? descEl.innerText.trim() : 'Consulta i dettagli';
                         
-                        // Tronca la descrizione se supera i 65 caratteri
                         const limiteCaratteri = 65;
                         if (descrizione.length > limiteCaratteri) {
                             descrizione = descrizione.substring(0, limiteCaratteri).trim() + "...";
                         }
 
-                        // Pulsante WhatsApp
                         const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
                         const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
 
-                        // Genera l'HTML mantenendo esattamente i tuoi stili CSS (.event-item, .event-title, ecc.)
                         const itemHTML = `
                             <div class="event-item">
                                 <div class="event-title">${titolo}</div>
