@@ -20,11 +20,47 @@
       background-size: cover;
       min-height: 100vh;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
       padding: 40px 20px;
       color: #1f1b18;
       -webkit-font-smoothing: antialiased;
+    }
+
+    /* Stile Navigazione coerente */
+    nav {
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 850px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a:hover, nav a.active {
+      background: rgba(194, 155, 56, 0.8);
+      border-color: #c29b38;
+      color: #fff;
     }
 
     .card-container {
@@ -38,14 +74,15 @@
       position: relative;
     }
 
+    /* BARRA SUPERIORE CON SIMBOLO FLUTTUANTE CENTRATO */
     .card-header {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
       margin-bottom: 30px;
     }
 
-    .btn-back, .btn-back-bottom {
+    .btn-back-bottom {
       display: inline-block;
       font-family: 'Inter', sans-serif;
       border: 1px solid #736758;
@@ -60,7 +97,7 @@
       transition: all 0.3s ease;
     }
 
-    .btn-back:hover, .btn-back-bottom:hover {
+    .btn-back-bottom:hover {
       background: #736758;
       color: #fff;
     }
@@ -77,6 +114,7 @@
       justify-content: center;
       box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
       animation: float4Directions 5s ease-in-out infinite;
+      flex-shrink: 0;
     }
 
     .symbol-circle svg {
@@ -238,11 +276,19 @@
     /* MEDIA QUERIES PER SMARTPHONE */
     @media (max-width: 650px) {
       body {
-        background-attachment: scroll; /* Ottimizza lo scorrimento su iOS[cite: 11] */
-        padding: 15px 10px;
+        background-attachment: scroll;
+        padding: 12px 8px;
+      }
+      nav ul {
+        gap: 6px;
+      }
+      nav a {
+        padding: 6px 12px;
+        font-size: 0.7rem;
       }
       .card-container {
         padding: 30px 20px;
+        border-radius: 14px;
       }
       .page-title {
         font-size: 2.2rem;
@@ -257,15 +303,44 @@
       .legal-notice-box {
         padding: 16px;
       }
+      .symbol-circle {
+        width: 40px;
+        height: 40px;
+      }
+      .symbol-circle svg {
+        width: 18px;
+        height: 18px;
+      }
+      .floating-contact-container {
+        bottom: 15px;
+        right: 15px;
+      }
+      .floating-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .floating-btn svg {
+        width: 22px;
+        height: 22px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi Sono</a></li>
+      <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
+      <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
+      <li><a href="calendario.html">📅 Calendario</a></li>
+    </ul>
+  </nav>
+
   <div class="card-container">
     
     <div class="card-header">
-      <a href="index.html" class="btn-back">← Torna alla Home</a>
       <div class="symbol-circle">
         <svg viewBox="0 0 24 24">
           <path d="M12,2 14.8,9.2 22,12 14.8,14.8 12,22 9.2,14.8 2,12 9.2,9.2 Z" />
@@ -282,70 +357,70 @@
       <h3>1. Disclaimer Professionale e Informativa sulle Pratiche</h3>
       <div class="legal-notice-box">
         <strong>AVVISO IMPORTANTE:</strong><br>
-        Le attività, le sessioni individuali, i percorsi sciamanici, il riequilibrio energetico e i rituali proposti su questo sito da Simona Staropoli <strong>non sono trattamenti medici, psicoterapeutici o sanitari</strong>[cite: 11].
+        Le attività, le sessioni individuali, i percorsi sciamanici, il riequilibrio energetico e i rituali proposti su questo sito da Simona Staropoli <strong>non sono trattamenti medici, psicoterapeutici o sanitari</strong>[cite: 5].
       </div>
       <p>
-        Simona Staropoli opera ai sensi della <strong>Legge n. 4/2013</strong> (Disposizioni in materia di professioni non organizzate)[cite: 11]. Le pratiche olistiche e sciamaniche si rivolgono unicamente al benessere spirituale, energetico e alla crescita personale dell'individuo[cite: 11].
+        Simona Staropoli opera ai sensi della <strong>Legge n. 4/2013</strong> (Disposizioni in materia di professioni non organizzate)[cite: 5]. Le pratiche olistiche e sciamaniche si rivolgono unicamente al benessere spirituale, energetico e alla crescita personale dell'individuo[cite: 5].
       </p>
       <ul>
-        <li>Non forniscono diagnosi mediche o psicologiche[cite: 11].</li>
-        <li>Non prescrivono cure né farmaci[cite: 11].</li>
-        <li>Non sostituiscono in alcun modo il parere, la diagnosi, la terapia o il trattamento di medici, psicologi o psicoterapeuti abilitati[cite: 11].</li>
+        <li>Non forniscono diagnosi mediche o psicologiche[cite: 5].</li>
+        <li>Non prescrivono cure né farmaci[cite: 5].</li>
+        <li>Non sostituiscono in alcun modo il parere, la diagnosi, la terapia o il trattamento di medici, psicologi o psicoterapeuti abilitati[cite: 5].</li>
       </ul>
       <p>
-        Chiunque scelga di intraprendere un percorso o partecipare a una sessione lo fa sotto la propria esclusiva responsabilità personale ed è invitato a consultare il proprio medico curante per qualsiasi problema di salute fisica o mentale[cite: 11].
+        Chiunque scelga di intraprendere un percorso o partecipare a una sessione lo fa sotto la propria esclusiva responsabilità personale ed è invitato a consultare il proprio medico curante per qualsiasi problema di salute fisica o mentale[cite: 5].
       </p>
 
       <!-- PRIVACY POLICY -->
       <h3>2. Privacy Policy (GDPR UE 2016/679)</h3>
       <p>
-        In questa sezione si descrivono le modalità di gestione del sito in riferimento al trattamento dei dati personali degli utenti che lo consultano e che contattano direttamente la titolare[cite: 11].
+        In questa sezione si descrivono le modalità di gestione del sito in riferimento al trattamento dei dati personali degli utenti che lo consultano e che contattano direttamente la titolare[cite: 5].
       </p>
 
       <h4>Titolare del Trattamento</h4>
       <p>
-        Il Titolare del trattamento dei dati personali è[cite: 11]:<br>
-        <strong>Simona Staropoli</strong> — Gavardo (BS), Italia[cite: 11]<br>
-        Email di contatto: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>[cite: 11]
+        Il Titolare del trattamento dei dati personali è[cite: 5]:<br>
+        <strong>Simona Staropoli</strong> — Gavardo (BS), Italia[cite: 5]<br>
+        Email di contatto: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>[cite: 5]
       </p>
 
       <h4>Tipologia di Dati Raccolti e Finalità</h4>
       <p>
-        I dati personali inviati spontaneamente dall'utente (es. nome, indirizzo email, numero di telefono inviati tramite messaggio WhatsApp o via mail) vengono utilizzati esclusivamente per[cite: 11]:
+        I dati personali inviati spontaneamente dall'utente (es. nome, indirizzo email, numero di telefono inviati tramite messaggio WhatsApp o via mail) vengono utilizzati esclusivamente per[cite: 5]:
       </p>
       <ul>
-        <li>Rispondere alle richieste di informazioni sulle sessioni o sui corsi[cite: 11].</li>
-        <li>Pianificare ed erogare le consulenze o le sessioni prenotate[cite: 11].</li>
+        <li>Rispondere alle richieste di informazioni sulle sessioni o sui corsi[cite: 5].</li>
+        <li>Pianificare ed erogare le consulenze o le sessioni prenotate[cite: 5].</li>
       </ul>
       <p>
-        I dati personali non verranno in alcun caso ceduti, venduti o condivisi con soggetti terzi per scopi di marketing o commerciale[cite: 11].
+        I dati personali non verranno in alcun caso ceduti, venduti o condivisi con soggetti terzi per scopi di marketing o commerciale[cite: 5].
       </p>
 
       <h4>Base Giuridica e Conservazione</h4>
       <p>
-        Il trattamento si basa sull'esecuzione di misure precontrattuali o contrattuali adottate su richiesta dell'interessato[cite: 11]. I dati saranno conservati per il tempo strettamente necessario all'espletamento della richiesta o secondo quanto previsto dagli obblighi di legge[cite: 11].
+        Il trattamento si basa sull'esecuzione di misure precontrattuali o contrattuali adottate su richiesta dell'interessato[cite: 5]. I dati saranno conservati per il tempo strettamente necessario all'espletamento della richiesta o secondo quanto previsto dagli obblighi di legge[cite: 5].
       </p>
 
       <h4>Diritti dell'Interessato</h4>
       <p>
-        In ogni momento, l'utente può esercitare i propri diritti ai sensi degli artt. 15-22 del Regolamento UE 2016/679 (accesso ai dati, rettifica, cancellazione, limitazione del trattamento o opposizione) scrivendo direttamente a <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>[cite: 11].
+        In ogni momento, l'utente può esercitare i propri diritti ai sensi degli artt. 15-22 del Regolamento UE 2016/679 (accesso ai dati, rettifica, cancellazione, limitazione del trattamento o opposizione) scrivendo direttamente a <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>[cite: 5].
       </p>
 
       <!-- COOKIE POLICY -->
       <h3>3. Cookie Policy</h3>
       <p>
-        Questo sito web è strutturato in maniera essenziale e rispetta la riservatezza degli utenti[cite: 11].
+        Questo sito web è strutturato in maniera essenziale e rispetta la riservatezza degli utenti[cite: 5].
       </p>
       <ul>
-        <li><strong>Nessun Cookie di Profilazione:</strong> Questo sito NON utilizza cookie di profilazione o tracciamento pubblicitario per inviare messaggi promozionali[cite: 11].</li>
-        <li><strong>Nessun Cookie Analitico di Terze Parti:</strong> Non sono presenti strumenti di tracciamento o analisi delle visite (es. Google Analytics)[cite: 11].</li>
-        <li><strong>Link a Siti Esterni:</strong> Nel sito sono presenti pulsanti e collegamenti verso servizi esterni (es. WhatsApp, Google Fonts, Unsplash per le immagini). Cliccando su tali link o pulsanti, l'utente potrebbe essere reindirizzato a piattaforme terze che adottano proprie policy autonome in materia di cookie e privacy. Si invita a far riferimento alle rispettive informative dei relativi servizi[cite: 11].</li>
+        <li><strong>Nessun Cookie di Profilazione:</strong> Questo sito NON utilizza cookie di profilazione o tracciamento pubblicitario per inviare messaggi promozionali[cite: 5].</li>
+        <li><strong>Nessun Cookie Analitico di Terze Parti:</strong> Non sono presenti strumenti di tracciamento o analisi delle visite (es. Google Analytics)[cite: 5].</li>
+        <li><strong>Link a Siti Esterni:</strong> Nel sito sono presenti pulsanti e collegamenti verso servizi esterni (es. WhatsApp, Google Fonts, Unsplash per le immagini)[cite: 5]. Cliccando su tali link o pulsanti, l'utente potrebbe essere reindirizzato a piattaforme terze che adottano proprie policy autonome in materia di cookie e privacy[cite: 5]. Si invita a far riferimento alle rispettive informative dei relativi servizi[cite: 5].</li>
       </ul>
 
       <!-- PROPRIETÀ INTELLETTUALE -->
       <h3>4. Proprietà Intellettuale</h3>
       <p>
-        Tutti i contenuti testuali presenti su questo sito sono di proprietà di Simona Staropoli[cite: 11]. È vietata la riproduzione, parziale o totale, dei testi senza previa autorizzazione scritta[cite: 11].
+        Tutti i contenuti testuali presenti su questo sito sono di proprietà di Simona Staropoli[cite: 5]. È vietata la riproduzione, parziale o totale, dei testi senza previa autorizzazione scritta[cite: 5].
       </p>
 
     </div>
