@@ -86,7 +86,7 @@
             word-wrap: break-word;
         }
 
-        /* --- NAVIGAZIONE OTTIMIZZATA PER MOBILE --- */
+        /* --- NAVIGAZIONE OTTIMIZZATA --- */
         nav {
             margin-bottom: 30px;
             width: 100%;
@@ -108,17 +108,19 @@
             display: inline-block;
             text-decoration: none;
             color: var(--text-light);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.78rem;
+            font-weight: 600;
             text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             text-align: center;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             background: rgba(212, 175, 55, 0.25);
             border-color: var(--accent-gold);
             color: #fff;
@@ -130,6 +132,47 @@
             padding: 45px 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        /* --- PULSANTE TORNA ALLA HOME --- */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 8px 20px;
+            border: 1px solid #5a6b62;
+            border-radius: 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .btn-home:hover {
+            background: var(--text-dark);
+            color: #ffffff;
+        }
+
+        .icon-badge {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .section-label {
@@ -259,10 +302,53 @@
             color: #121d17;
         }
 
+        /* --- SEZIONE FOOTER SCHEDA --- */
+        .card-footer {
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #d5dfd9;
+        }
+
+        .author-signature {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-style: italic;
+            color: #4a5d52;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .contact-info a {
+            color: var(--text-dark);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .bottom-actions {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .legal-link {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .legal-link a {
+            color: #666;
+            text-decoration: none;
+        }
+
         /* --- MEDIA QUERIES PER SMARTPHONE --- */
         @media (max-width: 650px) {
             body {
-                background-attachment: scroll; /* Ottimizza lo scorrimento su iOS */
+                background-attachment: scroll;
                 padding: 10px 0;
             }
             .container {
@@ -314,8 +400,8 @@
         }
 
         footer {
-            margin-top: 50px;
-            padding: 30px 20px;
+            margin-top: 30px;
+            padding: 20px;
             text-align: center;
             color: var(--text-muted);
             font-size: 0.75rem;
@@ -334,14 +420,22 @@
             <h1 class="site-title">Simona Staropoli</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
-                    <li><a href="il-sentiero-sciamanico.html">Sentiero Sciamanico</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="chi-sono.html">CHI SONO</a></li>
+                    <li><a href="rituali-di-benessere.html">RITUALI DI BENESSERE</a></li>
+                    <li><a href="il-sentiero-sciamanico.html">IL SENTIERO SCIAMANICO</a></li>
+                    <li><a href="calendario.html" class="active">📅 CALENDARIO</a></li>
                 </ul>
             </nav>
         </header>
 
         <main class="main-card">
+            
+            <div class="top-bar">
+                <a href="index.html" class="btn-home">← TORNA ALLA HOME</a>
+                <div class="icon-badge">✦</div>
+            </div>
+
             <h2 class="section-label">Cerchi & Incontri</h2>
             <p class="subtitle">Uno spazio sacro per condividere, meditare e ritrovare il proprio centro. Segui l'intuito, scegli l'incontro che vibra in sintonia con il tuo momento presente e lasciati guidare dall'energia del cerchio.</p>
 
@@ -534,11 +628,25 @@
                 </div>
             </div>
 
+            <!-- FOOTER SCHEDA -->
+            <div class="card-footer">
+                <div class="author-signature">Simona</div>
+                <div class="contact-info">
+                    <strong>Contattami qui:</strong><br>
+                    Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
+                </div>
+                <div class="bottom-actions">
+                    <a href="index.html" class="btn-home">← TORNA ALLA HOME</a>
+                </div>
+                <div class="legal-link">
+                    <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+                </div>
+            </div>
+
         </main>
 
         <footer>
-            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
-            <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+            Copyright 2026 - Simona Staropoli - Gavardo (BS)
         </footer>
     </div>
 
