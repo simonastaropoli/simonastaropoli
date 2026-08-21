@@ -62,23 +62,24 @@
       color: #fff;
     }
 
+    /* CARD CONTAINER: Padding superiore ridotto a 25px per eliminare lo spazio di troppo */
     .card-container {
       background: rgba(244, 241, 236, 0.96);
       backdrop-filter: blur(10px);
       max-width: 850px;
       width: 100%;
       border-radius: 20px;
-      padding: 50px 45px;
+      padding: 25px 45px 50px 45px;
       box-shadow: 0 20px 45px rgba(0,0,0,0.25);
       position: relative;
     }
 
-    /* BARRA SUPERIORE CON BUSSOLA FLUTTUANTE */
+    /* BARRA SUPERIORE CON BUSSOLA */
     .card-header {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      margin-bottom: 30px;
+      margin-bottom: 5px; /* Ridotto da 30px a 5px */
     }
 
     .btn-back-bottom {
@@ -101,29 +102,40 @@
       color: #fff;
     }
 
+    /* SIMBOLO BUSSOLA CON BAGLIORE LUMINOSO E FLUTTUAZIONE */
     .symbol-circle {
-      width: 48px;
-      height: 48px;
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
-      background: transparent;
-      border: 1.5px solid #c29b38;
+      background: rgba(244, 241, 236, 0.8);
+      border: 1px solid #c29b38;
       color: #c29b38;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
-      animation: float4Directions 5s ease-in-out infinite;
+      animation: floatAndGlow 4s ease-in-out infinite;
       flex-shrink: 0;
     }
 
-    @keyframes float4Directions {
-      0% { transform: translate(0, 0); }
-      25% { transform: translate(0, -7px); }
-      50% { transform: translate(7px, 0); }
-      75% { transform: translate(0, 7px); }
-      87.5% { transform: translate(-7px, 0); }
-      100% { transform: translate(0, 0); }
+    .symbol-circle svg {
+      width: 24px;
+      height: 24px;
+      fill: #c29b38;
+    }
+
+    @keyframes floatAndGlow {
+      0% {
+        transform: translateY(0px);
+        box-shadow: 0 0 12px rgba(194, 155, 56, 0.4);
+      }
+      50% {
+        transform: translateY(-6px);
+        box-shadow: 0 0 25px rgba(194, 155, 56, 0.85);
+      }
+      100% {
+        transform: translateY(0px);
+        box-shadow: 0 0 12px rgba(194, 155, 56, 0.4);
+      }
     }
 
     .page-title {
@@ -367,16 +379,19 @@
         font-size: 0.7rem;
       }
       .card-container {
-        padding: 24px 16px;
+        padding: 16px 16px 24px 16px;
         border-radius: 14px;
       }
       .card-header {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
       }
       .symbol-circle {
         width: 40px;
         height: 40px;
-        font-size: 1.1rem;
+      }
+      .symbol-circle svg {
+        width: 18px;
+        height: 18px;
       }
       .page-title {
         font-size: 1.9rem;
@@ -438,7 +453,11 @@
   <div class="card-container">
     
     <div class="card-header">
-      <div class="symbol-circle">✦</div>
+      <div class="symbol-circle" title="Bussola Sciamanica">
+        <svg viewBox="0 0 24 24">
+          <path d="M12,2 14.8,9.2 22,12 14.8,14.8 12,22 9.2,14.8 2,12 9.2,9.2 Z" />
+        </svg>
+      </div>
     </div>
 
     <h1 class="page-title">Il Sentiero Sciamanico</h1>
@@ -498,7 +517,7 @@
 
       <div class="ritual-box">
         <h5>✨ Cerimonie e Rituali di Guarigione Collettiva</h5>
-        <p>Nel corso dell'anno, all'interno dei Cerchi di gruppo, celebriamo eventi speciali e potenti rituali per trasmutare le energie e risvegliare la nostra luce interiore:</p>
+        <p>Nel corso dell'anno, all'interno dei Cerchi di gruppo, celebriamo eventi speciali e potenti rituali per trasmutare le energie e risvegliarne la nostra luce interiore:</p>
         <p>• <strong>Cerimonie Sciamaniche con il Fuoco:</strong> Il Fuoco è un grande elemento di spinta e trasmutazione rapida. Portiamo in offerta ciò che desideriamo trasformare, rilasciando vecchi schemi per far spazio al nuovo.</p>
         <p>• <strong>La Canoa Sciamanica:</strong> Un rituale di guarigione comunitaria di grande impatto, in cui il gruppo si unisce simbolicamente come un solo equipaggio per compiere un viaggio collettivo e portare forza e sostegno a un membro del Cerchio.</p>
         <p>• <strong>Guarigione con la Luce (Metodo Sandra Ingerman):</strong> Una profonda pratica di trasmutazione spirituale. Impariamo a non "lottare" contro il disagio, ma a risvegliare la nostra essenza divina radiosa per emettere frequenze di luce pura.</p>
