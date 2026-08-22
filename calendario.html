@@ -17,6 +17,8 @@
             --text-muted: #8a9a90;
             --box-accent: #e8eee9;
             --border-color: rgba(212, 175, 55, 0.3);
+            --whatsapp-green: #25D366;
+            --whatsapp-dark: #128C7E;
         }
 
         * {
@@ -305,24 +307,29 @@
             margin-bottom: 4px;
         }
 
+        /* TASTO PRENOTA STILE WHATSAPP */
         .btn-booking {
             display: inline-block;
-            padding: 8px 20px;
-            background: #121d17;
-            border: 1px solid #121d17;
+            padding: 9px 22px;
+            background: var(--whatsapp-green);
+            border: 1px solid var(--whatsapp-green);
             border-radius: 20px;
             color: #ffffff;
             text-decoration: none;
             font-size: 0.8rem;
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
             transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.25);
         }
 
         .btn-booking:hover {
-            background: transparent;
-            color: #121d17;
+            background: var(--whatsapp-dark);
+            border-color: var(--whatsapp-dark);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(18, 140, 126, 0.35);
         }
 
         /* --- SEZIONE FOOTER SCHEDA --- */
