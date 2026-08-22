@@ -141,7 +141,7 @@
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: start;
+            align-items: stretch; /* Forza le due colonne ad avere la stessa altezza totale */
         }
 
         .main-card {
@@ -152,6 +152,7 @@
             backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .main-card h2.section-label {
@@ -189,7 +190,7 @@
         }
 
         .contact-info {
-            margin-top: 20px;
+            margin-top: auto;
             padding-top: 15px;
             border-top: 1px solid #d5dfd9;
             font-size: 0.85rem;
@@ -201,7 +202,7 @@
             gap: 15px;
         }
 
-        /* PULSANTE TORNA SU (DESKTOP E MOBILE) */
+        /* PULSANTE TORNA SU */
         .back-to-top-text {
             display: inline-flex;
             align-items: center;
@@ -230,23 +231,34 @@
             text-decoration: none;
         }
 
-        /* SIDEBAR FLEX */
+        /* SIDEBAR BILANCIATA CON WIDGET FLESSIBILI */
         .sidebar { 
             display: flex; 
             flex-direction: column; 
+            justify-content: space-between; 
             gap: 20px; 
+            height: 100%;
         }
 
         .widget {
             background: var(--sidebar-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 22px;
+            padding: 20px;
             color: var(--text-light);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .widget:first-child {
+            flex: 0 0 auto; /* Mantiene la prima scheda compatta */
+        }
+
+        .widget:last-child {
+            flex: 1 1 auto; /* Permette alla seconda scheda di riempire lo spazio residuo */
         }
 
         .widget-title {
@@ -260,7 +272,7 @@
 
         .profile-img {
             width: 100%;
-            height: 170px;
+            height: 150px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -269,7 +281,7 @@
 
         .btn-more {
             display: inline-block;
-            margin-top: 15px;
+            margin-top: 12px;
             width: 100%;
             text-align: center;
             text-decoration: none;
@@ -294,7 +306,7 @@
         .values-list {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .value-item {
