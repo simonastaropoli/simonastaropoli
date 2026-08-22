@@ -1,557 +1,467 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chi Sono | Simona Staropoli - Naturopata e Operatrice Olistica</title>
-    <meta name="description" content="Scopri la storia di Simona Staropoli, Naturopata e Operatrice Olistica a Gavardo (Brescia).">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-dark: #121d17;
-            --card-bg: rgba(244, 241, 234, 0.95);
-            --sidebar-bg: rgba(22, 36, 29, 0.85);
-            --accent-gold: #d4af37;
-            --text-dark: #2c3531;
-            --text-light: #e0e6e3;
-            --text-muted: #8a9a90;
-            --border-color: rgba(212, 175, 55, 0.3);
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Mio Cammino - Simona Staropoli</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #1f1b18;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-dark);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* Menu di Navigazione Coerente */
+    nav {
+      margin-bottom: 25px;
+      width: 100%;
+      max-width: 850px;
+    }
 
-        .body-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 20, 15, 0.65);
-            z-index: -1;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
 
-        .container {
-            width: 100%;
-            max-width: 1140px;
-            padding: 20px;
-            margin: 0 auto;
-        }
+    nav a {
+      text-decoration: none;
+      color: #ffffff;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(5px);
+    }
 
-        header {
-            text-align: center;
-            padding: 40px 20px 20px 20px;
-            color: var(--text-light);
-        }
+    nav a:hover {
+      background: rgba(194, 155, 56, 0.8);
+      border-color: #c29b38;
+      color: #fff;
+    }
 
-        .symbol {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            border: 1px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-gold);
-            font-size: 22px;
-            animation: floatAndGlow 4s ease-in-out infinite;
-        }
+    .card-container {
+      background: rgba(244, 241, 236, 0.96);
+      backdrop-filter: blur(10px);
+      max-width: 850px;
+      width: 100%;
+      border-radius: 20px;
+      padding: 50px 45px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+      position: relative;
+    }
 
-        @keyframes floatAndGlow {
-            0% { transform: translateY(0px); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
-            50% { transform: translateY(-8px); box-shadow: 0 0 30px rgba(212, 175, 55, 0.8); }
-            100% { transform: translateY(0px); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
-        }
+    .card-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+    }
 
-        h1.site-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ffffff;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            word-wrap: break-word;
-        }
+    .btn-back-bottom {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      border: 1px solid #736758;
+      border-radius: 30px;
+      padding: 9px 20px;
+      color: #423a30;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
 
-        p.tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.3rem;
-            color: #d1dfd7;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-        }
+    .btn-back-bottom:hover {
+      background: #736758;
+      color: #fff;
+    }
 
-        nav { margin-bottom: 40px; }
-        nav ul { list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-        nav a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            color: var(--text-light);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-        }
+    .symbol-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: transparent;
+      border: 1.5px solid #c29b38;
+      color: #c29b38;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 0 15px rgba(194, 155, 56, 0.25);
+      animation: float4Directions 5s ease-in-out infinite;
+    }
 
-        nav a.active {
-            background: rgba(212, 175, 55, 0.35);
-            border-color: var(--accent-gold);
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-            font-weight: 600;
-        }
+    @keyframes float4Directions {
+      0% { transform: translate(0, 0); }
+      25% { transform: translate(0, -7px); }
+      50% { transform: translate(7px, 0); }
+      75% { transform: translate(0, 7px); }
+      87.5% { transform: translate(-7px, 0); }
+      100% { transform: translate(0, 0); }
+    }
 
-        nav a:hover { background: rgba(212, 175, 55, 0.25); border-color: var(--accent-gold); color: #fff; }
+    .page-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.2rem;
+      text-align: center;
+      color: #141210;
+      font-weight: 500;
+      margin-bottom: 6px;
+    }
 
-        .calendar-icon {
-            width: 22px;
-            height: 22px;
-            fill: #ffd700;
-            filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.9));
-            animation: pulseGlow 2s infinite ease-in-out;
-            vertical-align: middle;
-        }
+    .subtitle-gold {
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: #a88122;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
 
-        @keyframes pulseGlow {
-            0% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7)); }
-            50% { transform: scale(1.22); filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1)); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7)); }
-        }
+    .quote-box {
+      text-align: center;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #241d15;
+      background: rgba(225, 201, 138, 0.22);
+      margin-bottom: 40px;
+      padding: 28px 45px;
+      border-radius: 14px;
+      border: 1px solid #c29b38;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      line-height: 1.75;
+      text-wrap: balance;
+    }
 
-        /* LAYOUT PRINCIPALE */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr 340px;
-            gap: 30px;
-            align-items: stretch;
-        }
+    .card-body p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #2c2723;
+      margin-bottom: 24px;
+      text-align: left;
+    }
 
-        .main-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .card-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: #8c4327;
+      margin-top: 45px;
+      margin-bottom: 25px;
+      text-align: center;
+      border-bottom: 1px solid #d5dfd9;
+      padding-bottom: 10px;
+    }
 
-        .main-card h2.section-label {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            color: #5a6b62;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #d5dfd9;
-            padding-bottom: 10px;
-        }
+    .card-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      color: #1b281a;
+      margin-top: 34px;
+      margin-bottom: 14px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
 
-        .main-card h3.welcome-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: #8c4327;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
+    .card-body ul {
+      list-style-type: none;
+      margin-bottom: 30px;
+      padding-left: 0;
+    }
 
-        .main-card p {
-            margin-bottom: 18px;
-            font-size: 0.92rem;
-            color: #38423d;
-            line-height: 1.7;
-        }
+    .card-body ul li {
+      position: relative;
+      padding-left: 32px;
+      margin-bottom: 18px;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: #2c2723;
+    }
 
-        .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-style: italic;
-            color: #5a6b62;
-            margin: 15px 0;
-        }
+    .card-body ul li::before {
+      content: "✦";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #c29b38;
+      font-size: 1rem;
+    }
 
-        .contact-info {
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid #d5dfd9;
-            font-size: 0.85rem;
-            color: #55635c;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
+    /* Stile Timeline Formazione */
+    .timeline-item {
+      margin-bottom: 30px;
+      padding-left: 20px;
+      border-left: 2px solid #c29b38;
+    }
 
-        .contact-info a {
-            color: #2c3531;
-            font-weight: 600;
-            text-decoration: none;
-        }
+    .timeline-date {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      color: #a88122;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-        /* PULSANTE TORNA IN ALTO (DESKTOP) */
-        .back-to-top-text {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #121d17 !important;
-            background: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none !important;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-        }
+    .timeline-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #1b281a;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
 
-        .back-to-top-text:hover {
-            background: #f0c946;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-        }
+    /* Stili Sezione Finale e Firma */
+    .contact-footer-block {
+      margin-top: 40px;
+      padding-top: 20px;
+      text-align: left;
+    }
 
-        /* SIDEBAR BILANCIATA */
-        .sidebar { 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            gap: 20px; 
-            height: 100%;
-        }
+    .signature-simona {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-style: italic;
+      color: #5d6860;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
 
-        .widget {
-            background: var(--sidebar-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 22px;
-            color: var(--text-light);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+    .divider-line {
+      border: none;
+      border-top: 1px solid #dcdad4;
+      margin-bottom: 25px;
+    }
 
-        .widget:first-child { flex: 0 0 auto; }
-        .widget:last-child { flex: 1 1 auto; }
+    .contact-info-text {
+      font-size: 0.95rem;
+      color: #4a453f;
+      line-height: 1.6;
+      margin-bottom: 35px;
+    }
 
-        .widget-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
-            color: #ffffff;
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 6px;
-        }
+    .contact-info-text strong {
+      font-weight: 600;
+      color: #38332e;
+    }
 
-        .profile-img {
-            width: 100%;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
+    .contact-info-text a {
+      color: #2b4bee;
+      text-decoration: underline;
+    }
 
-        /* PULSANTE INVITANTE (SIDEBAR) */
-        .btn-outline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-align: center;
-            padding: 10px 18px;
-            background: linear-gradient(135deg, #d4af37 0%, #f0c946 100%);
-            border: none;
-            border-radius: 25px;
-            color: #121d17 !important;
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.25);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            margin-top: 12px;
-        }
+    .card-footer-center {
+      text-align: center;
+      margin-top: 20px;
+    }
 
-        .btn-outline:hover {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
-            background: linear-gradient(135deg, #f0c946 0%, #ffd700 100%);
-        }
+    .legal-footer-link {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 0.85rem;
+      color: #736758;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-        .values-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+    .legal-footer-link:hover {
+      color: #8c4327;
+      text-decoration: underline;
+    }
 
-        .value-item {
-            position: relative;
-            padding-left: 18px;
-        }
+    .floating-contact-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 9999;
+    }
 
-        .value-item::before {
-            content: '✦';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: var(--accent-gold);
-            font-size: 0.7rem;
-        }
+    .floating-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
 
-        .value-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #ffffff;
-            margin-bottom: 2px;
-        }
+    .floating-btn:hover { transform: scale(1.1); }
+    .floating-btn svg { width: 26px; height: 26px; fill: #ffffff; }
+    .btn-whatsapp { background-color: #25d366; }
+    .btn-email { background-color: #c29b38; }
 
-        .value-desc {
-            font-size: 0.78rem;
-            color: #c2d1c9;
-            line-height: 1.4;
-            font-weight: 300;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 30px 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            width: 100%;
-        }
-
-        footer a { color: var(--text-muted); text-decoration: underline; }
-
-        /* CONTENITORE BOTTONI FLUTTUANTI */
-        .floating-contact-container {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 1000;
-        }
-
-        .floating-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-            transition: transform 0.3s ease, filter 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .floating-btn svg { width: 22px; height: 22px; fill: #ffffff; }
-        .floating-btn:hover { transform: scale(1.1); filter: brightness(1.1); }
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-email { background-color: #d4af37; }
-        .btn-email svg { fill: #121d17; }
-        
-        .btn-top-mobile {
-            background-color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            display: none; /* Nascosto su desktop */
-        }
-        .btn-top-mobile svg { fill: #121d17; width: 24px; height: 24px; }
-
-        /* REGOLE MOBILE (Sotto i 900px) */
-        @media (max-width: 900px) {
-            body {
-                background-attachment: scroll;
-                padding: 10px 0;
-            }
-
-            .main-layout {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .container { padding: 10px; }
-            header { padding: 20px 10px 10px 10px; }
-            h1.site-title { font-size: 2.1rem; letter-spacing: 2px; }
-            p.tagline { font-size: 1.1rem; margin-bottom: 20px; }
-            nav ul { gap: 6px; }
-            nav a { padding: 6px 12px; font-size: 0.7rem; }
-            .main-card { padding: 24px 18px; border-radius: 12px; order: 1; }
-            .sidebar { order: 2; gap: 20px; }
-            .widget { padding: 18px; }
-            footer { order: 3; margin-top: 30px; }
-            
-            /* Gestione pulsanti mobile */
-            .back-to-top-text { display: none !important; }
-            .btn-whatsapp, .btn-email { display: none !important; } /* Nasconde WhatsApp ed Email su mobile */
-            .btn-top-mobile { display: flex !important; } /* Mostra solo il Torna Su circolare con freccia */
-
-            .floating-contact-container { bottom: 20px; right: 20px; }
-            .floating-btn { width: 46px; height: 46px; }
-        }
-    </style>
+    @media (max-width: 650px) {
+      body {
+        background-attachment: scroll;
+        padding: 15px 10px;
+      }
+      .card-container { padding: 30px 20px; }
+      .page-title { font-size: 2.2rem; }
+      .quote-box { padding: 18px 20px; font-size: 1.05rem; }
+    }
+  </style>
 </head>
-<body id="top">
+<body>
 
-    <div class="body-overlay"></div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="chi-sono.html">Chi Sono</a></li>
+      <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
+      <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
+      <li><a href="calendario.html">📅 Calendario</a></li>
+    </ul>
+  </nav>
 
-    <div class="container">
-        <header>
-            <div class="symbol">✦</div>
-            <h1 class="site-title">Simona Staropoli</h1>
-            <p class="tagline">Fai brillare la tua Luce</p>
+  <div class="card-container">
+    
+    <div class="card-header">
+      <div class="symbol-circle">✦</div>
+    </div>
 
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="chi-sono.html" class="active">Chi Sono</a></li>
-                    <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
-                    <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
-                    <li>
-                        <a href="calendario.html">
-                            <svg class="calendar-icon" viewBox="0 0 24 24">
-                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/>
-                            </svg>
-                            Calendario Incontri
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+    <h1 class="page-title">Chi Sono</h1>
+    <p class="subtitle-gold">Il Mio Cammino e il Sogno dell'Anima</p>
 
-        <div class="main-layout">
-            
-            <main class="main-card">
-                <div>
-                    <h2 class="section-label">CHI SONO</h2>
-                    <h3 class="welcome-title">La mia storia e il Sogno dell'Anima</h3>
+    <div class="quote-box">
+      “Quando impariamo a curare le nostre ferite, le nostre cicatrici diventano la luce con cui illuminiamo il cammino degli altri.”
+    </div>
 
-                    <p>Benvenuta/o. Sono Simona Staropoli, Naturopata e Operatrice Olistica specializzata in pratiche sciamaniche ancestrali, meditazione e riequilibrio energetico a Gavardo (Brescia).</p>
+    <div class="card-body">
+      <h4>Dalle ombre alla luce: il mio percorso di trasformazione</h4>
+      <p>
+        Il mio cammino nel mondo dello spirito e della cura non è nato da una teoria, ma da un'esigenza profonda della vita. Come accade a molti di noi, ho attraversato momenti di grande difficoltà, sfide e passaggi d'ombra che hanno messo a dura prova la mia centratura e la mia gioia di vivere.
+      </p>
+      <p>
+        È stato proprio nei momenti di più profonda ricerca che ho incontrato la meditazione, lo sciamanesimo e le costellazioni familiari sistemiche di Bert Hellinger. Attraverso la pratica costante, l'ascolto del silenzio e l'incontro con i mondi dello spirito, ho potuto guarire le mie ferite interiori, rilasciare le memorie di dolore e trasformare gli ostacoli in preziose opportunità di evoluzione. Ho imparato a superare i limiti della mente razionale, riscoprendo la mia natura autentica, il mio potere personale e la profonda connessione con la Natura e l'Universo.
+      </p>
+      <p>
+        Questa profonda trasformazione personale mi ha spinta a formarmi con dedizione, approfondendo la meditazione e le tecniche del Core Shamanism (secondo gli insegnamenti di Michael Harner), insieme a pratiche di guarigione energetica e lavoro sul corpo.
+      </p>
 
-                    <p>Il mio cammino nasce da una profonda ricerca personale e da oltre trent'anni di formazione dedicata al benessere integrato dell'essere umano. Credo fermamente che ognuno di noi possieda una luce interiore capace di guidarci nei momenti di ombra.</p>
+      <h4>Il Sogno della mia Anima</h4>
+      <p>
+        Nello sciamanesimo si parla spesso del "Sogno dell'Anima": quel compito profondo e sacro che ognuno di noi viene a realizzare su questa Terra per contribuire all'armonia del Tutto.
+      </p>
+      <p>
+        Attraverso il mio percorso, ho compreso chiaramente quale fosse il mio: aiutare le persone a ritrovare il proprio benessere, la pace interiore e la gioia di vivere. Il mio sogno prende forma ogni giorno attraverso strumenti sacri e ancestrali:
+      </p>
+      <ul>
+        <li><strong>Il Tocco Curativo:</strong> l'arte del massaggio e del contatto consapevole per riportare presenza, rilasciare le tensioni del corpo fisico ed energetico e far sentire la persona accudita e radicata.</li>
+        <li><strong>La Voce e il Suono:</strong> frequenze di guarigione, canto e battito del tamburo che scendono in profondità, guidando la mente nel silenzio e risvegliando le memorie sopite dell'anima.</li>
+      </ul>
 
-                    <p>Attraverso l'arte del massaggio e strumenti come il Core Shamanism, la Mindfulness e il contatto profondo con la Natura (Shinrin Yoku), ti offro uno spazio sicuro in cui riscoprire chi sei veramente e sciogliere ciò che ti impedisce di fluire liberamente nella vita.</p>
+      <h4>La mia Missione per Te</h4>
+      <p>
+        Oggi metto la mia esperienza, la mia sensibilità e le mie competenze al servizio di chiunque senta il richiamo di intraprendere un viaggio di risveglio e riarmonizzazione. Non mi considero una "guaritrice", ma una custode e una guida: creo uno spazio protetto, sacro e privo di giudizio in cui tu possa ritrovare i tuoi talenti, guarire la tua storia e far fiorire il tuo potenziale.
+      </p>
+      <p>
+        Che il tuo cammino incroci il mio attraverso un Rituale di Benessere, un Cerchio di Meditazione e Sciamanesimo o una Sessione Individuale, il mio impegno è accompagnarti a piccoli passi verso la versione più autentica e luminosa di te stessa/o.
+      </p>
 
-                    <div class="signature">Simona</div>
-                </div>
+      <h3>Le Mie Radici e la Mia Formazione</h3>
+      <p style="margin-bottom: 35px;">
+        Accanto all'esperienza personale, ho scelto di guidare gli altri con responsabilità e dedizione. La mia è una formazione in continua evoluzione, che intreccia la naturopatia e il lavoro corporeo con le più antiche tradizioni sciamaniche e di meditazione.
+      </p>
 
-                <div class="contact-info">
-                    <div>
-                        <strong>Contattami qui:</strong><br>
-                        Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
-                    </div>
-                    <div>
-                        <a href="#top" class="back-to-top-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
-                    </div>
-                </div>
-            </main>
+      <!-- TIMELINE CRONOLOGICA DELLA FORMAZIONE -->
+      
+      <div class="timeline-item">
+        <div class="timeline-date">2025 - Oggi</div>
+        <div class="timeline-title">Costellazioni Familiari e Formazione Continua</div>
+        <p>Formazione in Costellazioni Familiari Sistemiche sotto la guida di Marco Massignan (Istituto Nemeton) e costante ricerca personale e spirituale.</p>
+      </div>
 
-            <aside class="sidebar">
-                <div class="widget">
-                    <div>
-                        <h3 class="widget-title">Chi Sono</h3>
-                        <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
-                        <p style="font-size: 0.8rem; color: #c2d1c9;">
-                            Naturopata ed esperta in pratiche olistiche e sciamanesimo transculturale a Gavardo (BS).
-                        </p>
-                    </div>
-                    <a href="approfondisci.html" class="btn-outline">
-                        Scopri il mio percorso <span>✦</span>
-                    </a>
-                </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2020 - 2022</div>
+        <div class="timeline-title">Psicologia Archetipica, Mindfulness e Guida Forest Therapy</div>
+        <p>Percorso triennale con Selene Calloni Williams (Imaginal Academy): Meditation Talking, Mindfulness Immaginale e Diploma di Insegnante di Meditazione e Guida alla Terapia della Foresta (Shinrin Yoku).</p>
+      </div>
 
-                <div class="widget">
-                    <h3 class="widget-title">🌿 La mia Guida</h3>
-                    <div class="values-list">
-                        <div class="value-item">
-                            <div class="value-title">Presenza</div>
-                            <div class="value-desc">Un ascolto profondo e privo di giudizio.</div>
-                        </div>
-                        <div class="value-item">
-                            <div class="value-title">Natura</div>
-                            <div class="value-desc">La terra e i suoi cicli come maestri di guarigione.</div>
-                        </div>
-                        <div class="value-item">
-                            <div class="value-title">Consapevolezza</div>
-                            <div class="value-desc">Accendere la tua luce interiore per ritrovare il tuo centro.</div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+      <div class="timeline-item">
+        <div class="timeline-date">2014 - 2021</div>
+        <div class="timeline-title">Specializzazioni Sciamaniche Avanzate e Tradizioni Ancestrali</div>
+        <p>• <strong>Core Shamanism (FSS):</strong> Percorso biennale e seminari avanzati (Estrazione, Recupero dell'Anima, Guarigione con gli Antenati, la Morte e l'Aldilà, La Via del Sognare) sotto la guida di Nello Ceccon presso il Centro Studi Sciamanici e la Foundation for Shamanic Studies di Michael Harner.</p>
+        <p>• <strong>Tradizione Mistica Andina:</strong> Il Cammino dell'Inca (Paña e Chaupy) e iniziazione Llakta Karpay con i Maestri Q’ero: Don Francisco Apaza Flores e Massimo Romagnolo dell’associazione Ushai.</p>
+        <p>• <strong>Pratiche di Castaneda:</strong> Costruzione del corpo del sogno e passi magici (Tensegrity).</p>
+      </div>
 
+      <div class="timeline-item">
+        <div class="timeline-date">2003 - 2008</div>
+        <div class="timeline-title">Diploma in Naturopatia e Tecniche di Massaggio Corporeo</div>
+        <p>• Diploma di Naturopatia presso l'Istituto Riza di Medicina Psicosomatica.</p>
+        <p>• Perfezionamento in Massaggio Antistress (con il Dott. R. Morelli), Lettura del corpo e Bioenergetica (con il Dott. F. Padrini) e Hot Stone Massage (massaggio ayurvedico con le pietre).</p>
+        <p>• Corso avanzato in "Fondamenti di Naturopatia" presso l'Università Studi di Milano.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-date">1992 - 2007</div>
+        <div class="timeline-title">Yoga, Reiki ed Espressione Corporea</div>
+        <p>Percorso fondamentale e propedeutico attraverso Hatha Yoga, Tai Chi Chuan, integrazione energetica Reiki (Usui System e Komyo Reiki Kai) e tecniche di crescita personale e meditazione.</p>
+      </div>
+
+      <!-- NUOVA FIRMA E CONTATTI -->
+      <div class="contact-footer-block">
+        <div class="signature-simona">Simona</div>
+        <hr class="divider-line">
+        <div class="contact-info-text">
+          <strong>Contattami qui:</strong><br>
+          Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
         </div>
+      </div>
 
-        <footer>
-            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
-            <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
-        </footer>
     </div>
 
-    <!-- BOTTONI FLUTTUANTI FISSI -->
-    <div class="floating-contact-container">
-        <!-- TORNA SU FLUTTUANTE CON FRECCIA (VISIBILE SOLO SU MOBILE) -->
-        <a href="#top" class="floating-btn btn-top-mobile" title="Torna in alto" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-            <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
-        </a>
-        
-        <!-- VISIBILI SOLO SU DESKTOP -->
-        <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-        </a>
-        <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
+    <div class="card-footer-center">
+      <a href="index.html" class="btn-back-bottom">← TORNA ALLA HOME</a>
+      <br>
+      <a href="note-legali.html" class="legal-footer-link">Privacy, Cookie & Disclaimer</a>
     </div>
+
+  </div>
+
+  <!-- Pulsanti di contatto Fluttuanti -->
+  <div class="floating-contact-container">
+    <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
+      <svg viewBox="0 0 24 24">
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.992-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.52 5.242 1.521 5.404 0 9.8-4.396 9.802-9.8.001-2.615-1.017-5.074-2.868-6.927-1.851-1.854-4.309-2.873-6.926-2.874-5.406 0-9.803 4.398-9.806 9.801-.001 1.988.521 3.548 1.545 5.234l-.995 3.637 3.737-.981zm12.333-6.324c-.319-.16-1.891-.933-2.185-1.039-.295-.107-.51-.16-.724.16-.213.319-.826 1.039-1.012 1.252-.186.213-.372.24-.691.08-1.484-.743-2.522-1.282-3.525-3.009-.265-.455.265-.422.757-1.407.082-.165.042-.308-.021-.439-.063-.13-.51-1.229-.698-1.68-.184-.441-.371-.381-.51-.388-.13-.007-.279-.008-.428-.008-.15 0-.395.056-.601.279-.206.223-.787.77-.787 1.878 0 1.108.805 2.176.916 2.327.112.152 1.583 2.417 3.835 3.391 1.666.721 2.285.783 3.102.662.492-.073 1.892-.774 2.159-1.52.266-.746.266-1.387.186-1.52-.08-.132-.295-.213-.615-.373z"/>
+      </svg>
+    </a>
+    <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+    </a>
+  </div>
 
 </body>
 </html>
