@@ -3,875 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- 1. TITOLO STRATEGICO PER GOOGLE -->
-    <title>Simona Staropoli | Sciamanesimo, Meditazione e Benessere a Brescia</title>
-
-    <!-- 2. LA META DESCRIPTION E KEYWORDS -->
-    <meta name="description" content="Simona Staropoli a Gavardo (Brescia). Sessioni individuali e cerchi di sciamanesimo, percorsi di meditazione, riequilibrio energetico chakra, massaggi olistici e suoni curativi.">
-    <meta name="keywords" content="Sessioni individuali e cerchi di sciamanesimo, Percorsi di meditazione, Riequilibrio energetico dei chakra, Massaggi olistici a Gavardo, Brescia, Lombardia, Veneto, Emilia Romagna, Trentino, Piemonte, Guarigione Sciamanica, Spiritualità, Emozioni, Mindfulness, Benessere, Naturopata e Naturopatia, Olistica, Bioenergetica, Antistress, Rilassamento, Forest Therapy, Tamburo Sciamanico, Suoni curativi">
-
-    <!-- 3. I DATI STRUTTURATI -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Simona Staropoli - Operatrice Olistica e Sciamanesimo",
-      "image": "https://images.unsplash.com/photo-1448375240586-882707db888b",
-      "telephone": "+393498615665",
-      "email": "simona.staropoli@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Gavardo",
-        "addressRegion": "BS",
-        "postalCode": "25011",
-        "addressCountry": "IT"
-      },
-      "areaServed": ["Gavardo", "Brescia", "Lombardia", "Veneto", "Emilia Romagna", "Trentino", "Piemonte"],
-      "description": "Sessioni individuali e cerchi di sciamanesimo, percorsi di meditazione, riequilibrio energetico dei chakra e massaggi olistici a Gavardo, Brescia.",
-      "knowsAbout": [
-        "Sciamanesimo", "Pratiche Olistiche", "Riequilibrio Energetico", "Meditazione", 
-        "Massaggi di Benessere", "Guarigione Sciamanica", "Spiritualità", "Mindfulness", 
-        "Naturopatia", "Bioenergetica", "Forest Therapy", "Tamburo Sciamanico", "Suoni curativi"
-      ]
-    }
-    </script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Home - Benessere e Sciamanesimo</title>
+    <!-- FontAwesome per le icone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root {
-            --bg-dark: #121d17;
-            --card-bg: rgba(244, 241, 234, 0.95);
-            --sidebar-bg: rgba(22, 36, 29, 0.85);
-            --accent-gold: #d4af37;
-            --text-dark: #2c3531;
-            --text-light: #e0e6e3;
-            --text-muted: #8a9a90;
-            --box-accent: #e8eee9;
-            --border-color: rgba(212, 175, 55, 0.3);
-        }
-
+        /* Base e Layout Generale */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: 'Montserrat', sans-serif;
-            background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
-            background-size: cover;
-            color: var(--text-dark);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4efe6;
+            color: #333;
             line-height: 1.6;
-            min-height: 100vh;
+        }
+
+        .main-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .body-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(10, 20, 15, 0.65);
-            z-index: -1;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1140px;
-            padding: 20px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 40px 20px 20px 20px;
-            color: var(--text-light);
-        }
-
-        .symbol {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 20px auto;
-            border-radius: 50%;
-            border: 1px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-gold);
-            font-size: 22px;
-            animation: floatAndGlow 4s ease-in-out infinite;
-        }
-
-        @keyframes floatAndGlow {
-            0% {
-                transform: translateY(0px);
-                box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            }
-            50% {
-                transform: translateY(-8px);
-                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.4);
-            }
-            100% {
-                transform: translateY(0px);
-                box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            }
-        }
-
-        h1.site-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
-            font-weight: 600;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ffffff;
-            margin-bottom: 5px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            word-wrap: break-word;
-        }
-
-        p.tagline {
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            font-size: 1.3rem;
-            color: #d1dfd7;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-        }
-
-        nav {
-            margin-bottom: 40px;
-            width: 100%;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        nav a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            color: var(--text-light);
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 500;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
-            text-align: center;
-        }
-
-        nav a.active {
-            background: rgba(212, 175, 55, 0.35);
-            border-color: var(--accent-gold);
-            color: #ffffff;
-            box-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
-            font-weight: 600;
-        }
-
-        nav a:hover {
-            background: rgba(212, 175, 55, 0.25);
-            border-color: var(--accent-gold);
-            color: #fff;
-        }
-
-        .calendar-icon {
-            width: 22px;
-            height: 22px;
-            fill: #ffd700;
-            filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.9));
-            animation: pulseGlow 2s infinite ease-in-out;
-            vertical-align: middle;
-        }
-
-        @keyframes pulseGlow {
-            0% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7));
-            }
-            50% {
-                transform: scale(1.22);
-                filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.8));
-            }
-            100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7));
-            }
-        }
-
-        /* ALLINEAMENTO DELLE COLONNE */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: stretch;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .main-card {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 35px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            backdrop-filter: blur(10px);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .content-area {
+            flex: 2;
         }
 
-        .main-card h2.section-label {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
-            letter-spacing: 3px;
-            color: #5a6b62;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #d5dfd9;
-            padding-bottom: 10px;
+        .content-area h2 {
+            color: #8b3a2b;
+            margin: 25px 0 15px 0;
+            font-size: 1.4rem;
         }
 
-        .main-card h3.welcome-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
-            color: #8c4327;
-            margin-bottom: 20px;
-            font-weight: 600;
+        .content-area p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #4a4a4a;
         }
 
-        .main-card p {
-            margin-bottom: 18px;
-            font-size: 0.92rem;
-            color: #38423d;
-            line-height: 1.7;
-        }
-
-        .option-box {
-            background: var(--box-accent);
-            border-left: 3px solid #8c4327;
-            padding: 20px 22px;
-            border-radius: 0 8px 8px 0;
-            margin: 25px 0;
-            font-size: 0.92rem;
-            color: #2c3531;
-        }
-
-        .option-box p {
-            margin-bottom: 12px;
-        }
-
-        .option-box p:last-child {
-            margin-bottom: 0;
-        }
-
-        .signature {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 2.2rem;
-            font-style: italic;
-            color: #5a6b62;
-            margin: 15px 0;
-        }
-
-        .contact-info {
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px solid #d5dfd9;
-            font-size: 0.85rem;
-            color: #55635c;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-info a {
-            color: #2c3531;
-            font-weight: 600;
+        .path-link {
+            display: inline-block;
+            color: #8b3a2b;
+            font-weight: bold;
             text-decoration: none;
+            margin-top: 5px;
         }
 
-        /* PULSANTE "TORNA IN ALTO" DESKTOP */
-        .back-to-top-text {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap;
-            color: #121d17 !important;
-            background: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            text-decoration: none !important;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            flex-shrink: 0;
+        .path-link:hover {
+            text-decoration: underline;
         }
 
-        .back-to-top-text:hover {
-            background: #f0c946;
-            color: #121d17 !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        /* SIDEBAR E WIDGET */
+        /* Sidebar Prossimi Incontri */
         .sidebar {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 20px;
-            height: 100%;
-        }
-
-        .widget {
-            background: var(--sidebar-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 22px;
-            color: var(--text-light);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
             flex: 1;
+            min-width: 320px;
         }
 
-        .widget-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 1.35rem;
+        .events-card {
+            background-color: #0f1c15;
             color: #ffffff;
-            margin-bottom: 12px;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 6px;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .events-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .event-item {
-            margin-bottom: 14px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .event-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
             border-bottom: none;
+            padding-bottom: 0;
         }
 
+        /* Badge Data (Sostituisce "In Arrivo") */
         .event-date-badge {
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            font-size: 0.72rem;
+            gap: 6px;
+            background-color: rgba(212, 175, 55, 0.15);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             font-weight: 600;
-            color: var(--accent-gold);
-            background: rgba(212, 175, 55, 0.12);
-            border: 1px solid rgba(212, 175, 55, 0.25);
-            padding: 3px 8px;
-            border-radius: 12px;
-            margin-bottom: 6px;
-            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+            text-transform: capitalize;
         }
 
-        .event-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #e2ece7;
-            margin-bottom: 4px;
-        }
-
-        .event-desc {
-            font-size: 0.78rem;
-            color: var(--text-muted);
+        .event-item h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
             margin-bottom: 8px;
+            line-height: 1.3;
         }
 
+        .event-item p {
+            color: #a3b8cc;
+            font-size: 0.88rem;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Bottoni Incontro */
         .event-actions {
             display: flex;
-            gap: 8px;
-            margin-top: 8px;
+            gap: 10px;
         }
 
-        .btn-small {
-            display: inline-block;
-            padding: 4px 12px;
-            border: 1px solid var(--accent-gold);
-            border-radius: 12px;
-            color: var(--accent-gold);
-            text-decoration: none;
-            font-size: 0.72rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn-small:hover {
-            background: var(--accent-gold);
-            color: #121d17;
-        }
-
-        .btn-small-sec {
-            display: inline-block;
-            padding: 4px 12px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 12px;
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.72rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .btn-small-sec:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 170px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .profile-text {
-            font-size: 0.8rem;
-            color: #c2d1c9;
-            line-height: 1.4;
-            margin-bottom: 10px;
-        }
-
-        .btn-outline {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-align: center;
-            padding: 8px 15px;
-            border: 1px solid rgba(255,255,255,0.3);
+        .btn-action {
+            padding: 6px 16px;
             border-radius: 20px;
-            color: var(--text-light);
+            font-size: 0.85rem;
             text-decoration: none;
-            font-size: 0.78rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
-        .btn-outline:hover {
-            border-color: var(--accent-gold);
-            color: var(--accent-gold);
+        .btn-prenota {
+            background-color: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            border: 1px solid #d4af37;
         }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 12px;
-            padding-top: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        .btn-prenota:hover {
+            background-color: #d4af37;
+            color: #0f1c15;
         }
 
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
+        .btn-dettagli {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-dettagli:hover {
+            border-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Bottone Vedi Tutto */
+        .btn-full-calendar {
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .social-icon svg {
-            width: 18px;
-            height: 18px;
-            fill: var(--text-light);
-            transition: fill 0.3s ease;
-        }
-
-        .social-icon[title="Instagram"]:hover {
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
-            border-color: transparent;
-            transform: translateY(-2px);
-        }
-
-        .social-icon[title="YouTube"]:hover {
-            background: #FF0000;
-            border-color: #FF0000;
-            transform: translateY(-2px);
-        }
-
-        .social-icon:hover svg {
-            fill: #ffffff;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding: 30px 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.75rem;
+            gap: 8px;
             width: 100%;
-        }
-
-        footer a { color: var(--text-muted); text-decoration: underline; }
-
-        /* CONTENITORE BOTTONI FLUTTUANTI */
-        .floating-contact-container {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            z-index: 1000;
-        }
-
-        .floating-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            border-radius: 20px;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-            transition: transform 0.3s ease, filter 0.3s ease;
-            cursor: pointer;
-            border: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
         }
 
-        .floating-btn svg {
-            width: 22px;
-            height: 22px;
-            fill: #ffffff;
+        .btn-full-calendar:hover {
+            background-color: rgba(212, 175, 55, 0.1);
         }
 
-        .floating-btn:hover {
-            transform: scale(1.1);
-            filter: brightness(1.1);
-        }
-
-        .btn-whatsapp { background-color: #25D366; }
-        .btn-email { background-color: #d4af37; }
-        .btn-email svg { fill: #121d17; }
-
-        .btn-top-mobile {
-            background-color: var(--accent-gold);
-            border: 1px solid var(--accent-gold);
-            display: none; /* Nascosto su desktop */
-        }
-        .btn-top-mobile svg { fill: #121d17; width: 24px; height: 24px; }
-
-        /* REGOLE MOBILE (Sotto i 900px) */
-        @media (max-width: 900px) {
-            body {
-                background-attachment: scroll;
-                padding: 10px 0;
-            }
-
-            .main-layout {
-                display: flex;
+        @media (max-width: 768px) {
+            .main-container {
                 flex-direction: column;
-                gap: 20px;
             }
-
-            .container { padding: 10px; }
-            header { padding: 20px 10px 10px 10px; }
-            h1.site-title { font-size: 2.1rem; letter-spacing: 2px; }
-            p.tagline { font-size: 1.1rem; margin-bottom: 20px; }
-            nav ul { gap: 6px; }
-            nav a { padding: 6px 12px; font-size: 0.7rem; }
-            .main-card { padding: 24px 18px; border-radius: 12px; order: 1; }
-            .sidebar { order: 2; gap: 20px; }
-            .widget { padding: 18px; }
-            footer { order: 3; margin-top: 30px; }
-            
-            /* Gestione pulsanti mobile */
-            .back-to-top-text { display: none !important; }
-            .btn-whatsapp, .btn-email { display: none !important; } /* Nasconde WhatsApp ed Email su mobile */
-            .btn-top-mobile { display: flex !important; } /* Mostra solo il Torna Su circolare con freccia */
-
-            .floating-contact-container { bottom: 20px; right: 20px; }
-            .floating-btn { width: 46px; height: 46px; }
         }
     </style>
 </head>
-<body id="top">
+<body>
 
-    <div class="body-overlay"></div>
-
-    <div class="container">
-        <header>
-            <div class="symbol">✦</div>
-            <h1 class="site-title">Simona Staropoli</h1>
-            <p class="tagline">Fai brillare la tua Luce</p>
-
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="chi-sono.html">Chi Sono</a></li>
-                    <li><a href="rituali-di-benessere.html">Rituali di Benessere</a></li>
-                    <li><a href="il-sentiero-sciamanico.html">Il Sentiero Sciamanico</a></li>
-                    <li>
-                        <a href="calendario.html">
-                            <svg class="calendar-icon" viewBox="0 0 24 24">
-                                <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/>
-                            </svg>
-                            Calendario Incontri
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="main-layout">
+    <div class="main-container">
+        <!-- Contenuto Principale -->
+        <main class="content-area">
+            <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
             
-            <main class="main-card" id="comincia">
-                <div>
-                    <h2 class="section-label">Home</h2>
-                    <h3 class="welcome-title">Benvenuta/o nel tuo Spazio di Ascolto e Trasformazione</h3>
+            <p>Sono Simona e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, offro <strong>sessioni individuali e cerchi di sciamanesimo</strong>, percorsi di <strong>meditazione</strong>, <strong>riequilibrio energetico dei chakra</strong> e <strong>massaggi olistici</strong>. Attraverso il tocco curativo, il suono del <strong>tamburo sciamanico</strong> e le pratiche di <strong>bioenergetica</strong>, ti accompagno a ritrovare armonia, centratura e profondo rilassamento.</p>
+            
+            <p>Sia che tu stia cercando un momento di benessere attraverso la <strong>forest therapy</strong> e i <strong>suoni curativi</strong>, sia che tu voglia intraprendere un cammino di guarigione spirituale, qui troverai uno spazio sacro, sicuro e orientato alla crescita della tua consapevolezza.</p>
 
-                    <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
-                    <p>Sono Simona e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, offro <strong>sessioni individuali e cerchi di sciamanesimo</strong>, percorsi di <strong>meditazione</strong>, <strong>riequilibrio energetico dei chakra</strong> e <strong>massaggi olistici</strong>. Attraverso il tocco curativo, il suono del <strong>tamburo sciamanico</strong> e le pratiche di <strong>bioenergetica</strong>, ti accompagno a ritrovare armonia, centratura e profondo rilassamento.</p>
-                    <p>Sia che tu stia cercando un momento di benessere attraverso la <strong>forest therapy</strong> e i <strong>suoni curativi</strong>, sia che tu voglia intraprendere un cammino di guarigione spirituale, qui troverai uno spazio sacro, sicuro e orientato alla crescita della tua consapevolezza.</p>
+            <h2>Da dove vuoi iniziare il tuo Cammino?</h2>
 
-                    <p style="margin-top: 25px; font-weight: 600; color: #8c4327;">Da dove vuoi iniziare il tuo Cammino?</p>
+            <div style="background-color: #eaf2ed; padding: 20px; border-left: 4px solid #8b3a2b; border-radius: 4px; margin-bottom: 20px;">
+                <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
+                <a href="#" class="path-link">👉 Scopri i Rituali di Benessere</a>
+            </div>
 
-                    <div class="option-box">
-                        <p><strong>I Rituali di Benessere:</strong> Per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
-                        <p style="margin-top: 10px;"><a href="rituali-di-benessere.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a></p>
-                        
-                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
-                        
-                        <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
-                        <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
-                        
-                        <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
-                        
-                        <p><strong>La Mia Storia e il Sogno dell'Anima:</strong> Per conoscere chi sono, il mio percorso di trasformazione personale e la mia formazione come operatrice olistica.</p>
-                        <p style="margin-top: 10px;"><a href="chi-sono.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Leggi la mia storia</a></p>
-                    </div>
+            <div style="background-color: #eaf2ed; padding: 20px; border-left: 4px solid #8b3a2b; border-radius: 4px;">
+                <p><strong>Il Sentiero Sciamanico:</strong> Per esplorare la tua dimensione spirituale, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo.</p>
+                <a href="#" class="path-link">👉 Esplora il Sentiero Sciamanico</a>
+            </div>
+        </main>
 
-                    <div class="signature">Simona</div>
-                </div>
-
-                <div class="contact-info">
-                    <div>
-                        <strong>Contattami qui:</strong><br>
-                        Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
-                    </div>
-                    <div>
-                        <a href="#top" class="back-to-top-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
-                    </div>
-                </div>
-            </main>
-
-            <aside class="sidebar">
+        <!-- Sidebar Prossimi Incontri -->
+        <aside class="sidebar">
+            <div class="events-card">
+                <h3>Prossimi Incontri</h3>
                 
-                <!-- WIDGET 1: ORACOLO -->
-                <div class="widget">
-                    <div>
-                        <h3 class="widget-title">✨ L'Oracolo dell'Anima</h3>
-                        <p class="profile-text">
-                            Ascolta la tua guida interiore. Clicca sul pulsante e ricevi l'ispirazione per la tua giornata.
-                        </p>
-                    </div>
-                    <a href="oracolo.html" class="btn-outline" style="border-color: var(--accent-gold); color: var(--accent-gold); margin-top: 10px;">🔮 Consulta l'Oracolo</a>
+                <!-- Contenitore dinamico compilato via JS -->
+                <div id="prossimi-incontri-container">
+                    <p style="color: #a3b8cc; font-size: 0.9rem;">Caricamento eventi...</p>
                 </div>
 
-                <!-- WIDGET 2: CALENDARIO -->
-                <div class="widget">
-                    <div>
-                        <h3 class="widget-title">Prossimi Incontri</h3>
-                        
-                        <div id="dinamico-prossimi-incontri">
-                            <p style="color: var(--text-muted); font-size: 0.78rem; font-style: italic;">Aggiornamento incontri...</p>
-                        </div>
-                    </div>
-
-                    <a href="calendario.html" class="btn-outline" style="margin-top: 10px; border-color: var(--accent-gold); color: var(--accent-gold);">
-                        <svg class="calendar-icon" viewBox="0 0 24 24" style="width: 16px; height: 16px;">
-                            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/>
-                        </svg>
-                        Vedi Tutto il Calendario
-                    </a>
-                </div>
-
-                <!-- WIDGET 3: CHI SONO -->
-                <div class="widget">
-                    <div>
-                        <h3 class="widget-title">Chi Sono</h3>
-                        <img src="simo.jpg" alt="Simona Staropoli" class="profile-img">
-                        <p class="profile-text">
-                            Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <a href="chi-sono.html" class="btn-outline">Approfondisci</a>
-
-                        <div class="social-links">
-                            <a href="https://www.instagram.com/simostar72/" class="social-icon" title="Instagram" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0 3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </a>
-                            <a href="https://www.youtube.com/@simonastaropoli" class="social-icon" title="YouTube" target="_blank" rel="noopener">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </aside>
-
-        </div>
-
-        <footer>
-            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
-            <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
-        </footer>
+                <a href="calendario.html" class="btn-full-calendar">
+                    <i class="far fa-calendar-alt"></i> Vedi Tutto il Calendario
+                </a>
+            </div>
+        </aside>
     </div>
 
-    <!-- BOTTONI FLUTTUANTI FISSI -->
-    <div class="floating-contact-container">
-        <!-- TORNA SU FLUTTUANTE CON FRECCIA (VISIBILE SOLO SU MOBILE) -->
-        <a href="#top" class="floating-btn btn-top-mobile" title="Torna in alto" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-            <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
-        </a>
-        
-        <!-- VISIBILI SOLO SU DESKTOP -->
-        <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
-            <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-        </a>
-        <a href="mailto:simona.staropoli@gmail.com" class="floating-btn btn-email" title="Invia Email">
-            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </a>
-    </div>
-
-    <!-- SCRIPT AGGIORNATO PER LA SINCRONIZZAZIONE AUTOMATICA -->
+    <!-- Script dinamico per sincronizzare la sidebar col file calendario.html -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener('DOMContentLoaded', () => {
             fetch('calendario.html')
                 .then(response => {
-                    if (!response.ok) throw new Error("Errore nel caricamento del file calendario.html");
+                    if (!response.ok) throw new Error('Impossibile caricare il file calendario.html');
                     return response.text();
                 })
-                .then(htmlText => {
+                .then(html => {
                     const parser = new DOMParser();
-                    const doc = parser.parseFromString(htmlText, 'text/html');
-                    
-                    let eventi = doc.querySelectorAll('.calendar-item, .event-item, .evento, article');
-                    const container = document.getElementById('dinamico-prossimi-incontri');
-                    
-                    if (!container) return;
+                    const doc = parser.parseFromString(html, 'text/html');
+                    const items = doc.querySelectorAll('.calendar-item');
+                    const container = document.getElementById('prossimi-incontri-container');
 
-                    if (!eventi || eventi.length === 0) {
-                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun incontro in programma al momento.</p>';
+                    if (!items.length) {
+                        container.innerHTML = '<p style="color: #a3b8cc;">Nessun evento in programma.</p>';
                         return;
                     }
 
-                    container.innerHTML = '';
+                    container.innerHTML = ''; // Pulisce il testo di caricamento
 
-                    const primiTre = Array.from(eventi).slice(0, 3);
-
-                    primiTre.forEach(evento => {
-                        const titoloEl = evento.querySelector('h3, h2, .event-title, strong');
-                        const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro';
+                    // Prende i primi 3 eventi dal calendario
+                    Array.from(items).slice(0, 3).forEach(item => {
+                        // Estrazione Giorno, Mese, Anno dal blocco .date-box
+                        const day = item.querySelector('.date-box .day')?.textContent.trim() || '';
+                        const month = item.querySelector('.date-box .month')?.textContent.trim() || '';
+                        const year = item.querySelector('.date-box .year')?.textContent.trim() || '';
                         
-                        let dataEl = evento.querySelector('.event-date, .date, .badge-date, .calendar-date, time, .data');
-                        let dataTesto = dataEl ? dataEl.innerText.trim() : '';
+                        // Estrazione Titolo, Descrizione e Link WhatsApp/Prenotazione
+                        const title = item.querySelector('.event-details h3')?.textContent.trim() || '';
+                        const description = item.querySelector('.event-details p')?.textContent.trim() || '';
+                        const prenotaLink = item.querySelector('.event-actions a')?.getAttribute('href') || '#';
 
-                        if (!dataTesto) {
-                            const testoCompleto = evento.innerText;
-                            const matchData = testoCompleto.match(/(\d{1,2}\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)|\d{1,2}[\/\.-]\d{1,2}(?:[\/\.-]\d{2,4})?)/i);
-                            if (matchData) {
-                                dataTesto = matchData[0];
-                            }
-                        }
+                        // Composizione della stringa data (es. "03 Ott 2026")
+                        const fullDate = `${day} ${month} ${year}`.trim();
 
-                        const descEl = evento.querySelector('.event-desc, p');
-                        let descrizione = descEl ? descEl.innerText.trim() : 'Consulta i dettagli';
-                        
-                        const limiteCaratteri = 60;
-                        if (descrizione.length > limiteCaratteri) {
-                            descrizione = descrizione.substring(0, limiteCaratteri).trim() + "...";
-                        }
-
-                        const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
-                        const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
-
-                        const badgeDataHTML = `<div class="event-date-badge">
-                            <svg style="width:12px;height:12px;fill:var(--accent-gold);" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
-                            ${dataTesto ? dataTesto : 'In Arrivo'}
-                        </div>`;
-
-                        const itemHTML = `
-                            <div class="event-item">
-                                ${badgeDataHTML}
-                                <div class="event-title">${titolo}</div>
-                                <div class="event-desc">${descrizione}</div>
-                                <div class="event-actions">
-                                    <a href="${linkWhatsApp}" class="btn-small" target="_blank" rel="noopener">Prenota</a>
-                                    <a href="calendario.html" class="btn-small-sec">Dettagli</a>
-                                </div>
-                            </div>
-                        `;
-                        container.innerHTML += itemHTML;
-                    });
-                })
-                .catch(error => {
-                    console.error("Sincronizzazione in locale o errore di rete:", error);
-                    const container = document.getElementById('dinamico-prossimi-incontri');
-                    if (container) {
-                        container.innerHTML = `
+                        // Generazione Card HTML con la data al posto di "In Arrivo"
+                        const cardHTML = `
                             <div class="event-item">
                                 <div class="event-date-badge">
-                                    <svg style="width:12px;height:12px;fill:var(--accent-gold);" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
-                                    Prossimi Incontri
+                                    <i class="far fa-calendar-alt"></i> ${fullDate}
                                 </div>
-                                <div class="event-title">Cerchi e Sessioni Sciamaniche</div>
-                                <div class="event-desc">Scopri le prossime date disponibili in calendario...</div>
+                                <h4>${title}</h4>
+                                <p>${description}</p>
                                 <div class="event-actions">
-                                    <a href="calendario.html" class="btn-small-sec">Apri Calendario</a>
+                                    <a href="${prenotaLink}" target="_blank" class="btn-action btn-prenota">Prenota</a>
+                                    <a href="calendario.html" class="btn-action btn-dettagli">Dettagli</a>
                                 </div>
                             </div>
                         `;
-                    }
+
+                        container.insertAdjacentHTML('beforeend', cardHTML);
+                    });
+                })
+                .catch(err => {
+                    console.error('Errore durante la sincronizzazione:', err);
+                    document.getElementById('prossimi-incontri-container').innerHTML = 
+                        '<p style="color: #ea8686; font-size: 0.85rem;">Errore di caricamento eventi.</p>';
                 });
         });
     </script>
-
 </body>
 </html>
