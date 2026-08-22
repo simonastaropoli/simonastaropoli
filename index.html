@@ -39,7 +39,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -299,7 +299,7 @@
             color: #55635c;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
             flex-wrap: wrap;
             gap: 15px;
         }
@@ -310,19 +310,30 @@
             text-decoration: none;
         }
 
-        /* STILE BASE PER DESKTOP (Testo Semplice) */
+        /* ----------------------------------------------------
+           STILE PULSANTE "TORNA IN ALTO" - DESKTOP (MOLTO VISIBILE)
+        ---------------------------------------------------- */
         .back-to-top-text {
-            color: #5a6b62;
+            color: #b8860b !important; /* Oro scuro leggibile */
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.82rem;
-            transition: color 0.3s ease;
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
             cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
         }
 
         .back-to-top-text:hover {
-            color: #8c4327;
-            text-decoration: underline;
+            color: #8c4327 !important;
+            background: rgba(140, 67, 39, 0.1);
+            border-color: #8c4327;
         }
 
         /* SIDEBAR E WIDGET */
@@ -553,7 +564,9 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
-        /* REGOLE MOBILE (Sotto i 900px) */
+        /* ----------------------------------------------------
+           REGOLE MOBILE (Sotto i 900px)
+        ---------------------------------------------------- */
         @media (max-width: 900px) {
             body {
                 background-attachment: scroll;
@@ -580,19 +593,23 @@
             .floating-btn { width: 42px; height: 42px; }
             .floating-btn svg { width: 18px; height: 18px; }
 
-            /* TRASFORMAZIONE IN PULSANTE SOLO SU MOBILE */
+            /* PULSANTE MOBILE EVIDENTE */
             .back-to-top-text {
                 display: inline-flex;
                 align-items: center;
+                justify-content: center;
                 gap: 6px;
-                color: #2c3531;
-                background: rgba(212, 175, 55, 0.15);
-                border: 1px solid var(--accent-gold);
-                padding: 6px 14px;
-                border-radius: 15px;
-                font-size: 0.75rem;
+                color: #121d17 !important;
+                background: var(--accent-gold);
+                border: 1px solid #ffffff;
+                padding: 8px 16px;
+                border-radius: 20px;
+                font-size: 0.78rem;
+                font-weight: 700;
                 letter-spacing: 0.5px;
                 text-transform: uppercase;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+                margin-top: 5px;
             }
         }
     </style>
