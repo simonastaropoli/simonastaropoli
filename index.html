@@ -160,7 +160,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         nav a {
@@ -183,7 +183,6 @@
             text-align: center;
         }
 
-        /* Stile per la voce attiva ("spuntata") */
         nav a.active {
             background: rgba(212, 175, 55, 0.35);
             border-color: var(--accent-gold);
@@ -196,7 +195,6 @@
             background: rgba(212, 175, 55, 0.25);
             border-color: var(--accent-gold);
             color: #fff;
-            transform: translateY(-2px);
         }
 
         .calendar-icon {
@@ -223,19 +221,17 @@
             }
         }
 
-        /* Layout Principale bilanciato */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
-            gap: 24px;
-            align-items: stretch; /* Mantiene le colonne allineate in altezza */
+            gap: 30px;
+            align-items: stretch;
         }
 
-        /* Card Principale (sinistra) */
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 35px; /* Spaziatura interna bilanciata */
+            padding: 35px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             backdrop-filter: blur(10px);
             display: flex;
@@ -249,7 +245,7 @@
             letter-spacing: 3px;
             color: #5a6b62;
             text-transform: uppercase;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             border-bottom: 1px solid #d5dfd9;
             padding-bottom: 10px;
         }
@@ -264,7 +260,7 @@
 
         .main-card p {
             margin-bottom: 18px;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             color: #38423d;
             line-height: 1.7;
         }
@@ -292,15 +288,20 @@
             font-size: 2.2rem;
             font-style: italic;
             color: #5a6b62;
-            margin: 30px 0 20px 0;
+            margin: 15px 0;
         }
 
         .contact-info {
             margin-top: auto;
-            padding-top: 20px;
+            padding-top: 15px;
             border-top: 1px solid #d5dfd9;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: #55635c;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .contact-info a {
@@ -309,80 +310,50 @@
             text-decoration: none;
         }
 
-        .card-footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #d5dfd9;
-            text-align: center;
-            font-size: 0.8rem;
-            color: #55635c;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .card-footer a {
-            color: #2c3531;
-            text-decoration: underline;
-        }
-
-        .back-to-top-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            font-weight: 600 !important;
-            font-size: 0.78rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-top: 10px;
-            padding: 8px 20px;
-            border-radius: 20px;
-            transition: all 0.3s ease;
-            background-color: #8c4327;
-            box-shadow: 0 4px 10px rgba(140, 67, 39, 0.25);
+        /* STILE BASE PER DESKTOP (Testo Semplice) */
+        .back-to-top-text {
+            color: #5a6b62;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.82rem;
+            transition: color 0.3s ease;
             cursor: pointer;
         }
 
-        .back-to-top-link:hover {
-            background-color: var(--accent-gold);
-            color: #121d17 !important;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        .back-to-top-text:hover {
+            color: #8c4327;
+            text-decoration: underline;
         }
 
-        /* Sidebar e Widget (destra) */
+        /* SIDEBAR E WIDGET */
         .sidebar {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Distribuisce le finestre uniformemente */
-            gap: 20px; /* Distanza uniforme tra i widget */
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .widget {
             background: var(--sidebar-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 24px; /* Padding coerente con la colonna di sinistra */
+            padding: 22px;
             color: var(--text-light);
             backdrop-filter: blur(10px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            flex: 1;
         }
 
         .widget-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: #ffffff;
-            margin-bottom: 16px;
-            letter-spacing: 1px;
+            margin-bottom: 12px;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            padding-bottom: 8px;
+            padding-bottom: 6px;
         }
 
         .event-item {
@@ -452,19 +423,18 @@
 
         .profile-img {
             width: 100%;
-            height: 200px;
+            height: 170px;
             object-fit: cover;
             border-radius: 10px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border: 1px solid rgba(255, 255, 255, 0.15);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
 
         .profile-text {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: #c2d1c9;
-            line-height: 1.5;
-            margin-bottom: 12px;
+            line-height: 1.4;
+            margin-bottom: 10px;
         }
 
         .btn-outline {
@@ -497,8 +467,8 @@
         }
 
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: rgba(255,255,255,0.08);
             display: flex;
@@ -511,8 +481,8 @@
         }
 
         .social-icon svg {
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
             fill: var(--text-light);
             transition: fill 0.3s ease;
         }
@@ -532,6 +502,17 @@
         .social-icon:hover svg {
             fill: #ffffff;
         }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            width: 100%;
+        }
+
+        footer a { color: var(--text-muted); text-decoration: underline; }
 
         .floating-contact-container {
             position: fixed;
@@ -572,95 +553,56 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
-        @media (max-width: 1024px) {
+        /* REGOLE MOBILE (Sotto i 900px) */
+        @media (max-width: 900px) {
             body {
                 background-attachment: scroll;
-            }
-
-            .container {
-                padding: 10px;
-            }
-
-            header {
-                padding: 20px 10px 10px 10px;
-            }
-
-            h1.site-title {
-                font-size: 2.1rem;
-                letter-spacing: 2px;
-            }
-
-            p.tagline {
-                font-size: 1.1rem;
-                margin-bottom: 20px;
-            }
-
-            nav ul {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 8px;
-            }
-
-            nav li {
-                width: auto;
-            }
-
-            nav a {
-                display: inline-flex;
-                width: auto;
-                padding: 8px 14px;
-                font-size: 0.75rem;
+                padding: 10px 0;
             }
 
             .main-layout {
                 display: flex;
                 flex-direction: column;
-            }
-
-            .main-card {
-                padding: 30px 20px;
-                display: flex;
-                flex-direction: column;
-            }
-
-            .main-card h3.welcome-title {
-                font-size: 1.6rem;
-            }
-
-            .sidebar {
-                order: 2;
-                margin-top: 20px;
                 gap: 20px;
             }
 
-            .card-footer {
-                order: 3;
-                background: var(--card-bg);
-                border-radius: 16px;
-                padding: 20px;
-                margin-top: 20px;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            }
+            .container { padding: 10px; }
+            header { padding: 20px 10px 10px 10px; }
+            h1.site-title { font-size: 2.1rem; letter-spacing: 2px; }
+            p.tagline { font-size: 1.1rem; margin-bottom: 20px; }
+            nav ul { gap: 6px; }
+            nav a { padding: 6px 12px; font-size: 0.7rem; }
+            .main-card { padding: 24px 18px; border-radius: 12px; order: 1; }
+            .sidebar { order: 2; gap: 20px; }
+            .widget { padding: 18px; }
+            footer { order: 3; margin-top: 30px; }
+            .floating-contact-container { bottom: 15px; right: 15px; }
+            .floating-btn { width: 42px; height: 42px; }
+            .floating-btn svg { width: 18px; height: 18px; }
 
-            .back-to-top-link {
+            /* TRASFORMAZIONE IN PULSANTE SOLO SU MOBILE */
+            .back-to-top-text {
                 display: inline-flex;
-                width: 100%;
-                max-width: 250px;
-                justify-content: center;
-                padding: 12px 20px;
-                font-size: 0.85rem;
-                margin: 15px auto 0 auto;
+                align-items: center;
+                gap: 6px;
+                color: #2c3531;
+                background: rgba(212, 175, 55, 0.15);
+                border: 1px solid var(--accent-gold);
+                padding: 6px 14px;
+                border-radius: 15px;
+                font-size: 0.75rem;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
             }
         }
     </style>
 </head>
-<body>
+<body id="top">
 
     <div class="body-overlay"></div>
 
     <div class="container">
-        <header id="top">
+        <header>
             <div class="symbol">✦</div>
             <h1 class="site-title">Simona Staropoli</h1>
             <p class="tagline">Fai brillare la tua Luce</p>
@@ -714,16 +656,13 @@
                     <div class="signature">Simona</div>
                 </div>
 
-                <div>
-                    <div class="contact-info">
+                <div class="contact-info">
+                    <div>
                         <strong>Contattami qui:</strong><br>
                         Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
                     </div>
-
-                    <div class="card-footer">
-                        <span>Copyright 2026 - Simona Staropoli - Gavardo (BS)</span>
-                        <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
-                        <a href="#top" class="back-to-top-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
+                    <div>
+                        <a href="#top" class="back-to-top-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
                     </div>
                 </div>
             </main>
@@ -738,7 +677,7 @@
                             Ascolta la tua guida interiore. Clicca sul pulsante e ricevi l'ispirazione per la tua giornata.
                         </p>
                     </div>
-                    <a href="oracolo.html" class="btn-outline" style="border-color: var(--accent-gold); color: var(--accent-gold); margin-top: 15px;">🔮 Consulta l'Oracolo</a>
+                    <a href="oracolo.html" class="btn-outline" style="border-color: var(--accent-gold); color: var(--accent-gold); margin-top: 10px;">🔮 Consulta l'Oracolo</a>
                 </div>
 
                 <!-- WIDGET 2: CALENDARIO -->
@@ -751,8 +690,8 @@
                         </div>
                     </div>
 
-                    <a href="calendario.html" class="btn-outline" style="margin-top: 15px; border-color: var(--accent-gold); color: var(--accent-gold);">
-                        <svg class="calendar-icon" viewBox="0 0 24 24" style="width: 18px; height: 18px;">
+                    <a href="calendario.html" class="btn-outline" style="margin-top: 10px; border-color: var(--accent-gold); color: var(--accent-gold);">
+                        <svg class="calendar-icon" viewBox="0 0 24 24" style="width: 16px; height: 16px;">
                             <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/>
                         </svg>
                         Vedi Tutto il Calendario
@@ -791,6 +730,10 @@
 
         </div>
 
+        <footer>
+            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
+            <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+        </footer>
     </div>
 
     <div class="floating-contact-container">
@@ -802,7 +745,7 @@
         </a>
     </div>
 
-    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA AL 100% -->
+    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('calendario.html')
