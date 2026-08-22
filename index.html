@@ -780,22 +780,22 @@
         </a>
     </div>
 
-    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA E MOSTRA BADGE DATA -->
+    <!-- SCRIPT OTTIMIZZATO PER SINCRONIZZAZIONE ED ESTRAZIONE DATA -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            const container = document.getElementById('dinamico-prossimi-incontri');
+            if (!container) return;
+
             fetch('calendario.html')
                 .then(response => {
-                    if (!response.ok) throw new Error("Errore nel caricamento di calendario.html");
+                    if (!response.ok) throw new Error("Errore durante il caricamento di calendario.html");
                     return response.text();
                 })
                 .then(htmlText => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    let elementiEvento = doc.querySelectorAll('.calendar-card, .event-card, .calendar-item, .event-item');
-                    const container = document.getElementById('dinamico-prossimi-incontri');
-                    
-                    if (!container) return;
+                    const elementiEvento = doc.querySelectorAll('.calendar-card, .event-card, .calendar-item, .event-item');
 
                     const mesiMap = {
                         "gennaio": 0, "febbraio": 1, "marzo": 2, "aprile": 3,
@@ -812,23 +812,31 @@
 
                     elementiEvento.forEach(evento => {
                         let dataEvento = null;
-                        let testoDataBadge = "";
+                        let testoBadge = "";
 
-                        // 1. Cerca eventuale elemento data esplicito nel card (es. .event-date, .date, .badge)
-                        const elDataBadge = evento.querySelector('.event-date, .date, .badge, .date-badge');
-                        if (elDataBadge) {
-                            testoDataBadge = elDataBadge.innerText.trim();
+                        // Estrazione data da attributo data-date
+                        const dateAttr = evento.getAttribute('data-date');
+                        if (dateAttr) {
+                            const partiAttr = dateAttr.trim().split(' ');
+                            if (partiAttr.length >= 2) {
+                                const giornoAttr = parseInt(partiAttr[0], 10);
+                                const meseStrAttr = partiAttr[1].toLowerCase();
+                                const annoAttr = partiAttr[2] ? parseInt(partiAttr[2], 10) : oggi.getFullYear();
+
+                                if (mesiMap.hasOwnProperty(meseStrAttr)) {
+                                    dataEvento = new Date(annoAttr, mesiMap[meseStrAttr], giornoAttr);
+                                    testoBadge = `${giornoAttr} ${partiAttr[1]}`;
+                                }
+                            }
                         }
 
-                        // 2. Cerca attributo data esplicito (data-date="YYYY-MM-DD")
-                        const attrData = evento.getAttribute('data-date');
-                        if (attrData) {
-                            dataEvento = new Date(attrData);
-                        } else {
-                            // Estrazione automatica dal testo
-                            const testoCompleto = evento.innerText.toLowerCase();
-                            const regexData = /(\d{1,2})\s+([a-z]+)\s*(\d{4})?/;
-                            const match = testoCompleto.match(regexData);
+                        // Se non è stato trovato tramite data-date, analizza gli elementi interni o il testo
+                        if (!dataEvento) {
+                            const badgeEl = evento.querySelector('.event-date, .date, .badge, .date-badge');
+                            const testoPerRicerca = badgeEl ? badgeEl.innerText : evento.innerText;
+
+                            const regexData = /(\d{1,2})\s+([a-zA-Z]+)\s*(\d{4})?/;
+                            const match = testoPerRicerca.toLowerCase().match(regexData);
 
                             if (match) {
                                 const giorno = parseInt(match[1], 10);
@@ -837,50 +845,43 @@
 
                                 if (mesiMap.hasOwnProperty(meseStr)) {
                                     dataEvento = new Date(anno, mesiMap[meseStr], giorno);
-                                    if (!testoDataBadge) {
-                                        testoDataBadge = `${giorno} ${meseStr.charAt(0).toUpperCase() + meseStr.slice(1)}`;
-                                    }
+                                    const meseFormattato = meseStr.charAt(0).toUpperCase() + meseStr.slice(1, 3);
+                                    testoBadge = `${giorno} ${meseFormattato}`;
                                 }
                             }
                         }
 
-                        // Se la data è valida ed è oggi o futura
+                        // Sincronizza solo se la data è valida ed è odierna/futura
                         if (dataEvento && !isNaN(dataEvento.getTime())) {
                             dataEvento.setHours(0, 0, 0, 0);
                             if (dataEvento >= oggi) {
-                                eventiFuturi.push({ el: evento, data: dataEvento, badgeText: testoDataBadge });
+                                eventiFuturi.push({ el: evento, data: dataEvento, badgeText: testoBadge });
                             }
-                        } else {
-                            // Se la data non è estratta con precisione, mantieni comunque l'evento per la visualizzazione
-                            eventiFuturi.push({ el: evento, data: new Date(2099, 11, 31), badgeText: testoDataBadge });
                         }
                     });
 
                     if (eventiFuturi.length === 0) {
-                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun incontro in programma al momento.</p>';
+                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun prossimo incontro in programma.</p>';
                         return;
                     }
 
-                    // Ordina cronologicamente
+                    // Ordina cronologicamente dal più vicino al più lontano
                     eventiFuturi.sort((a, b) => a.data - b.data);
 
                     container.innerHTML = '';
-                    const primiTre = eventiFuturi.slice(0, 3);
-
-                    primiTre.forEach(item => {
+                    eventiFuturi.slice(0, 3).forEach(item => {
                         const evento = item.el;
                         const titoloEl = evento.querySelector('h3, .event-title, .title');
-                        const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro';
+                        const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro Sciamanico';
                         
                         const descEl = evento.querySelector('.event-desc, .description, p');
                         let descrizione = descEl ? descEl.innerText.trim() : 'Consulta i dettagli';
                         
-                        const limiteCaratteri = 65;
-                        if (descrizione.length > limiteCaratteri) {
-                            descrizione = descrizione.substring(0, limiteCaratteri).trim() + "...";
+                        if (descrizione.length > 65) {
+                            descrizione = descrizione.substring(0, 65).trim() + "...";
                         }
 
-                        const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
+                        const prenotaBtn = evento.querySelector('a[href*="wa.me"], a.btn-booking');
                         const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
 
                         const badgeHTML = item.badgeText 
@@ -902,11 +903,8 @@
                     });
                 })
                 .catch(error => {
-                    console.error("Errore durante la sincronizzazione automatica:", error);
-                    const container = document.getElementById('dinamico-prossimi-incontri');
-                    if (container) {
-                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">I dettagli sono disponibili nella pagina Calendario.</p>';
-                    }
+                    console.error("Errore durante la sincronizzazione con calendario.html:", error);
+                    container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Consulta il calendario per gli appuntamenti.</p>';
                 });
         });
     </script>
