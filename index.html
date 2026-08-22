@@ -780,7 +780,7 @@
         </a>
     </div>
 
-    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA E DATA ICONIZZATA -->
+    <!-- SCRIPT AGGIORNATO PER LA SINCRONIZZAZIONE AUTOMATICA -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('calendario.html')
@@ -792,7 +792,7 @@
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    let eventi = doc.querySelectorAll('.calendar-item, .event-item');
+                    let eventi = doc.querySelectorAll('.calendar-item, .event-item, .evento, article');
                     const container = document.getElementById('dinamico-prossimi-incontri');
                     
                     if (!container) return;
@@ -807,17 +807,24 @@
                     const primiTre = Array.from(eventi).slice(0, 3);
 
                     primiTre.forEach(evento => {
-                        const titoloEl = evento.querySelector('h3, .event-title');
+                        const titoloEl = evento.querySelector('h3, h2, .event-title, strong');
                         const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro';
                         
-                        // Cerca la data o badge data nel file sorgente
-                        const dataEl = evento.querySelector('.event-date, .date, .badge-date, .calendar-date');
-                        const dataTesto = dataEl ? dataEl.innerText.trim() : '';
+                        let dataEl = evento.querySelector('.event-date, .date, .badge-date, .calendar-date, time, .data');
+                        let dataTesto = dataEl ? dataEl.innerText.trim() : '';
+
+                        if (!dataTesto) {
+                            const testoCompleto = evento.innerText;
+                            const matchData = testoCompleto.match(/(\d{1,2}\s+(?:gennaio|febbraio|marzo|aprile|maggio|giugno|luglio|agosto|settembre|ottobre|novembre|dicembre)|\d{1,2}[\/\.-]\d{1,2}(?:[\/\.-]\d{2,4})?)/i);
+                            if (matchData) {
+                                dataTesto = matchData[0];
+                            }
+                        }
 
                         const descEl = evento.querySelector('.event-desc, p');
                         let descrizione = descEl ? descEl.innerText.trim() : 'Consulta i dettagli';
                         
-                        const limiteCaratteri = 65;
+                        const limiteCaratteri = 60;
                         if (descrizione.length > limiteCaratteri) {
                             descrizione = descrizione.substring(0, limiteCaratteri).trim() + "...";
                         }
@@ -825,17 +832,14 @@
                         const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
                         const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
 
-                        // Crea il badge iconizzato con la data se reperibile
-                        const badgeHTML = dataTesto 
-                            ? `<div class="event-date-badge">
-                                 <svg style="width:12px;height:12px;fill:var(--accent-gold);" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
-                                 ${dataTesto}
-                               </div>`
-                            : '';
+                        const badgeDataHTML = `<div class="event-date-badge">
+                            <svg style="width:12px;height:12px;fill:var(--accent-gold);" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
+                            ${dataTesto ? dataTesto : 'In Arrivo'}
+                        </div>`;
 
                         const itemHTML = `
                             <div class="event-item">
-                                ${badgeHTML}
+                                ${badgeDataHTML}
                                 <div class="event-title">${titolo}</div>
                                 <div class="event-desc">${descrizione}</div>
                                 <div class="event-actions">
@@ -848,10 +852,22 @@
                     });
                 })
                 .catch(error => {
-                    console.error("Errore durante la sincronizzazione automatica:", error);
+                    console.error("Sincronizzazione in locale o errore di rete:", error);
                     const container = document.getElementById('dinamico-prossimi-incontri');
                     if (container) {
-                        container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">I dettagli sono disponibili nella pagina Calendario.</p>';
+                        container.innerHTML = `
+                            <div class="event-item">
+                                <div class="event-date-badge">
+                                    <svg style="width:12px;height:12px;fill:var(--accent-gold);" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zM7 12h5v5H7z"/></svg>
+                                    Prossimi Incontri
+                                </div>
+                                <div class="event-title">Cerchi e Sessioni Sciamaniche</div>
+                                <div class="event-desc">Scopri le prossime date disponibili in calendario...</div>
+                                <div class="event-actions">
+                                    <a href="calendario.html" class="btn-small-sec">Apri Calendario</a>
+                                </div>
+                            </div>
+                        `;
                     }
                 });
         });
