@@ -141,7 +141,7 @@
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: stretch;
+            align-items: start;
         }
 
         .main-card {
@@ -152,7 +152,6 @@
             backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         .main-card h2.section-label {
@@ -190,38 +189,51 @@
         }
 
         .contact-info {
-            margin-top: auto;
+            margin-top: 20px;
             padding-top: 15px;
             border-top: 1px solid #d5dfd9;
             font-size: 0.85rem;
             color: #55635c;
             display: flex;
             justify-content: space-between;
-            align-items: flex-end;
+            align-items: center;
             flex-wrap: wrap;
             gap: 15px;
         }
 
-        /* STILE BASE PER DESKTOP (Testo Semplice) */
+        /* PULSANTE TORNA SU (DESKTOP E MOBILE) */
         .back-to-top-text {
-            color: #5a6b62;
-            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #121d17;
+            background: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.78rem;
             font-weight: 600;
-            font-size: 0.82rem;
-            transition: color 0.3s ease;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
             cursor: pointer;
         }
 
         .back-to-top-text:hover {
-            color: #8c4327;
-            text-decoration: underline;
+            background: #f0c946;
+            color: #121d17;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            text-decoration: none;
         }
 
-        /* SIDEBAR FLEX CON DUE WIDGET PARI ALTEZZA */
+        /* SIDEBAR FLEX */
         .sidebar { 
             display: flex; 
             flex-direction: column; 
-            justify-content: space-between; 
             gap: 20px; 
         }
 
@@ -235,8 +247,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            flex: 1;
         }
 
         .widget-title {
@@ -259,7 +269,7 @@
 
         .btn-more {
             display: inline-block;
-            margin-top: 10px;
+            margin-top: 15px;
             width: 100%;
             text-align: center;
             text-decoration: none;
@@ -378,21 +388,6 @@
             .floating-contact-container { bottom: 15px; right: 15px; }
             .floating-btn { width: 42px; height: 42px; }
             .floating-btn svg { width: 18px; height: 18px; }
-
-            /* TRASFORMAZIONE IN PULSANTE SOLO SU MOBILE */
-            .back-to-top-text {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                color: #2c3531;
-                background: rgba(212, 175, 55, 0.15);
-                border: 1px solid var(--accent-gold);
-                padding: 6px 14px;
-                border-radius: 15px;
-                font-size: 0.75rem;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-            }
         }
     </style>
 </head>
