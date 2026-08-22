@@ -765,37 +765,89 @@
         </a>
     </div>
 
-    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA -->
+    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA E FILTRAGGIO DATE -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('calendario.html')
                 .then(response => {
-                    if (!response.ok) throw new Error("Errore nel caricamento del file calendario.html");
+                    if (!response.ok) throw new Error("Errore nel caricamento di calendario.html");
                     return response.text();
                 })
                 .then(htmlText => {
                     const parser = new DOMParser();
                     const doc = parser.parseFromString(htmlText, 'text/html');
                     
-                    let eventi = doc.querySelectorAll('.calendar-item, .event-item');
+                    let elementiEvento = doc.querySelectorAll('.calendar-card, .event-card, .calendar-item, .event-item');
                     const container = document.getElementById('dinamico-prossimi-incontri');
                     
                     if (!container) return;
 
-                    if (!eventi || eventi.length === 0) {
+                    const mesiMap = {
+                        "gennaio": 0, "febbraio": 1, "marzo": 2, "aprile": 3,
+                        "maggio": 4, "giugno": 5, "luglio": 6, "agosto": 7,
+                        "settembre": 8, "ottobre": 9, "novembre": 10, "dicembre": 11,
+                        "gen": 0, "feb": 1, "mar": 2, "apr": 3, "mag": 4, "giu": 5,
+                        "lug": 6, "ago": 7, "set": 8, "ott": 9, "nov": 10, "dic": 11
+                    };
+
+                    const oggi = new Date();
+                    oggi.setHours(0, 0, 0, 0);
+
+                    const eventiFuturi = [];
+
+                    elementiEvento.forEach(evento => {
+                        let dataEvento = null;
+
+                        // Cerca attributo data esplicito (data-date="YYYY-MM-DD")
+                        const attrData = evento.getAttribute('data-date');
+                        if (attrData) {
+                            dataEvento = new Date(attrData);
+                        } else {
+                            // Estrazione automatica dal testo
+                            const testoData = evento.innerText.toLowerCase();
+                            const regexData = /(\d{1,2})\s+([a-z]+)\s*(\d{4})?/;
+                            const match = testoData.match(regexData);
+
+                            if (match) {
+                                const giorno = parseInt(match[1], 10);
+                                const meseStr = match[2];
+                                const anno = match[3] ? parseInt(match[3], 10) : oggi.getFullYear();
+
+                                if (mesiMap.hasOwnProperty(meseStr)) {
+                                    dataEvento = new Date(anno, mesiMap[meseStr], giorno);
+                                }
+                            }
+                        }
+
+                        // Se la data è valida ed è oggi o futura
+                        if (dataEvento && !isNaN(dataEvento.getTime())) {
+                            dataEvento.setHours(0, 0, 0, 0);
+                            if (dataEvento >= oggi) {
+                                eventiFuturi.push({ el: evento, data: dataEvento });
+                            }
+                        } else {
+                            // Se non è determinabile una data precisa, mantieni l'evento come ripiego
+                            eventiFuturi.push({ el: evento, data: new Date(2099, 11, 31) });
+                        }
+                    });
+
+                    if (eventiFuturi.length === 0) {
                         container.innerHTML = '<p style="color: var(--text-muted); font-size: 0.78rem;">Nessun incontro in programma al momento.</p>';
                         return;
                     }
 
+                    // Ordina cronologicamente
+                    eventiFuturi.sort((a, b) => a.data - b.data);
+
                     container.innerHTML = '';
+                    const primiTre = eventiFuturi.slice(0, 3);
 
-                    const primiTre = Array.from(eventi).slice(0, 3);
-
-                    primiTre.forEach(evento => {
-                        const titoloEl = evento.querySelector('h3, .event-title');
+                    primiTre.forEach(item => {
+                        const evento = item.el;
+                        const titoloEl = evento.querySelector('h3, .event-title, .title');
                         const titolo = titoloEl ? titoloEl.innerText.trim() : 'Incontro';
                         
-                        const descEl = evento.querySelector('.event-desc, p');
+                        const descEl = evento.querySelector('.event-desc, .description, p');
                         let descrizione = descEl ? descEl.innerText.trim() : 'Consulta i dettagli';
                         
                         const limiteCaratteri = 65;
