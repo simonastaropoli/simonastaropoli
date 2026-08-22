@@ -383,6 +383,21 @@
             border-bottom: none;
         }
 
+        /* BADGE DATA EVENTO */
+        .event-date-badge {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.18);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-size: 0.68rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-bottom: 4px;
+        }
+
         .event-title {
             font-weight: 600;
             font-size: 0.9rem;
@@ -602,8 +617,8 @@
             
             /* Gestione pulsanti mobile */
             .back-to-top-text { display: none !important; }
-            .btn-whatsapp, .btn-email { display: none !important; } /* Nasconde WhatsApp ed Email su mobile */
-            .btn-top-mobile { display: flex !important; } /* Mostra solo il Torna Su circolare con freccia */
+            .btn-whatsapp, .btn-email { display: none !important; }
+            .btn-top-mobile { display: flex !important; }
 
             .floating-contact-container { bottom: 20px; right: 20px; }
             .floating-btn { width: 46px; height: 46px; }
@@ -765,7 +780,7 @@
         </a>
     </div>
 
-    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA E FILTRAGGIO DATE -->
+    <!-- SCRIPT PER LA SINCRONIZZAZIONE AUTOMATICA E MOSTRA BADGE DATA -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             fetch('calendario.html')
@@ -797,16 +812,23 @@
 
                     elementiEvento.forEach(evento => {
                         let dataEvento = null;
+                        let testoDataBadge = "";
 
-                        // Cerca attributo data esplicito (data-date="YYYY-MM-DD")
+                        // 1. Cerca eventuale elemento data esplicito nel card (es. .event-date, .date, .badge)
+                        const elDataBadge = evento.querySelector('.event-date, .date, .badge, .date-badge');
+                        if (elDataBadge) {
+                            testoDataBadge = elDataBadge.innerText.trim();
+                        }
+
+                        // 2. Cerca attributo data esplicito (data-date="YYYY-MM-DD")
                         const attrData = evento.getAttribute('data-date');
                         if (attrData) {
                             dataEvento = new Date(attrData);
                         } else {
                             // Estrazione automatica dal testo
-                            const testoData = evento.innerText.toLowerCase();
+                            const testoCompleto = evento.innerText.toLowerCase();
                             const regexData = /(\d{1,2})\s+([a-z]+)\s*(\d{4})?/;
-                            const match = testoData.match(regexData);
+                            const match = testoCompleto.match(regexData);
 
                             if (match) {
                                 const giorno = parseInt(match[1], 10);
@@ -815,6 +837,9 @@
 
                                 if (mesiMap.hasOwnProperty(meseStr)) {
                                     dataEvento = new Date(anno, mesiMap[meseStr], giorno);
+                                    if (!testoDataBadge) {
+                                        testoDataBadge = `${giorno} ${meseStr.charAt(0).toUpperCase() + meseStr.slice(1)}`;
+                                    }
                                 }
                             }
                         }
@@ -823,11 +848,11 @@
                         if (dataEvento && !isNaN(dataEvento.getTime())) {
                             dataEvento.setHours(0, 0, 0, 0);
                             if (dataEvento >= oggi) {
-                                eventiFuturi.push({ el: evento, data: dataEvento });
+                                eventiFuturi.push({ el: evento, data: dataEvento, badgeText: testoDataBadge });
                             }
                         } else {
-                            // Se non è determinabile una data precisa, mantieni l'evento come ripiego
-                            eventiFuturi.push({ el: evento, data: new Date(2099, 11, 31) });
+                            // Se la data non è estratta con precisione, mantieni comunque l'evento per la visualizzazione
+                            eventiFuturi.push({ el: evento, data: new Date(2099, 11, 31), badgeText: testoDataBadge });
                         }
                     });
 
@@ -858,8 +883,13 @@
                         const prenotaBtn = evento.querySelector('a[href*="wa.me"]');
                         const linkWhatsApp = prenotaBtn ? prenotaBtn.getAttribute('href') : 'https://wa.me/393498615665';
 
+                        const badgeHTML = item.badgeText 
+                            ? `<span class="event-date-badge">${item.badgeText}</span>` 
+                            : '';
+
                         const itemHTML = `
                             <div class="event-item">
+                                ${badgeHTML}
                                 <div class="event-title">${titolo}</div>
                                 <div class="event-desc">${descrizione}</div>
                                 <div class="event-actions">
