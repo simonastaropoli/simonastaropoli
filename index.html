@@ -221,11 +221,12 @@
             }
         }
 
+        /* ALLINEAMENTO DELLE COLONNE */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
             gap: 30px;
-            align-items: stretch;
+            align-items: stretch; /* Mantiene la stessa altezza visiva */
         }
 
         .main-card {
@@ -300,7 +301,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
             gap: 15px;
         }
 
@@ -310,30 +310,33 @@
             text-decoration: none;
         }
 
-        /* ----------------------------------------------------
-           STILE PULSANTE "TORNA IN ALTO" - DESKTOP (MOLTO VISIBILE)
-        ---------------------------------------------------- */
+        /* PULSANTE "TORNA IN ALTO" DESKTOP */
         .back-to-top-text {
-            color: #b8860b !important; /* Oro scuro leggibile */
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.88rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            cursor: pointer;
             display: inline-flex;
             align-items: center;
-            gap: 4px;
-            padding: 4px 8px;
-            border-radius: 6px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            justify-content: center;
+            white-space: nowrap;
+            color: #121d17 !important;
+            background: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            flex-shrink: 0;
         }
 
         .back-to-top-text:hover {
-            color: #8c4327 !important;
-            background: rgba(140, 67, 39, 0.1);
-            border-color: #8c4327;
+            background: #f0c946;
+            color: #121d17 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
 
         /* SIDEBAR E WIDGET */
@@ -342,6 +345,7 @@
             flex-direction: column;
             justify-content: space-between;
             gap: 20px;
+            height: 100%;
         }
 
         .widget {
@@ -564,9 +568,7 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
-        /* ----------------------------------------------------
-           REGOLE MOBILE (Sotto i 900px)
-        ---------------------------------------------------- */
+        /* REGOLE MOBILE (Sotto i 900px) */
         @media (max-width: 900px) {
             body {
                 background-attachment: scroll;
@@ -593,23 +595,18 @@
             .floating-btn { width: 42px; height: 42px; }
             .floating-btn svg { width: 18px; height: 18px; }
 
-            /* PULSANTE MOBILE EVIDENTE */
+            /* STRUTTURA ED ALLINEAMENTO PER SMARTPHONE */
+            .contact-info {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+                gap: 12px;
+            }
+
             .back-to-top-text {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                gap: 6px;
-                color: #121d17 !important;
-                background: var(--accent-gold);
-                border: 1px solid #ffffff;
-                padding: 8px 16px;
-                border-radius: 20px;
+                width: 100%;
+                padding: 10px 16px;
                 font-size: 0.78rem;
-                font-weight: 700;
-                letter-spacing: 0.5px;
-                text-transform: uppercase;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-                margin-top: 5px;
             }
         }
     </style>
