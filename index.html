@@ -344,6 +344,7 @@
             transition: all 0.3s ease;
             background-color: #8c4327;
             box-shadow: 0 4px 10px rgba(140, 67, 39, 0.25);
+            cursor: pointer;
         }
 
         .back-to-top-link:hover {
@@ -641,6 +642,16 @@
                 margin-top: 20px;
                 box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             }
+
+            .back-to-top-link {
+                display: inline-flex;
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 0.85rem;
+                margin: 15px auto 0 auto;
+            }
         }
     </style>
 </head>
@@ -712,7 +723,7 @@
                     <div class="card-footer">
                         <span>Copyright 2026 - Simona Staropoli - Gavardo (BS)</span>
                         <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
-                        <a href="#top" class="back-to-top-link">↑ Torna in alto</a>
+                        <a href="#top" class="back-to-top-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
                     </div>
                 </div>
             </main>
