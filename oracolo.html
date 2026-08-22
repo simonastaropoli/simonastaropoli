@@ -32,7 +32,7 @@
             background: #0d1511 url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
             background-size: cover;
             color: var(--text-dark);
-            line-height: 1.6;
+            line-height: 1.5;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -53,72 +53,72 @@
         .container {
             width: 100%;
             max-width: 900px;
-            padding: 20px;
+            padding: 10px 15px; /* Ridotto il padding generale */
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            padding: 40px 15px 20px 15px;
+            padding: 15px 10px 10px 10px; /* Spazi verticali ridotti nel header */
             color: var(--text-light);
         }
 
         .symbol {
-            width: 50px;
-            height: 50px;
-            margin: 0 auto 20px auto;
+            width: 40px; /* Ridotte le dimensioni del simbolo */
+            height: 40px;
+            margin: 0 auto 10px auto; /* Margin ridotto */
             border-radius: 50%;
             border: 1px solid var(--accent-gold);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--accent-gold);
-            font-size: 22px;
+            font-size: 18px;
         }
 
         h1.site-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.8rem;
+            font-size: 2.4rem; /* Leggermente ridotto */
             font-weight: 600;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: #ffffff;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
             word-wrap: break-word;
         }
 
         p.tagline {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             color: #d1dfd7;
-            margin-bottom: 30px;
+            margin-bottom: 15px; /* Ridotto lo spazio sotto il payoff */
         }
 
-        /* --- MENU SU UNICA RIGA --- */
+        /* --- MENU COMPATTO SU UNICA RIGA --- */
         nav {
-            margin-bottom: 30px;
+            margin-bottom: 15px; /* Margin ridotto */
             width: 100%;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: nowrap; /* Mantiene gli elementi su una sola riga */
+            flex-wrap: nowrap;
             justify-content: center;
-            gap: 8px;
-            overflow-x: auto; /* Permette lo scorrimento orizzontale su schermi piccoli */
-            padding: 5px 10px;
-            -webkit-overflow-scrolling: touch; /* Scroll fluido su smartphone */
-            scrollbar-width: none; /* Nasconde scrollbar su Firefox */
+            gap: 6px; /* Gap ridotto tra i pulsanti */
+            overflow-x: auto;
+            padding: 2px 5px;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
 
         nav ul::-webkit-scrollbar {
-            display: none; /* Nasconde scrollbar su Chrome/Safari */
+            display: none;
         }
 
         nav li {
-            flex-shrink: 0; /* Impedisce che i pulsanti vengano schiacciati */
+            flex-shrink: 0;
         }
 
         nav a {
@@ -127,15 +127,15 @@
             color: var(--text-light);
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 8px 14px;
+            padding: 6px 12px; /* Ridotto il padding dei pulsanti */
             border-radius: 20px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 500;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             transition: all 0.3s ease;
             text-align: center;
-            white-space: nowrap; /* Evita che il testo all'interno vada a capo */
+            white-space: nowrap;
         }
 
         nav a:hover {
@@ -144,10 +144,11 @@
             color: #fff;
         }
 
+        /* --- SCHEDA PRINCIPALE COMPATTA --- */
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 45px 40px;
+            padding: 25px 25px; /* Padding interno alla scheda nettamente ridotto */
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             text-align: center;
             backdrop-filter: blur(10px);
@@ -155,26 +156,26 @@
 
         h2.section-label {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2rem;
+            font-size: 1.75rem;
             color: #8c4327;
-            margin-bottom: 15px;
+            margin-bottom: 8px; /* Margin ridotto */
             font-weight: 600;
         }
 
         p.oracle-intro {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             color: #38423d;
-            margin-bottom: 30px;
-            line-height: 1.7;
+            margin-bottom: 15px; /* Margin ridotto */
+            line-height: 1.5;
         }
 
         .oracle-box {
             background: var(--box-accent);
             border: 2px dashed var(--accent-gold);
-            padding: 30px;
+            padding: 18px 15px; /* Ridotto il padding del riquadro */
             border-radius: 12px;
-            margin: 25px 0;
-            min-height: 140px;
+            margin: 15px 0; /* Ridotto il margine del riquadro */
+            min-height: 95px; /* Altezza minima ridotta */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -195,10 +196,10 @@
 
         .oracle-message {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-style: italic;
             color: #2c3531;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .pulse-active {
@@ -206,33 +207,19 @@
         }
 
         @keyframes energy-pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            30% {
-                transform: scale(0.95);
-                opacity: 0.4;
-                background-color: rgba(212, 175, 55, 0.1);
-            }
-            60% {
-                transform: scale(1.04);
-                opacity: 0.8;
-                box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+            0% { transform: scale(1); opacity: 1; }
+            30% { transform: scale(0.95); opacity: 0.4; background-color: rgba(212, 175, 55, 0.1); }
+            60% { transform: scale(1.04); opacity: 0.8; box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); }
+            100% { transform: scale(1); opacity: 1; }
         }
 
         .btn-oracle {
             background: #8c4327;
             color: #ffffff;
             border: none;
-            padding: 12px 30px;
+            padding: 10px 24px; /* Padding pulsante leggermente ridotto */
             border-radius: 30px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
@@ -255,61 +242,54 @@
         @media (max-width: 650px) {
             body {
                 background-attachment: scroll;
-                padding: 10px 0;
-            }
-
-            .container {
-                padding: 10px;
             }
 
             header {
-                padding: 20px 10px 10px 10px;
+                padding: 10px 5px 5px 5px;
             }
 
             h1.site-title {
-                font-size: 2.1rem;
-                letter-spacing: 2px;
+                font-size: 1.8rem;
             }
 
             p.tagline {
-                font-size: 1.1rem;
-                margin-bottom: 20px;
+                font-size: 1rem;
+                margin-bottom: 12px;
             }
 
-            /* Allineamento a sinistra su mobile per favorire lo scorrimento orizzontale */
             nav ul {
                 justify-content: flex-start;
             }
 
             .main-card {
-                padding: 30px 20px;
+                padding: 20px 15px;
             }
 
             h2.section-label {
-                font-size: 1.7rem;
+                font-size: 1.5rem;
             }
 
             .oracle-box {
-                padding: 20px 15px;
-                min-height: 120px;
+                padding: 15px 10px;
+                min-height: 85px;
             }
 
             .oracle-message {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
 
             .btn-oracle {
                 width: 100%;
-                padding: 14px 20px;
+                padding: 12px 18px;
             }
         }
 
         footer {
-            margin-top: 50px;
-            padding: 30px 20px;
+            margin-top: 25px; /* Margine ridotto */
+            padding: 15px 20px;
             text-align: center;
             color: var(--text-muted);
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             width: 100%;
         }
 
