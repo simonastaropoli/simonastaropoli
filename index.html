@@ -116,18 +116,9 @@
         }
 
         @keyframes floatAndGlow {
-            0% {
-                transform: translateY(0px);
-                box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            }
-            50% {
-                transform: translateY(-8px);
-                box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.4);
-            }
-            100% {
-                transform: translateY(0px);
-                box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
-            }
+            0% { transform: translateY(0px); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
+            50% { transform: translateY(-8px); box-shadow: 0 0 30px rgba(212, 175, 55, 0.8), 0 0 10px rgba(212, 175, 55, 0.4); }
+            100% { transform: translateY(0px); box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); }
         }
 
         h1.site-title {
@@ -208,21 +199,11 @@
         }
 
         @keyframes pulseGlow {
-            0% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7));
-            }
-            50% {
-                transform: scale(1.22);
-                filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.8));
-            }
-            100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7));
-            }
+            0% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7)); }
+            50% { transform: scale(1.22); filter: drop-shadow(0 0 12px rgba(255, 215, 0, 1)) drop-shadow(0 0 18px rgba(255, 215, 0, 0.8)); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.7)); }
         }
 
-        /* ALLINEAMENTO DELLE COLONNE */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
@@ -267,6 +248,20 @@
             line-height: 1.7;
         }
 
+        /* STILE PER I LINK GOOGLE */
+        a.google-link {
+            color: #8c4327;
+            text-decoration: none;
+            border-bottom: 1px dashed #8c4327;
+            transition: all 0.2s ease;
+        }
+
+        a.google-link:hover {
+            color: #d4af37;
+            border-bottom-color: #d4af37;
+            background: rgba(212, 175, 55, 0.1);
+        }
+
         .option-box {
             background: var(--box-accent);
             border-left: 3px solid #8c4327;
@@ -277,13 +272,8 @@
             color: #2c3531;
         }
 
-        .option-box p {
-            margin-bottom: 12px;
-        }
-
-        .option-box p:last-child {
-            margin-bottom: 0;
-        }
+        .option-box p { margin-bottom: 12px; }
+        .option-box p:last-child { margin-bottom: 0; }
 
         .signature {
             font-family: 'Cormorant Garamond', serif;
@@ -305,13 +295,8 @@
             gap: 15px;
         }
 
-        .contact-info a {
-            color: #2c3531;
-            font-weight: 600;
-            text-decoration: none;
-        }
+        .contact-info a { color: #2c3531; font-weight: 600; text-decoration: none; }
 
-        /* PULSANTE "TORNA IN ALTO" DESKTOP */
         .back-to-top-text {
             display: inline-flex;
             align-items: center;
@@ -340,7 +325,6 @@
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
         }
 
-        /* SIDEBAR E WIDGET */
         .sidebar {
             display: flex;
             flex-direction: column;
@@ -384,7 +368,6 @@
             border-bottom: none;
         }
 
-        /* BADGE DATA EVENTO */
         .event-date-badge {
             display: inline-block;
             background: rgba(212, 175, 55, 0.18);
@@ -530,9 +513,7 @@
             transform: translateY(-2px);
         }
 
-        .social-icon:hover svg {
-            fill: #ffffff;
-        }
+        .social-icon:hover svg { fill: #ffffff; }
 
         footer {
             margin-top: 50px;
@@ -545,7 +526,6 @@
 
         footer a { color: var(--text-muted); text-decoration: underline; }
 
-        /* CONTENITORE BOTTONI FLUTTUANTI */
         .floating-contact-container {
             position: fixed;
             bottom: 25px;
@@ -570,11 +550,7 @@
             border: none;
         }
 
-        .floating-btn svg {
-            width: 22px;
-            height: 22px;
-            fill: #ffffff;
-        }
+        .floating-btn svg { width: 22px; height: 22px; fill: #ffffff; }
 
         .floating-btn:hover {
             transform: scale(1.1);
@@ -588,23 +564,13 @@
         .btn-top-mobile {
             background-color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
-            display: none; /* Nascosto su desktop */
+            display: none;
         }
         .btn-top-mobile svg { fill: #121d17; width: 24px; height: 24px; }
 
-        /* REGOLE MOBILE (Sotto i 900px) */
         @media (max-width: 900px) {
-            body {
-                background-attachment: scroll;
-                padding: 10px 0;
-            }
-
-            .main-layout {
-                display: flex;
-                flex-direction: column;
-                gap: 20px;
-            }
-
+            body { background-attachment: scroll; padding: 10px 0; }
+            .main-layout { display: flex; flex-direction: column; gap: 20px; }
             .container { padding: 10px; }
             header { padding: 20px 10px 10px 10px; }
             h1.site-title { font-size: 2.1rem; letter-spacing: 2px; }
@@ -615,12 +581,9 @@
             .sidebar { order: 2; gap: 20px; }
             .widget { padding: 18px; }
             footer { order: 3; margin-top: 30px; }
-            
-            /* Gestione pulsanti mobile */
             .back-to-top-text { display: none !important; }
             .btn-whatsapp, .btn-email { display: none !important; }
             .btn-top-mobile { display: flex !important; }
-
             .floating-contact-container { bottom: 20px; right: 20px; }
             .floating-btn { width: 46px; height: 46px; }
         }
@@ -633,7 +596,9 @@
     <div class="container">
         <header>
             <div class="symbol">✦</div>
-            <h1 class="site-title">Simona Staropoli</h1>
+            <h1 class="site-title">
+                <a href="https://www.google.com/search?q=Simona+Staropoli+Brescia" target="_blank" rel="noopener" style="color: inherit; text-decoration: none;">Simona Staropoli</a>
+            </h1>
             <p class="tagline">Fai brillare la tua Luce</p>
 
             <nav>
@@ -663,19 +628,19 @@
 
                     <p>Se sei qui, stai muovendo un passo verso te stessa/o. Non importa cosa ti abbia portata/o fin qui: ciò che conta è che questo può essere il tuo momento per fermarti, respirare e riascoltare il tuo centro.</p>
                     
-                    <p>Sono Simona e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, in vicinanza della <strong>Valle Sabbia</strong> e del <strong>Lago di Garda</strong>, offro <strong>sessioni individuali e cerchi di sciamanesimo</strong>, <strong>percorsi di meditazione</strong>, <strong>riequilibrio energetico dei chakra</strong> e <strong>massaggi olistici</strong>. Se cerchi un <strong>viaggio spirituale a Brescia e Gavardo</strong> o ti chiedi se c'è un <strong>corso di sciamanesimo a Brescia (Lombardia) e Gavardo</strong>, qui troverai pratiche dedicate alla tua crescita interiore.</p>
+                    <p>Sono <a class="google-link" href="https://www.google.com/search?q=Simona+Staropoli" target="_blank" rel="noopener">Simona Staropoli</a> e, nel mio spazio a <strong>Gavardo (Brescia)</strong>, nelle vicinanze della <strong>Valle Sabbia</strong> e del <strong>Lago di Garda</strong>, offro <a class="google-link" href="https://www.google.com/search?q=Sessioni+individuali+e+cerchi+di+sciamanesimo+Simona+Staropoli" target="_blank" rel="noopener">sessioni individuali e cerchi di sciamanesimo</a>, <a class="google-link" href="https://www.google.com/search?q=Percorsi+di+meditazione+Simona+Staropoli+Brescia" target="_blank" rel="noopener">percorsi di meditazione</a>, <a class="google-link" href="https://www.google.com/search?q=Riequilibrio+energetico+dei+chakra+Simona+Staropoli" target="_blank" rel="noopener">riequilibrio energetico dei chakra</a> e <a class="google-link" href="https://www.google.com/search?q=Massaggi+olistici+a+Gavardo+Simona+Staropoli" target="_blank" rel="noopener">massaggi olistici a Gavardo e Brescia</a>. Se cerchi un <a class="google-link" href="https://www.google.com/search?q=Viaggio+spirituale+a+Brescia+e+Gavardo+Simona+Staropoli" target="_blank" rel="noopener">viaggio spirituale a Brescia e Gavardo</a> o ti chiedi: <a class="google-link" href="https://www.google.com/search?q=Cerchi+un+corso+di+sciamanesimo+a+Brescia+e+Gavardo+Simona+Staropoli" target="_blank" rel="noopener">cerchi un corso di sciamanesimo a Brescia (Lombardia) e Gavardo?</a>, qui troverai un ambiente accogliente per la tua crescita interiore.</p>
                     
-                    <p>Attraverso il tocco curativo, il ritmo del <strong>tamburo sciamanico</strong>, le tecniche di <strong>bioenergetica</strong>, la <strong>mindfulness</strong> e la <strong>guarigione sciamanica</strong>, ti accompagno a rilasciare l'<strong>antistress</strong>, gestire le tue <strong>emozioni</strong> e ritrovare un profondo <strong>rilassamento</strong> e <strong>benessere</strong>. Uniamo l'approccio tipico della <strong>naturopatia (naturopata)</strong> e delle <strong>pratiche olistiche</strong> ad attività in natura come la <strong>forest therapy</strong> ed i <strong>suoni curativi</strong>.</p>
+                    <p>Attraverso il tocco curativo del massaggio, il ritmo ritmico del <a class="google-link" href="https://www.google.com/search?q=Tamburo+Sciamanico+Simona+Staropoli+Brescia" target="_blank" rel="noopener">tamburo sciamanico</a>, le pratiche di <a class="google-link" href="https://www.google.com/search?q=Bioenergetica+Simona+Staropoli+Brescia" target="_blank" rel="noopener">bioenergetica</a>, la <a class="google-link" href="https://www.google.com/search?q=Mindfullnes+Simona+Staropoli" target="_blank" rel="noopener">mindfulness</a> e la <a class="google-link" href="https://www.google.com/search?q=Guarigione+Sciamanica+Simona+Staropoli+Brescia" target="_blank" rel="noopener">guarigione sciamanica</a>, ti accompagno a rilasciare l'<strong>antistress</strong>, gestire al meglio le tue <strong>emozioni</strong> e ritrovare un profondo <strong>rilassamento</strong> e <strong>benessere</strong>. Uniamo l'approccio tipico della <a class="google-link" href="https://www.google.com/search?q=Naturopata+e+Naturopatia+Simona+Staropoli+Brescia" target="_blank" rel="noopener">naturopatia e naturopata</a> e delle <a class="google-link" href="https://www.google.com/search?q=Pratiche+Olistiche+Simona+Staropoli+Brescia" target="_blank" rel="noopener">pratiche olistiche</a> ad attività in natura come la <a class="google-link" href="https://www.google.com/search?q=Forest+Therapy+Simona+Staropoli+Brescia" target="_blank" rel="noopener">forest therapy</a> ed i <a class="google-link" href="https://www.google.com/search?q=Suoni+curativi+Simona+Staropoli+Brescia" target="_blank" rel="noopener">suoni curativi</a>.</p>
 
                     <p style="margin-top: 25px; font-weight: 600; color: #8c4327;">Da dove vuoi iniziare il tuo Cammino?</p>
 
                     <div class="option-box">
-                        <p><strong>I Rituali di Benessere:</strong> Massaggi di benessere e pratiche olistiche per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
+                        <p><strong><a class="google-link" href="https://www.google.com/search?q=Massaggi+di+Benessere+Simona+Staropoli+Brescia" target="_blank" rel="noopener">I Rituali di Benessere:</a></strong> Massaggi di benessere e pratiche olistiche per sciogliere le tensioni del corpo, ritrovare radicamento e riequilibrare la tua energia quotidiana attraverso il massaggio, i cristalli e la meditazione.</p>
                         <p style="margin-top: 10px;"><a href="rituali-di-benessere.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Scopri i Rituali di Benessere</a></p>
                         
                         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
                         
-                        <p><strong>Il Sentiero Sciamanico:</strong> Scopri lo sciamanesimo per esplorare la tua spiritualità, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo a Brescia e Gavardo.</p>
+                        <p><strong><a class="google-link" href="https://www.google.com/search?q=Scopri+lo+Sciamanesimo+Simona+Staropoli+Brescia" target="_blank" rel="noopener">Il Sentiero Sciamanico:</a></strong> Scopri lo sciamanesimo per esplorare la tua spiritualità, incontrare le tue Guide e trasformare i blocchi profondi attraverso sessioni individuali o nei Cerchi di gruppo a Brescia e Gavardo.</p>
                         <p style="margin-top: 10px;"><a href="il-sentiero-sciamanico.html" style="color: #8c4327; font-weight: 600; text-decoration: underline;">👉 Esplora il Sentiero Sciamanico</a></p>
                         
                         <hr style="margin: 20px 0; border: 0; border-top: 1px solid #d5dfd9;">
@@ -733,7 +698,9 @@
                 <div class="widget">
                     <div>
                         <h3 class="widget-title">Chi Sono</h3>
-                        <img src="simo.jpg" alt="Simona Staropoli - Sciamanesimo Brescia e Gavardo" class="profile-img">
+                        <a href="https://www.google.com/search?q=Sciamanesimo+a+Brescia+e+Gavardo+Simona+Staropoli" target="_blank" rel="noopener">
+                            <img src="simo.jpg" alt="Simona Staropoli - Sciamanesimo Brescia e Gavardo" class="profile-img">
+                        </a>
                         <p class="profile-text">
                             Ciao, sono Simona. Dopo un lungo percorso personale e spirituale, ti accompagno alla riscoperta della tua natura più autentica...
                         </p>
@@ -769,12 +736,10 @@
 
     <!-- BOTTONI FLUTTUANTI FISSI -->
     <div class="floating-contact-container">
-        <!-- TORNA SU FLUTTUANTE CON FRECCIA (VISIBILE SOLO SU MOBILE) -->
         <a href="#top" class="floating-btn btn-top-mobile" title="Torna in alto" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
             <svg viewBox="0 0 24 24"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
         </a>
         
-        <!-- VISIBILI SOLO SU DESKTOP -->
         <a href="https://wa.me/393498615665" class="floating-btn btn-whatsapp" title="WhatsApp" target="_blank">
             <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         </a>
@@ -817,7 +782,6 @@
                         let dataEvento = null;
                         let testoBadge = "";
 
-                        // Estrazione data da attributo data-date
                         const dateAttr = evento.getAttribute('data-date');
                         if (dateAttr) {
                             const partiAttr = dateAttr.trim().split(' ');
@@ -833,7 +797,6 @@
                             }
                         }
 
-                        // Se non è stato trovato tramite data-date, analizza gli elementi interni o il testo
                         if (!dataEvento) {
                             const badgeEl = evento.querySelector('.event-date, .date, .badge, .date-badge');
                             const testoPerRicerca = badgeEl ? badgeEl.innerText : evento.innerText;
@@ -854,7 +817,6 @@
                             }
                         }
 
-                        // Sincronizza solo se la data è valida ed è odierna/futura
                         if (dataEvento && !isNaN(dataEvento.getTime())) {
                             dataEvento.setHours(0, 0, 0, 0);
                             if (dataEvento >= oggi) {
@@ -868,7 +830,6 @@
                         return;
                     }
 
-                    // Ordina cronologicamente dal più vicino al più lontano
                     eventiFuturi.sort((a, b) => a.data - b.data);
 
                     container.innerHTML = '';
