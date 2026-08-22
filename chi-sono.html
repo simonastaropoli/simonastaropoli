@@ -136,7 +136,6 @@
 
         nav a:hover { background: rgba(212, 175, 55, 0.25); border-color: var(--accent-gold); color: #fff; }
 
-        /* ALLINEAMENTO: stretch per pareggiare le altezze delle colonne */
         .main-layout {
             display: grid;
             grid-template-columns: 1fr 340px;
@@ -144,7 +143,6 @@
             align-items: stretch;
         }
 
-        /* ALLINEAMENTO: flexbox con space-between per distribuire l'altezza in automatico */
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -196,25 +194,57 @@
             border-top: 1px solid #d5dfd9;
             font-size: 0.88rem;
             color: #55635c;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 15px;
         }
 
-        .back-to-top-text {
-            color: #5a6b62;
-            text-decoration: none;
+        .contact-info a {
+            color: #2c3531;
             font-weight: 600;
-            font-size: 0.85rem;
-            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .card-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #d5dfd9;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #55635c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-footer a {
+            color: #2c3531;
+            text-decoration: underline;
+        }
+
+        .back-to-top-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            font-weight: 600 !important;
+            font-size: 0.78rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            padding: 8px 20px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            background-color: #8c4327;
+            box-shadow: 0 4px 10px rgba(140, 67, 39, 0.25);
             cursor: pointer;
         }
 
-        .back-to-top-text:hover {
-            color: #8c4327;
-            text-decoration: underline;
+        .back-to-top-link:hover {
+            background-color: var(--accent-gold);
+            color: #121d17 !important;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
         }
 
         .sidebar { display: flex; flex-direction: column; gap: 25px; }
@@ -306,17 +336,6 @@
             font-weight: 300;
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 30px 20px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.75rem;
-            width: 100%;
-        }
-
-        footer a { color: var(--text-muted); text-decoration: underline; }
-
         .floating-contact-container {
             position: fixed;
             bottom: 25px;
@@ -392,9 +411,23 @@
                 padding: 18px;
             }
 
-            footer {
+            .card-footer {
                 order: 3;
-                margin-top: 30px;
+                background: var(--card-bg);
+                border-radius: 16px;
+                padding: 20px;
+                margin-top: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            }
+
+            .back-to-top-link {
+                display: inline-flex;
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+                padding: 12px 20px;
+                font-size: 0.85rem;
+                margin: 15px auto 0 auto;
             }
 
             .floating-contact-container {
@@ -412,12 +445,12 @@
         }
     </style>
 </head>
-<body id="top">
+<body>
 
     <div class="body-overlay"></div>
 
     <div class="container">
-        <header>
+        <header id="top">
             <div class="symbol">✦</div>
             <h1 class="site-title">Simona Staropoli</h1>
             <p class="tagline">Fai brillare la tua Luce</p>
@@ -449,13 +482,16 @@
                     <div class="signature">Simona</div>
                 </div>
 
-                <div class="contact-info">
-                    <div>
+                <div>
+                    <div class="contact-info">
                         <strong>Contattami qui:</strong><br>
                         Email: <a href="mailto:simona.staropoli@gmail.com">simona.staropoli@gmail.com</a>
                     </div>
-                    <div>
-                        <a href="#top" class="back-to-top-text" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
+
+                    <div class="card-footer">
+                        <span>Copyright 2026 - Simona Staropoli - Gavardo (BS)</span>
+                        <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
+                        <a href="#top" class="back-to-top-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ Torna in alto</a>
                     </div>
                 </div>
             </main>
@@ -491,10 +527,6 @@
 
         </div>
 
-        <footer>
-            Copyright 2026 - Simona Staropoli - Gavardo (BS)<br>
-            <a href="note-legali.html">Privacy, Cookie & Disclaimer</a>
-        </footer>
     </div>
 
     <div class="floating-contact-container">
