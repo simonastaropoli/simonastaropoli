@@ -53,32 +53,67 @@
         .container {
             width: 100%;
             max-width: 900px;
-            padding: 10px 15px; /* Ridotto il padding generale */
+            padding: 10px 15px;
             margin: 0 auto;
         }
 
         header {
             text-align: center;
-            padding: 15px 10px 10px 10px; /* Spazi verticali ridotti nel header */
+            padding: 15px 10px 10px 10px;
             color: var(--text-light);
         }
 
+        /* --- BUSSOLA ANIMATA IN AUTOMATICO --- */
         .symbol {
-            width: 40px; /* Ridotte le dimensioni del simbolo */
-            height: 40px;
-            margin: 0 auto 10px auto; /* Margin ridotto */
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 10px auto;
             border-radius: 50%;
             border: 1px solid var(--accent-gold);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--accent-gold);
-            font-size: 18px;
+            font-size: 20px;
+            user-select: none;
+            /* Animazione continua automatica: fluttuazione, rotazione e pulsazione di luce */
+            animation: auto-magic 5s ease-in-out infinite;
+        }
+
+        @keyframes auto-magic {
+            0% {
+                transform: translateY(0px) rotate(0deg) scale(1);
+                box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+                border-color: var(--accent-gold);
+            }
+            25% {
+                transform: translateY(-8px) rotate(90deg) scale(1.08);
+                box-shadow: 0 0 18px rgba(212, 175, 55, 0.7);
+                border-color: #fff;
+                color: #fff;
+            }
+            50% {
+                transform: translateY(3px) rotate(180deg) scale(0.95);
+                box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+                border-color: var(--accent-gold);
+                color: var(--accent-gold);
+            }
+            75% {
+                transform: translateY(-5px) rotate(270deg) scale(1.05);
+                box-shadow: 0 0 16px rgba(212, 175, 55, 0.6);
+                border-color: #fff;
+            }
+            100% {
+                transform: translateY(0px) rotate(360deg) scale(1);
+                box-shadow: 0 0 6px rgba(212, 175, 55, 0.2);
+                border-color: var(--accent-gold);
+                color: var(--accent-gold);
+            }
         }
 
         h1.site-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 2.4rem; /* Leggermente ridotto */
+            font-size: 2.4rem;
             font-weight: 600;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -92,12 +127,12 @@
             font-style: italic;
             font-size: 1.15rem;
             color: #d1dfd7;
-            margin-bottom: 15px; /* Ridotto lo spazio sotto il payoff */
+            margin-bottom: 15px;
         }
 
         /* --- MENU COMPATTO SU UNICA RIGA --- */
         nav {
-            margin-bottom: 15px; /* Margin ridotto */
+            margin-bottom: 15px;
             width: 100%;
         }
 
@@ -106,7 +141,7 @@
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
-            gap: 6px; /* Gap ridotto tra i pulsanti */
+            gap: 6px;
             overflow-x: auto;
             padding: 2px 5px;
             -webkit-overflow-scrolling: touch;
@@ -127,7 +162,7 @@
             color: var(--text-light);
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-            padding: 6px 12px; /* Ridotto il padding dei pulsanti */
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 0.72rem;
             font-weight: 500;
@@ -148,7 +183,7 @@
         .main-card {
             background: var(--card-bg);
             border-radius: 16px;
-            padding: 25px 25px; /* Padding interno alla scheda nettamente ridotto */
+            padding: 25px 25px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
             text-align: center;
             backdrop-filter: blur(10px);
@@ -158,24 +193,24 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.75rem;
             color: #8c4327;
-            margin-bottom: 8px; /* Margin ridotto */
+            margin-bottom: 8px;
             font-weight: 600;
         }
 
         p.oracle-intro {
             font-size: 0.88rem;
             color: #38423d;
-            margin-bottom: 15px; /* Margin ridotto */
+            margin-bottom: 15px;
             line-height: 1.5;
         }
 
         .oracle-box {
             background: var(--box-accent);
             border: 2px dashed var(--accent-gold);
-            padding: 18px 15px; /* Ridotto il padding del riquadro */
+            padding: 18px 15px;
             border-radius: 12px;
-            margin: 15px 0; /* Ridotto il margine del riquadro */
-            min-height: 95px; /* Altezza minima ridotta */
+            margin: 15px 0;
+            min-height: 95px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -217,7 +252,7 @@
             background: #8c4327;
             color: #ffffff;
             border: none;
-            padding: 10px 24px; /* Padding pulsante leggermente ridotto */
+            padding: 10px 24px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -285,7 +320,7 @@
         }
 
         footer {
-            margin-top: 25px; /* Margine ridotto */
+            margin-top: 25px;
             padding: 15px 20px;
             text-align: center;
             color: var(--text-muted);
