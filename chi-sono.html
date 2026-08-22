@@ -202,6 +202,7 @@
             gap: 15px;
         }
 
+        /* STILE BASE PER DESKTOP (Testo Semplice) */
         .back-to-top-text {
             color: #5a6b62;
             text-decoration: none;
@@ -351,6 +352,7 @@
         .btn-email { background-color: #d4af37; }
         .btn-email svg { fill: #121d17; }
 
+        /* REGOLE MOBILE (Sotto i 900px) */
         @media (max-width: 900px) {
             body {
                 background-attachment: scroll;
@@ -376,6 +378,21 @@
             .floating-contact-container { bottom: 15px; right: 15px; }
             .floating-btn { width: 42px; height: 42px; }
             .floating-btn svg { width: 18px; height: 18px; }
+
+            /* TRASFORMAZIONE IN PULSANTE SOLO SU MOBILE */
+            .back-to-top-text {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                color: #2c3531;
+                background: rgba(212, 175, 55, 0.15);
+                border: 1px solid var(--accent-gold);
+                padding: 6px 14px;
+                border-radius: 15px;
+                font-size: 0.75rem;
+                letter-spacing: 0.5px;
+                text-transform: uppercase;
+            }
         }
     </style>
 </head>
